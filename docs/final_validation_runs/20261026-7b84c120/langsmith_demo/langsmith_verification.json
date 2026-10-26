@@ -1,0 +1,36 @@
+{
+  "started_at": "2026-10-26T05:31:14.103827+00:00",
+  "project": "sales-copilot",
+  "status": "error",
+  "hosted_delivery_verified": false,
+  "project_read_error": {
+    "exception_type": "LangSmithError",
+    "category": "model_request_failed",
+    "http_status": 403
+  },
+  "error": {
+    "exception_type": "AttributeError",
+    "category": "model_request_failed",
+    "http_status": null
+  },
+  "api_usage": {
+    "started_adapter_calls": 0,
+    "completed_callbacks": 0,
+    "failed_callbacks": 0,
+    "calls_with_usage": 0,
+    "observed_usage": null,
+    "minimum_call_interval_seconds": 6,
+    "call_budget": 12,
+    "calls": []
+  },
+  "versions": {
+    "langsmith": "0.14.12",
+    "langgraph": "1.2.17",
+    "langchain-core": "1.7.0",
+    "langchain-google-genai": "4.4.2",
+    "google-genai": "2.33.0",
+    "sentence-transformers": "6.2.0",
+    "transformers": "5.20.2"
+  },
+  "finished_at": "2026-10-26T05:31:15.011716+00:00"
+}

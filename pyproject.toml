@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-sales-copilot"
+version = "0.1.0"
+description = "Stage 3: policy retrieval and transactional first-time CRM assignment with explicit consent"
+requires-python = ">=3.11"
+dependencies = [
+    "langgraph>=1.0,<2",
+    "langchain>=1.0,<2",
+    "langchain-google-genai>=4,<5",
+    "pydantic>=2.7,<3",
+    "python-dotenv>=1.0,<2",
+    "sentence-transformers>=5,<7",
+    "rank-bm25>=0.2.2,<0.3",
+    "numpy>=1.26,<3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+observability = ["langsmith>=0.12,<1"]
+ragas = ["ragas>=0.4.3,<0.5", "instructor>=1.17,<2", "langchain-community>=0.4.1,<0.4.2"]
+anthropic = ["langchain-anthropic>=1,<2"]
+openai = ["langchain-openai>=1,<2"]
+
+[project.scripts]
+sales-copilot = "sales_copilot.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["sales_copilot*"]
+
+[tool.setuptools.package-data]
+sales_copilot = ["policies/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

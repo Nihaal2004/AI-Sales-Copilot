@@ -1,0 +1,153 @@
+{
+  "started_at": "2026-10-26T05:31:40.946123+00:00",
+  "project": "sales-copilot",
+  "status": "completed",
+  "hosted_delivery_verified": false,
+  "project_read_error": {
+    "exception_type": "LangSmithError",
+    "category": "model_request_failed",
+    "http_status": 403
+  },
+  "read": {
+    "latency_ms": 14694.975,
+    "tool_names": [
+      "get_lead_details",
+      "retrieve_policy"
+    ],
+    "all_tool_results_ok": true,
+    "interrupted": false,
+    "ownership_unchanged": true
+  },
+  "assignment": {
+    "approval_interrupt_received": true,
+    "committed": true,
+    "tool_results_ok": true
+  },
+  "synchronous_export_errors": 0,
+  "exported_records": 30,
+  "independently_read_records": 0,
+  "hosted_read_errors": [
+    {
+      "exception_type": "LangSmithError",
+      "category": "model_request_failed",
+      "http_status": 403
+    }
+  ],
+  "missing_run_ids": [
+    "b8aa6695-2471-47f8-937e-5215ce61c9fc",
+    "1aaa7f87-15d3-4822-a30e-ede3521ab252",
+    "34c62852-4166-4e1b-b57f-a4835af61ccf",
+    "d08fddfa-3aa0-4493-b30b-7278406a9441",
+    "d1e6bcad-c58a-4f2c-a6e8-48e8a48d378f",
+    "44acca9d-16ee-4651-9b22-694cb105e5b2",
+    "1f7244ce-7d3d-47bf-934e-c09e8ad96a88",
+    "b59edb4d-636a-4dbe-ac6c-c1817e3242c8",
+    "30f259af-70a3-47cf-9da2-315ba9b75922",
+    "c2de03bf-50f6-4ad8-8371-f8095049a726",
+    "d54a2929-1c0d-4755-929c-ecb249646d43",
+    "71a92f99-144f-4a2a-8d21-ca5dac563eae",
+    "8016c48a-05b9-4225-9bac-c5850cc453e5",
+    "f743a879-1a2f-4879-8a04-a7b225b538e5",
+    "903f2ddd-b7ef-4c8a-a196-0ca4ce6964f8",
+    "9ae7e943-1236-4152-a0f3-74c02229e41f",
+    "68255e43-61ce-43ef-9f27-b8494ac37905",
+    "6cc077c7-9720-4f21-9846-ee01253458b5",
+    "94a83a3c-30f1-4694-8cbf-32c1c5e43e43",
+    "6c21626a-f51f-4850-8ccb-4aa300844d09",
+    "25e62ef5-66f7-427a-9256-159a85e020d3",
+    "9c7e3a31-fe98-40d6-b7ed-dede3ee9746d",
+    "cad213b8-4663-41fe-99f2-364c92058965",
+    "c9f07b94-5782-438a-9ef5-3244f9c051fe",
+    "77795006-7d84-4a96-b4f8-cb6b284895a7",
+    "abed7401-7485-4b73-a394-8998606db918",
+    "ef80f919-ab74-49a6-aa3f-7f883d4f0f48",
+    "7bd414a7-ca64-47f4-931c-556e705bdb0d",
+    "dcb11f9a-1a16-4a40-8eb4-6c95d5457e61",
+    "364cf7ab-1e00-402b-bf76-d96a55cefdb4"
+  ],
+  "remote_mismatches": [],
+  "hosted_privacy_failures": [],
+  "local_payload_allowlist_passed": true,
+  "parent_relationships_valid": true,
+  "observed_spans": {},
+  "root_run_ids": [
+    "9ae7e943-1236-4152-a0f3-74c02229e41f",
+    "77795006-7d84-4a96-b4f8-cb6b284895a7",
+    "364cf7ab-1e00-402b-bf76-d96a55cefdb4"
+  ],
+  "hosted_latency_fields_present": true,
+  "hosted_llm_usage_spans": 0,
+  "api_usage": {
+    "started_adapter_calls": 4,
+    "completed_callbacks": 4,
+    "failed_callbacks": 0,
+    "calls_with_usage": 4,
+    "observed_usage": {
+      "input_tokens": 4475,
+      "output_tokens": 436,
+      "total_tokens": 4911
+    },
+    "minimum_call_interval_seconds": 6,
+    "call_budget": 12,
+    "calls": [
+      {
+        "call": 1,
+        "label": "fictional_read",
+        "latency_ms": 2845.641,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 250,
+          "output_tokens": 33,
+          "total_tokens": 283
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 2,
+        "label": "fictional_read",
+        "latency_ms": 2832.378,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 837,
+          "output_tokens": 38,
+          "total_tokens": 875
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 3,
+        "label": "fictional_read",
+        "latency_ms": 2616.466,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 3150,
+          "output_tokens": 329,
+          "total_tokens": 3479
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 4,
+        "label": "fictional_assignment_proposal",
+        "latency_ms": 887.058,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 238,
+          "output_tokens": 36,
+          "total_tokens": 274
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      }
+    ]
+  },
+  "versions": {
+    "langsmith": "0.14.12",
+    "langgraph": "1.2.17",
+    "langchain-core": "1.7.0",
+    "langchain-google-genai": "4.4.2",
+    "google-genai": "2.33.0",
+    "sentence-transformers": "6.2.0",
+    "transformers": "5.20.2"
+  },
+  "finished_at": "2026-10-26T05:32:16.558821+00:00"
+}

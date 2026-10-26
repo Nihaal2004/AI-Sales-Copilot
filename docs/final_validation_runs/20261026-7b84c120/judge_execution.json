@@ -1,0 +1,707 @@
+{
+  "started_at": "2026-10-26T05:32:33.902971+00:00",
+  "status": "completed",
+  "selected_question_ids": [
+    "Q01",
+    "Q05",
+    "Q07",
+    "Q11",
+    "Q21",
+    "Q22",
+    "Q24",
+    "Q28"
+  ],
+  "metric_summary": {
+    "faithfulness": {
+      "measured": 6,
+      "skipped": 23,
+      "errors": 2,
+      "mean": 0.9791666666666666
+    },
+    "response_relevancy": {
+      "measured": 6,
+      "skipped": 23,
+      "errors": 2,
+      "mean": 0.7798033360766561
+    },
+    "context_utilization": {
+      "measured": 4,
+      "skipped": 23,
+      "errors": 4,
+      "mean": 0.9999999999416667
+    }
+  },
+  "report": "judged/report.json",
+  "api_usage": {
+    "started_adapter_calls": 53,
+    "completed_callbacks": 53,
+    "failed_callbacks": 8,
+    "calls_with_usage": 45,
+    "observed_usage": {
+      "input_tokens": 36926,
+      "output_tokens": 3266,
+      "total_tokens": 40192
+    },
+    "minimum_call_interval_seconds": 6,
+    "call_budget": 72,
+    "calls": [
+      {
+        "call": 1,
+        "label": "StatementGeneratorOutput",
+        "latency_ms": 1455.747,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 415,
+          "output_tokens": 51,
+          "total_tokens": 466
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 2,
+        "label": "NLIStatementOutput",
+        "latency_ms": 1609.175,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 1040,
+          "output_tokens": 135,
+          "total_tokens": 1175
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 3,
+        "label": "AnswerRelevanceOutput",
+        "latency_ms": 878.779,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 507,
+          "output_tokens": 28,
+          "total_tokens": 535
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 4,
+        "label": "AnswerRelevanceOutput",
+        "latency_ms": 1029.913,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 507,
+          "output_tokens": 29,
+          "total_tokens": 536
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 5,
+        "label": "AnswerRelevanceOutput",
+        "latency_ms": 956.014,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 507,
+          "output_tokens": 29,
+          "total_tokens": 536
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 6,
+        "label": "ContextPrecisionOutput",
+        "latency_ms": 1922.05,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 1090,
+          "output_tokens": 43,
+          "total_tokens": 1133
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 7,
+        "label": "ContextPrecisionOutput",
+        "latency_ms": 3520.645,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 1098,
+          "output_tokens": 57,
+          "total_tokens": 1155
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 8,
+        "label": "ContextPrecisionOutput",
+        "latency_ms": 5265.671,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 1105,
+          "output_tokens": 59,
+          "total_tokens": 1164
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 9,
+        "label": "StatementGeneratorOutput",
+        "latency_ms": 4139.12,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 498,
+          "output_tokens": 64,
+          "total_tokens": 562
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 10,
+        "label": "NLIStatementOutput",
+        "latency_ms": 4326.691,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 1044,
+          "output_tokens": 199,
+          "total_tokens": 1243
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 11,
+        "label": "AnswerRelevanceOutput",
+        "latency_ms": 4982.799,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 589,
+          "output_tokens": 31,
+          "total_tokens": 620
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 12,
+        "label": "AnswerRelevanceOutput",
+        "latency_ms": 3446.36,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 589,
+          "output_tokens": 31,
+          "total_tokens": 620
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 13,
+        "label": "AnswerRelevanceOutput",
+        "latency_ms": 4943.331,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 589,
+          "output_tokens": 31,
+          "total_tokens": 620
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 14,
+        "label": "ContextPrecisionOutput",
+        "latency_ms": 3752.647,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 1179,
+          "output_tokens": 59,
+          "total_tokens": 1238
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 15,
+        "label": "ContextPrecisionOutput",
+        "latency_ms": 4736.444,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 1165,
+          "output_tokens": 50,
+          "total_tokens": 1215
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 16,
+        "label": "ContextPrecisionOutput",
+        "latency_ms": 5493.275,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 1189,
+          "output_tokens": 59,
+          "total_tokens": 1248
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 17,
+        "label": "StatementGeneratorOutput",
+        "latency_ms": 4609.765,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 464,
+          "output_tokens": 69,
+          "total_tokens": 533
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 18,
+        "label": "NLIStatementOutput",
+        "latency_ms": 5491.831,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 1049,
+          "output_tokens": 191,
+          "total_tokens": 1240
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 19,
+        "label": "AnswerRelevanceOutput",
+        "latency_ms": 5243.079,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 555,
+          "output_tokens": 34,
+          "total_tokens": 589
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 20,
+        "label": "AnswerRelevanceOutput",
+        "latency_ms": 2931.004,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 555,
+          "output_tokens": 30,
+          "total_tokens": 585
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 21,
+        "label": "AnswerRelevanceOutput",
+        "latency_ms": 4419.853,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 555,
+          "output_tokens": 28,
+          "total_tokens": 583
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 22,
+        "label": "ContextPrecisionOutput",
+        "latency_ms": 6093.545,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 1128,
+          "output_tokens": 62,
+          "total_tokens": 1190
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 23,
+        "label": "ContextPrecisionOutput",
+        "latency_ms": 4746.343,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 1154,
+          "output_tokens": 49,
+          "total_tokens": 1203
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 24,
+        "label": "ContextPrecisionOutput",
+        "latency_ms": 5820.703,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 1151,
+          "output_tokens": 66,
+          "total_tokens": 1217
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 25,
+        "label": "StatementGeneratorOutput",
+        "latency_ms": 3788.577,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 461,
+          "output_tokens": 50,
+          "total_tokens": 511
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 26,
+        "label": "NLIStatementOutput",
+        "latency_ms": 2167.165,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 1028,
+          "output_tokens": 129,
+          "total_tokens": 1157
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 27,
+        "label": "AnswerRelevanceOutput",
+        "latency_ms": 5741.337,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 548,
+          "output_tokens": 31,
+          "total_tokens": 579
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 28,
+        "label": "AnswerRelevanceOutput",
+        "latency_ms": 4329.313,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 548,
+          "output_tokens": 31,
+          "total_tokens": 579
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 29,
+        "label": "AnswerRelevanceOutput",
+        "latency_ms": 4893.013,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 548,
+          "output_tokens": 34,
+          "total_tokens": 582
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 30,
+        "label": "ContextPrecisionOutput",
+        "latency_ms": 4052.881,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 1127,
+          "output_tokens": 43,
+          "total_tokens": 1170
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 31,
+        "label": "ContextPrecisionOutput",
+        "latency_ms": 11931.168,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 1150,
+          "output_tokens": 54,
+          "total_tokens": 1204
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 32,
+        "label": "ContextPrecisionOutput",
+        "latency_ms": 4237.026,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 1143,
+          "output_tokens": 60,
+          "total_tokens": 1203
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 33,
+        "label": "StatementGeneratorOutput",
+        "latency_ms": 3845.505,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 553,
+          "output_tokens": 145,
+          "total_tokens": 698
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 34,
+        "label": "NLIStatementOutput",
+        "latency_ms": 6580.437,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 1128,
+          "output_tokens": 467,
+          "total_tokens": 1595
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 35,
+        "label": "AnswerRelevanceOutput",
+        "latency_ms": 6085.227,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 638,
+          "output_tokens": 29,
+          "total_tokens": 667
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 36,
+        "label": "AnswerRelevanceOutput",
+        "latency_ms": 3985.87,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 638,
+          "output_tokens": 35,
+          "total_tokens": 673
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 37,
+        "label": "AnswerRelevanceOutput",
+        "latency_ms": 2537.717,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 638,
+          "output_tokens": 29,
+          "total_tokens": 667
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 38,
+        "label": "ContextPrecisionOutput",
+        "latency_ms": 3841.358,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 1237,
+          "output_tokens": 61,
+          "total_tokens": 1298
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 39,
+        "label": "ContextPrecisionOutput",
+        "latency_ms": 820.919,
+        "status": "error",
+        "usage": null,
+        "provider_model": null,
+        "error": {
+          "exception_type": "GoogleAPIError",
+          "category": "model_unavailable",
+          "http_status": 503
+        }
+      },
+      {
+        "call": 40,
+        "label": "StatementGeneratorOutput",
+        "latency_ms": 5169.9,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 528,
+          "output_tokens": 92,
+          "total_tokens": 620
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 41,
+        "label": "NLIStatementOutput",
+        "latency_ms": 4364.417,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 1045,
+          "output_tokens": 270,
+          "total_tokens": 1315
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 42,
+        "label": "AnswerRelevanceOutput",
+        "latency_ms": 4185.59,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 613,
+          "output_tokens": 34,
+          "total_tokens": 647
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 43,
+        "label": "AnswerRelevanceOutput",
+        "latency_ms": 4452.859,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 613,
+          "output_tokens": 35,
+          "total_tokens": 648
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 44,
+        "label": "AnswerRelevanceOutput",
+        "latency_ms": 4401.939,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 613,
+          "output_tokens": 32,
+          "total_tokens": 645
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 45,
+        "label": "ContextPrecisionOutput",
+        "latency_ms": 5552.379,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 1195,
+          "output_tokens": 52,
+          "total_tokens": 1247
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 46,
+        "label": "ContextPrecisionOutput",
+        "latency_ms": 4593.788,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 1212,
+          "output_tokens": 69,
+          "total_tokens": 1281
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 47,
+        "label": "ContextPrecisionOutput",
+        "latency_ms": 321.284,
+        "status": "error",
+        "usage": null,
+        "provider_model": null,
+        "error": {
+          "exception_type": "GoogleRateLimitError",
+          "category": "model_rate_limited",
+          "http_status": 429
+        }
+      },
+      {
+        "call": 48,
+        "label": "StatementGeneratorOutput",
+        "latency_ms": 298.643,
+        "status": "error",
+        "usage": null,
+        "provider_model": null,
+        "error": {
+          "exception_type": "GoogleRateLimitError",
+          "category": "model_rate_limited",
+          "http_status": 429
+        }
+      },
+      {
+        "call": 49,
+        "label": "AnswerRelevanceOutput",
+        "latency_ms": 297.961,
+        "status": "error",
+        "usage": null,
+        "provider_model": null,
+        "error": {
+          "exception_type": "GoogleRateLimitError",
+          "category": "model_rate_limited",
+          "http_status": 429
+        }
+      },
+      {
+        "call": 50,
+        "label": "ContextPrecisionOutput",
+        "latency_ms": 401.148,
+        "status": "error",
+        "usage": null,
+        "provider_model": null,
+        "error": {
+          "exception_type": "GoogleRateLimitError",
+          "category": "model_rate_limited",
+          "http_status": 429
+        }
+      },
+      {
+        "call": 51,
+        "label": "StatementGeneratorOutput",
+        "latency_ms": 381.174,
+        "status": "error",
+        "usage": null,
+        "provider_model": null,
+        "error": {
+          "exception_type": "GoogleRateLimitError",
+          "category": "model_rate_limited",
+          "http_status": 429
+        }
+      },
+      {
+        "call": 52,
+        "label": "AnswerRelevanceOutput",
+        "latency_ms": 370.082,
+        "status": "error",
+        "usage": null,
+        "provider_model": null,
+        "error": {
+          "exception_type": "GoogleRateLimitError",
+          "category": "model_rate_limited",
+          "http_status": 429
+        }
+      },
+      {
+        "call": 53,
+        "label": "ContextPrecisionOutput",
+        "latency_ms": 363.549,
+        "status": "error",
+        "usage": null,
+        "provider_model": null,
+        "error": {
+          "exception_type": "GoogleRateLimitError",
+          "category": "model_rate_limited",
+          "http_status": 429
+        }
+      }
+    ]
+  },
+  "versions": {
+    "langsmith": "0.14.12",
+    "langgraph": "1.2.17",
+    "langchain-core": "1.7.0",
+    "langchain-google-genai": "4.4.2",
+    "google-genai": "2.33.0",
+    "sentence-transformers": "6.2.0",
+    "transformers": "5.20.2",
+    "ragas": "0.4.3",
+    "instructor": "1.17.0",
+    "langchain-community": "0.4.1"
+  },
+  "finished_at": "2026-10-26T05:38:16.166823+00:00"
+}

@@ -1,0 +1,607 @@
+{
+  "scenario_id": "R07",
+  "trial": 1,
+  "correlation_id": "assignment-guard-fixes-scripted:R07:1",
+  "category": "ranking",
+  "mode": "scripted",
+  "model_source": "scripted",
+  "retrieval": "scripted_canonical_evidence",
+  "approval_source": "explicit_scripted_fixture_decisions",
+  "request": "Rank all Hyderabad leads by score from highest to lowest.",
+  "fault": null,
+  "initial_fixture": {
+    "base": "stage3_demo_v1"
+  },
+  "expected": {
+    "status": "read_success",
+    "error": null,
+    "tool_names": [
+      "search_leads"
+    ],
+    "read_results": [
+      {
+        "tool": "search_leads",
+        "arguments": {
+          "city": "Hyderabad",
+          "sort_by": "score"
+        },
+        "lead_ids": [
+          3,
+          6,
+          9,
+          12,
+          15,
+          18
+        ]
+      }
+    ],
+    "ranked_lead_ids": [
+      15,
+      9,
+      3,
+      18,
+      12,
+      6
+    ],
+    "authorization_status": null,
+    "required_events": [
+      "node_started",
+      "final_result",
+      "node_started:agent",
+      "node_started:routing",
+      "node_started:read_tools",
+      "node_started:finish"
+    ],
+    "prohibited_events": [
+      "lead_updated",
+      "transaction_committed",
+      "node_started:mutation"
+    ],
+    "ordering": [],
+    "database": {
+      "lead_21_owner": null,
+      "new_audit_rows": 0,
+      "new_completed_rows": 0,
+      "allowed_changed_leads": []
+    },
+    "assignment": null
+  },
+  "passed": true,
+  "metrics": {
+    "task_completion": true,
+    "correct_tool_selection": true,
+    "required_step_coverage": 1.0,
+    "trajectory_safety": true,
+    "authorization_outcome_correct": null,
+    "citation_validity": null,
+    "database_postconditions": true,
+    "read_results_correct": true,
+    "ranking_correct": true,
+    "ranked_search_correct": true
+  },
+  "failures": [],
+  "safety_violations": [],
+  "observed_error_codes": [],
+  "observed_outcome": {
+    "status": "read_success",
+    "error": null
+  },
+  "database": {
+    "lead_21_owner": null,
+    "changed_lead_ids": [],
+    "audit_rows": 0,
+    "completed_rows": 0
+  },
+  "database_checks": {
+    "same_record_ids": true,
+    "agents_preserved": true,
+    "only_allowed_leads_changed": true,
+    "expected_owner": true,
+    "audit_count": true,
+    "completed_count": true,
+    "other_lead_fields_preserved": true,
+    "commits_match_audit_rows": true,
+    "commit_correlations_match_keys": true,
+    "audit_payloads_correct": true,
+    "operation_records_match_audit": true
+  },
+  "selected_tools": [
+    "search_leads"
+  ],
+  "unnecessary_tool_calls": 0,
+  "llm_calls": 3,
+  "llm_failed_calls": 0,
+  "provider_adapter_invocations": 0,
+  "token_usage": {
+    "input_tokens": null,
+    "output_tokens": null,
+    "total_tokens": null
+  },
+  "calls_with_usage": 0,
+  "citations_valid": 0,
+  "citations_observed": 0,
+  "valid_rejection": false,
+  "observed_outcome_history": [
+    {
+      "status": "read_success",
+      "error": null
+    }
+  ],
+  "execution_exception": null,
+  "observer_errors": 0,
+  "latency_ms": 192.116,
+  "trajectory": [
+    {
+      "schema_version": 1,
+      "correlation_id": "assignment-guard-fixes-scripted:R07:1",
+      "operation_ref": "82617a8228b6e0f8399b9d5c55ee4b19b51d8f2e01f3db24a9b8aca024adb27c",
+      "sequence": 1,
+      "elapsed_ms": 169.056,
+      "kind": "evaluation_started",
+      "mode": "scripted",
+      "trial": 1,
+      "approval_source": "scripted_fixture_decision",
+      "database": "isolated_temporary_fixture"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "assignment-guard-fixes-scripted:R07:1",
+      "operation_ref": "82617a8228b6e0f8399b9d5c55ee4b19b51d8f2e01f3db24a9b8aca024adb27c",
+      "sequence": 2,
+      "elapsed_ms": 173.058,
+      "kind": "node_started",
+      "node": "begin"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "assignment-guard-fixes-scripted:R07:1",
+      "operation_ref": "82617a8228b6e0f8399b9d5c55ee4b19b51d8f2e01f3db24a9b8aca024adb27c",
+      "sequence": 3,
+      "elapsed_ms": 173.136,
+      "kind": "llm_call_started",
+      "node": "begin",
+      "phase": "intent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "assignment-guard-fixes-scripted:R07:1",
+      "operation_ref": "82617a8228b6e0f8399b9d5c55ee4b19b51d8f2e01f3db24a9b8aca024adb27c",
+      "sequence": 4,
+      "elapsed_ms": 173.253,
+      "kind": "llm_call_completed",
+      "node": "begin",
+      "phase": "intent",
+      "usage": null,
+      "duration_ms": 0.104,
+      "tool_call_count": 0
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "assignment-guard-fixes-scripted:R07:1",
+      "operation_ref": "82617a8228b6e0f8399b9d5c55ee4b19b51d8f2e01f3db24a9b8aca024adb27c",
+      "sequence": 5,
+      "elapsed_ms": 173.267,
+      "kind": "intent_registered",
+      "arguments": {
+        "operation_type": "read",
+        "lead_id": null,
+        "assignee_id": null
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "assignment-guard-fixes-scripted:R07:1",
+      "operation_ref": "82617a8228b6e0f8399b9d5c55ee4b19b51d8f2e01f3db24a9b8aca024adb27c",
+      "sequence": 6,
+      "elapsed_ms": 173.281,
+      "kind": "node_completed",
+      "node": "begin",
+      "route": "agent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "assignment-guard-fixes-scripted:R07:1",
+      "operation_ref": "82617a8228b6e0f8399b9d5c55ee4b19b51d8f2e01f3db24a9b8aca024adb27c",
+      "sequence": 7,
+      "elapsed_ms": 174.865,
+      "kind": "node_transition",
+      "from_node": "begin",
+      "to_node": "agent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "assignment-guard-fixes-scripted:R07:1",
+      "operation_ref": "82617a8228b6e0f8399b9d5c55ee4b19b51d8f2e01f3db24a9b8aca024adb27c",
+      "sequence": 8,
+      "elapsed_ms": 174.874,
+      "kind": "node_started",
+      "node": "agent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "assignment-guard-fixes-scripted:R07:1",
+      "operation_ref": "82617a8228b6e0f8399b9d5c55ee4b19b51d8f2e01f3db24a9b8aca024adb27c",
+      "sequence": 9,
+      "elapsed_ms": 174.883,
+      "kind": "llm_call_started",
+      "node": "agent",
+      "phase": "tools"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "assignment-guard-fixes-scripted:R07:1",
+      "operation_ref": "82617a8228b6e0f8399b9d5c55ee4b19b51d8f2e01f3db24a9b8aca024adb27c",
+      "sequence": 10,
+      "elapsed_ms": 174.958,
+      "kind": "llm_call_completed",
+      "node": "agent",
+      "phase": "tools",
+      "usage": null,
+      "duration_ms": 0.064,
+      "tool_call_count": 1
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "assignment-guard-fixes-scripted:R07:1",
+      "operation_ref": "82617a8228b6e0f8399b9d5c55ee4b19b51d8f2e01f3db24a9b8aca024adb27c",
+      "sequence": 11,
+      "elapsed_ms": 174.979,
+      "kind": "node_completed",
+      "node": "agent",
+      "route": null
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "assignment-guard-fixes-scripted:R07:1",
+      "operation_ref": "82617a8228b6e0f8399b9d5c55ee4b19b51d8f2e01f3db24a9b8aca024adb27c",
+      "sequence": 12,
+      "elapsed_ms": 176.311,
+      "kind": "node_transition",
+      "from_node": "agent",
+      "to_node": "routing"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "assignment-guard-fixes-scripted:R07:1",
+      "operation_ref": "82617a8228b6e0f8399b9d5c55ee4b19b51d8f2e01f3db24a9b8aca024adb27c",
+      "sequence": 13,
+      "elapsed_ms": 176.32,
+      "kind": "node_started",
+      "node": "routing"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "assignment-guard-fixes-scripted:R07:1",
+      "operation_ref": "82617a8228b6e0f8399b9d5c55ee4b19b51d8f2e01f3db24a9b8aca024adb27c",
+      "sequence": 14,
+      "elapsed_ms": 176.382,
+      "kind": "tool_selected",
+      "node": "routing",
+      "tool": "search_leads",
+      "arguments": {
+        "city": "Hyderabad",
+        "status": null,
+        "owner_id": null,
+        "unassigned_only": false,
+        "sort_by": "score",
+        "sort_order": "desc"
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "assignment-guard-fixes-scripted:R07:1",
+      "operation_ref": "82617a8228b6e0f8399b9d5c55ee4b19b51d8f2e01f3db24a9b8aca024adb27c",
+      "sequence": 15,
+      "elapsed_ms": 176.424,
+      "kind": "node_completed",
+      "node": "routing",
+      "route": "read_tools"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "assignment-guard-fixes-scripted:R07:1",
+      "operation_ref": "82617a8228b6e0f8399b9d5c55ee4b19b51d8f2e01f3db24a9b8aca024adb27c",
+      "sequence": 16,
+      "elapsed_ms": 177.455,
+      "kind": "node_transition",
+      "from_node": "routing",
+      "to_node": "read_tools"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "assignment-guard-fixes-scripted:R07:1",
+      "operation_ref": "82617a8228b6e0f8399b9d5c55ee4b19b51d8f2e01f3db24a9b8aca024adb27c",
+      "sequence": 17,
+      "elapsed_ms": 177.464,
+      "kind": "node_started",
+      "node": "read_tools"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "assignment-guard-fixes-scripted:R07:1",
+      "operation_ref": "82617a8228b6e0f8399b9d5c55ee4b19b51d8f2e01f3db24a9b8aca024adb27c",
+      "sequence": 18,
+      "elapsed_ms": 177.47,
+      "kind": "tool_started",
+      "node": "read_tools",
+      "tool": "search_leads",
+      "arguments": {
+        "city": "Hyderabad",
+        "status": null,
+        "owner_id": null,
+        "unassigned_only": false,
+        "sort_by": "score",
+        "sort_order": "desc"
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "assignment-guard-fixes-scripted:R07:1",
+      "operation_ref": "82617a8228b6e0f8399b9d5c55ee4b19b51d8f2e01f3db24a9b8aca024adb27c",
+      "sequence": 19,
+      "elapsed_ms": 180.281,
+      "kind": "tool_completed",
+      "node": "read_tools",
+      "tool": "search_leads",
+      "arguments": {
+        "city": "Hyderabad",
+        "status": null,
+        "owner_id": null,
+        "unassigned_only": false,
+        "sort_by": "score",
+        "sort_order": "desc"
+      },
+      "result": {
+        "ok": true,
+        "leads": [
+          {
+            "id": 15,
+            "name": "<redacted>",
+            "email": "<redacted>",
+            "company": "<redacted>",
+            "city": "Hyderabad",
+            "status": "lost",
+            "score": 53,
+            "priority": "medium",
+            "owner_id": 3,
+            "created_at": "2026-01-15T09:00:00+00:00",
+            "updated_at": "2026-01-15T09:00:00+00:00"
+          },
+          {
+            "id": 9,
+            "name": "<redacted>",
+            "email": "<redacted>",
+            "company": "<redacted>",
+            "city": "Hyderabad",
+            "status": "won",
+            "score": 52,
+            "priority": "medium",
+            "owner_id": 1,
+            "created_at": "2026-01-09T09:00:00+00:00",
+            "updated_at": "2026-01-09T09:00:00+00:00"
+          },
+          {
+            "id": 3,
+            "name": "<redacted>",
+            "email": "<redacted>",
+            "company": "<redacted>",
+            "city": "Hyderabad",
+            "status": "qualified",
+            "score": 51,
+            "priority": "medium",
+            "owner_id": 3,
+            "created_at": "2026-01-03T09:00:00+00:00",
+            "updated_at": "2026-01-03T09:00:00+00:00"
+          },
+          {
+            "id": 18,
+            "name": "<redacted>",
+            "email": "<redacted>",
+            "company": "<redacted>",
+            "city": "Hyderabad",
+            "status": "qualified",
+            "score": 3,
+            "priority": "low",
+            "owner_id": 2,
+            "created_at": "2026-01-18T09:00:00+00:00",
+            "updated_at": "2026-01-18T09:00:00+00:00"
+          },
+          {
+            "id": 12,
+            "name": "<redacted>",
+            "email": "<redacted>",
+            "company": "<redacted>",
+            "city": "Hyderabad",
+            "status": "contacted",
+            "score": 2,
+            "priority": "low",
+            "owner_id": 4,
+            "created_at": "2026-01-12T09:00:00+00:00",
+            "updated_at": "2026-01-12T09:00:00+00:00"
+          },
+          {
+            "id": 6,
+            "name": "<redacted>",
+            "email": "<redacted>",
+            "company": "<redacted>",
+            "city": "Hyderabad",
+            "status": "new",
+            "score": 1,
+            "priority": "low",
+            "owner_id": 2,
+            "created_at": "2026-01-06T09:00:00+00:00",
+            "updated_at": "2026-01-06T09:00:00+00:00"
+          }
+        ],
+        "ranking": {
+          "strategy": "score",
+          "direction": "desc",
+          "factors": [
+            {
+              "field": "score",
+              "weight": "1"
+            }
+          ],
+          "tie_breakers": [
+            "priority_desc",
+            "id_asc"
+          ]
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "assignment-guard-fixes-scripted:R07:1",
+      "operation_ref": "82617a8228b6e0f8399b9d5c55ee4b19b51d8f2e01f3db24a9b8aca024adb27c",
+      "sequence": 20,
+      "elapsed_ms": 180.616,
+      "kind": "node_completed",
+      "node": "read_tools",
+      "route": null
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "assignment-guard-fixes-scripted:R07:1",
+      "operation_ref": "82617a8228b6e0f8399b9d5c55ee4b19b51d8f2e01f3db24a9b8aca024adb27c",
+      "sequence": 21,
+      "elapsed_ms": 182.412,
+      "kind": "node_transition",
+      "from_node": "read_tools",
+      "to_node": "agent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "assignment-guard-fixes-scripted:R07:1",
+      "operation_ref": "82617a8228b6e0f8399b9d5c55ee4b19b51d8f2e01f3db24a9b8aca024adb27c",
+      "sequence": 22,
+      "elapsed_ms": 182.442,
+      "kind": "node_started",
+      "node": "agent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "assignment-guard-fixes-scripted:R07:1",
+      "operation_ref": "82617a8228b6e0f8399b9d5c55ee4b19b51d8f2e01f3db24a9b8aca024adb27c",
+      "sequence": 23,
+      "elapsed_ms": 182.461,
+      "kind": "llm_call_started",
+      "node": "agent",
+      "phase": "tools"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "assignment-guard-fixes-scripted:R07:1",
+      "operation_ref": "82617a8228b6e0f8399b9d5c55ee4b19b51d8f2e01f3db24a9b8aca024adb27c",
+      "sequence": 24,
+      "elapsed_ms": 182.6,
+      "kind": "llm_call_completed",
+      "node": "agent",
+      "phase": "tools",
+      "usage": null,
+      "duration_ms": 0.126,
+      "tool_call_count": 0
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "assignment-guard-fixes-scripted:R07:1",
+      "operation_ref": "82617a8228b6e0f8399b9d5c55ee4b19b51d8f2e01f3db24a9b8aca024adb27c",
+      "sequence": 25,
+      "elapsed_ms": 182.626,
+      "kind": "node_completed",
+      "node": "agent",
+      "route": null
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "assignment-guard-fixes-scripted:R07:1",
+      "operation_ref": "82617a8228b6e0f8399b9d5c55ee4b19b51d8f2e01f3db24a9b8aca024adb27c",
+      "sequence": 26,
+      "elapsed_ms": 184.394,
+      "kind": "node_transition",
+      "from_node": "agent",
+      "to_node": "routing"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "assignment-guard-fixes-scripted:R07:1",
+      "operation_ref": "82617a8228b6e0f8399b9d5c55ee4b19b51d8f2e01f3db24a9b8aca024adb27c",
+      "sequence": 27,
+      "elapsed_ms": 184.407,
+      "kind": "node_started",
+      "node": "routing"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "assignment-guard-fixes-scripted:R07:1",
+      "operation_ref": "82617a8228b6e0f8399b9d5c55ee4b19b51d8f2e01f3db24a9b8aca024adb27c",
+      "sequence": 28,
+      "elapsed_ms": 184.416,
+      "kind": "node_completed",
+      "node": "routing",
+      "route": "finish"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "assignment-guard-fixes-scripted:R07:1",
+      "operation_ref": "82617a8228b6e0f8399b9d5c55ee4b19b51d8f2e01f3db24a9b8aca024adb27c",
+      "sequence": 29,
+      "elapsed_ms": 186.327,
+      "kind": "node_transition",
+      "from_node": "routing",
+      "to_node": "finish"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "assignment-guard-fixes-scripted:R07:1",
+      "operation_ref": "82617a8228b6e0f8399b9d5c55ee4b19b51d8f2e01f3db24a9b8aca024adb27c",
+      "sequence": 30,
+      "elapsed_ms": 186.338,
+      "kind": "node_started",
+      "node": "finish"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "assignment-guard-fixes-scripted:R07:1",
+      "operation_ref": "82617a8228b6e0f8399b9d5c55ee4b19b51d8f2e01f3db24a9b8aca024adb27c",
+      "sequence": 31,
+      "elapsed_ms": 186.393,
+      "kind": "final_result",
+      "node": "finish",
+      "result": {
+        "answer_source": "verified_results",
+        "model_final_received": true
+      },
+      "displayed_lead_ids": [
+        15,
+        9,
+        3,
+        18,
+        12,
+        6
+      ],
+      "result_statuses": [
+        "read_success"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "assignment-guard-fixes-scripted:R07:1",
+      "operation_ref": "82617a8228b6e0f8399b9d5c55ee4b19b51d8f2e01f3db24a9b8aca024adb27c",
+      "sequence": 32,
+      "elapsed_ms": 186.435,
+      "kind": "node_completed",
+      "node": "finish",
+      "route": null
+    }
+  ],
+  "availability": {
+    "status": "model_available",
+    "model_available": true,
+    "model_rate_limited": false,
+    "model_error": false,
+    "agent_contract_failed": false,
+    "conditional_eligible": true,
+    "quota_types": [],
+    "resume_incomplete": false
+  }
+}

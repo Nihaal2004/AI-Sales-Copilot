@@ -1,0 +1,6 @@
+{
+  "method": "unauthenticated public SDK info endpoint",
+  "endpoint": "https://api.smith.langchain.com/info",
+  "authentication_sent": false,
+  "http_status": 200
+}

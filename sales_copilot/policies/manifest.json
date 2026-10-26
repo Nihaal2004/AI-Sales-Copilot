@@ -1,0 +1,4 @@
+{
+  "corpus_version": "stage2-1.0",
+  "required_policy_ids": ["CRM-TERR-001", "CRM-IND-002", "CRM-CERT-003", "CRM-VIP-004", "CRM-REASSIGN-005", "CRM-CAP-006", "CRM-AVAIL-007", "CRM-MGMT-008", "CRM-PRI-009", "CRM-OWN-010"]
+}

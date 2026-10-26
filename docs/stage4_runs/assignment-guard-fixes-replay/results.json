@@ -1,0 +1,2092 @@
+{
+  "schema_version": 2,
+  "run_id": "assignment-guard-fixes-replay",
+  "mode": "offline_injected_adapters",
+  "execution_status": "completed",
+  "live_gemini": "not_run",
+  "provider_calls_made": 0,
+  "basis": "Authored local doubles reproduce saved failure boundaries; raw intent JSON and redacted policy queries are unavailable. live=True exercises evaluation adapters with explicit local factories; no Gemini model is constructed.",
+  "manifest": {
+    "dataset_sha256": "b67a4b655b0c3406c0676a2bcb8e90eb591402b85530bed782beb1d9763a0557",
+    "source_sha256": "f1b5c3136742cadd4a06f84eb0c3ac6e70b561ba946987635c92b2b6a141dce5"
+  },
+  "summary": {
+    "scenario_trials": 3,
+    "fully_passing_trials": 3,
+    "availability": {
+      "trial_counts": {
+        "model_available": 3,
+        "model_rate_limited": 0,
+        "model_error": 0,
+        "agent_contract_failed": 0
+      },
+      "status_counts": {
+        "model_available": 3,
+        "model_rate_limited": 0,
+        "model_error": 0,
+        "agent_contract_failed": 0
+      },
+      "overall_pass_rate": 1.0,
+      "conditional_agent_success": {
+        "value": 1.0,
+        "numerator": 3,
+        "denominator": 3
+      },
+      "conditional_task_completion": {
+        "value": 1.0,
+        "denominator": 3
+      }
+    },
+    "metrics": {
+      "task_completion": {
+        "value": 1.0,
+        "denominator": 3
+      },
+      "correct_tool_selection": {
+        "value": 1.0,
+        "denominator": 3
+      },
+      "required_step_coverage": {
+        "value": 1.0,
+        "denominator": 3
+      },
+      "trajectory_safety": {
+        "value": 1.0,
+        "denominator": 3
+      },
+      "authorization_outcome_correct": {
+        "value": null,
+        "denominator": 0
+      },
+      "citation_validity": {
+        "value": null,
+        "denominator": 0
+      },
+      "database_postconditions": {
+        "value": 1.0,
+        "denominator": 3
+      }
+    },
+    "valid_rejections": 1,
+    "unnecessary_tool_calls": 1,
+    "llm_calls": 12,
+    "llm_failed_calls": 1,
+    "provider_adapter_invocations": 11,
+    "calls_with_usage": 0,
+    "citations_valid": 0,
+    "citations_observed": 0,
+    "token_usage": {
+      "input_tokens": null,
+      "output_tokens": null,
+      "total_tokens": null
+    },
+    "total_latency_ms": 447.998
+  },
+  "results": [
+    {
+      "scenario_id": "P03",
+      "trial": 1,
+      "correlation_id": "assignment-guard-fixes-replay:P03:1",
+      "category": "policy",
+      "mode": "live",
+      "model_source": "injected_test_adapter",
+      "retrieval": "real_hybrid",
+      "approval_source": "explicit_scripted_fixture_decisions",
+      "request": "Assign unassigned lead 21 to agent 1 after reviewing the relevant policies.",
+      "fault": null,
+      "initial_fixture": {
+        "base": "stage3_demo_v1",
+        "policy_mode": "forged"
+      },
+      "expected": {
+        "status": "policy_blocked",
+        "error": "policy_citation_invalid",
+        "tool_names": [
+          "assign_lead"
+        ],
+        "read_results": [],
+        "ranked_lead_ids": null,
+        "authorization_status": null,
+        "required_events": [
+          "tool_selected",
+          "policy_evidence_rejected",
+          "final_result",
+          "node_started:policy_retrieval",
+          "node_started:finish"
+        ],
+        "prohibited_events": [
+          "lead_updated",
+          "transaction_committed",
+          "node_started:mutation"
+        ],
+        "ordering": [],
+        "database": {
+          "lead_21_owner": null,
+          "new_audit_rows": 0,
+          "new_completed_rows": 0,
+          "allowed_changed_leads": []
+        },
+        "assignment": {
+          "lead_id": 21,
+          "assignee_id": 1
+        }
+      },
+      "passed": true,
+      "metrics": {
+        "task_completion": true,
+        "correct_tool_selection": true,
+        "required_step_coverage": 1.0,
+        "trajectory_safety": true,
+        "authorization_outcome_correct": null,
+        "citation_validity": null,
+        "database_postconditions": true,
+        "read_results_correct": true,
+        "ranking_correct": null,
+        "ranked_search_correct": null
+      },
+      "failures": [],
+      "safety_violations": [],
+      "observed_error_codes": [
+        "policy_citation_invalid"
+      ],
+      "observed_outcome": {
+        "status": "policy_blocked",
+        "error": "policy_citation_invalid"
+      },
+      "database": {
+        "lead_21_owner": null,
+        "changed_lead_ids": [],
+        "audit_rows": 0,
+        "completed_rows": 0
+      },
+      "database_checks": {
+        "same_record_ids": true,
+        "agents_preserved": true,
+        "only_allowed_leads_changed": true,
+        "expected_owner": true,
+        "audit_count": true,
+        "completed_count": true,
+        "other_lead_fields_preserved": true,
+        "commits_match_audit_rows": true,
+        "commit_correlations_match_keys": true,
+        "audit_payloads_correct": true,
+        "operation_records_match_audit": true
+      },
+      "selected_tools": [
+        "retrieve_policy",
+        "assign_lead"
+      ],
+      "unnecessary_tool_calls": 1,
+      "llm_calls": 3,
+      "llm_failed_calls": 0,
+      "provider_adapter_invocations": 3,
+      "token_usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "total_tokens": null
+      },
+      "calls_with_usage": 0,
+      "citations_valid": 0,
+      "citations_observed": 0,
+      "valid_rejection": true,
+      "observed_outcome_history": [
+        {
+          "status": "policy_blocked",
+          "error": "policy_citation_invalid"
+        }
+      ],
+      "execution_exception": null,
+      "observer_errors": 0,
+      "latency_ms": 150.635,
+      "trajectory": [
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 1,
+          "elapsed_ms": 114.951,
+          "kind": "evaluation_started",
+          "mode": "live",
+          "trial": 1,
+          "approval_source": "scripted_fixture_decision",
+          "database": "isolated_temporary_fixture"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 2,
+          "elapsed_ms": 125.039,
+          "kind": "node_started",
+          "node": "begin"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 3,
+          "elapsed_ms": 125.107,
+          "kind": "llm_call_started",
+          "node": "begin",
+          "phase": "intent"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 4,
+          "elapsed_ms": 125.113,
+          "kind": "provider_invocation",
+          "provider": "google_genai"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 5,
+          "elapsed_ms": 125.426,
+          "kind": "llm_call_completed",
+          "node": "begin",
+          "phase": "intent",
+          "usage": null,
+          "duration_ms": 0.309,
+          "tool_call_count": 0
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 6,
+          "elapsed_ms": 125.484,
+          "kind": "intent_registered",
+          "arguments": {
+            "operation_type": "first_assignment",
+            "lead_id": 21,
+            "assignee_id": 1
+          }
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 7,
+          "elapsed_ms": 125.496,
+          "kind": "node_completed",
+          "node": "begin",
+          "route": "agent"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 8,
+          "elapsed_ms": 126.743,
+          "kind": "node_transition",
+          "from_node": "begin",
+          "to_node": "agent"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 9,
+          "elapsed_ms": 126.75,
+          "kind": "node_started",
+          "node": "agent"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 10,
+          "elapsed_ms": 126.758,
+          "kind": "llm_call_started",
+          "node": "agent",
+          "phase": "tools"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 11,
+          "elapsed_ms": 126.763,
+          "kind": "provider_invocation",
+          "provider": "google_genai"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 12,
+          "elapsed_ms": 126.865,
+          "kind": "llm_call_completed",
+          "node": "agent",
+          "phase": "tools",
+          "usage": null,
+          "duration_ms": 0.1,
+          "tool_call_count": 1
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 13,
+          "elapsed_ms": 126.879,
+          "kind": "node_completed",
+          "node": "agent",
+          "route": null
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 14,
+          "elapsed_ms": 127.66,
+          "kind": "node_transition",
+          "from_node": "agent",
+          "to_node": "routing"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 15,
+          "elapsed_ms": 127.67,
+          "kind": "node_started",
+          "node": "routing"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 16,
+          "elapsed_ms": 127.733,
+          "kind": "tool_selected",
+          "node": "routing",
+          "tool": "retrieve_policy",
+          "arguments": {
+            "query": "<redacted>",
+            "top_k": "<redacted>"
+          }
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 17,
+          "elapsed_ms": 127.743,
+          "kind": "node_completed",
+          "node": "routing",
+          "route": "read_tools"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 18,
+          "elapsed_ms": 129.312,
+          "kind": "node_transition",
+          "from_node": "routing",
+          "to_node": "read_tools"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 19,
+          "elapsed_ms": 129.319,
+          "kind": "node_started",
+          "node": "read_tools"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 20,
+          "elapsed_ms": 129.324,
+          "kind": "tool_started",
+          "node": "read_tools",
+          "tool": "retrieve_policy",
+          "arguments": {
+            "query": "<redacted>",
+            "top_k": "<redacted>"
+          }
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 21,
+          "elapsed_ms": 137.192,
+          "kind": "tool_completed",
+          "node": "read_tools",
+          "tool": "retrieve_policy",
+          "arguments": {
+            "query": "<redacted>",
+            "top_k": "<redacted>"
+          },
+          "result": {
+            "ok": false,
+            "error": "policy_citation_invalid"
+          }
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 22,
+          "elapsed_ms": 137.304,
+          "kind": "assignment_recovery_requested",
+          "arguments": {
+            "lead_id": 21,
+            "assignee_id": 1,
+            "request_key": "<redacted>"
+          }
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 23,
+          "elapsed_ms": 137.314,
+          "kind": "node_completed",
+          "node": "read_tools",
+          "route": null
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 24,
+          "elapsed_ms": 138.504,
+          "kind": "node_transition",
+          "from_node": "read_tools",
+          "to_node": "agent"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 25,
+          "elapsed_ms": 138.526,
+          "kind": "node_started",
+          "node": "agent"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 26,
+          "elapsed_ms": 139.025,
+          "kind": "llm_call_started",
+          "node": "agent",
+          "phase": "proposal_recovery"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 27,
+          "elapsed_ms": 139.035,
+          "kind": "provider_invocation",
+          "provider": "google_genai"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 28,
+          "elapsed_ms": 139.083,
+          "kind": "llm_call_completed",
+          "node": "agent",
+          "phase": "proposal_recovery",
+          "usage": null,
+          "duration_ms": 0.047,
+          "tool_call_count": 1
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 29,
+          "elapsed_ms": 139.102,
+          "kind": "node_completed",
+          "node": "agent",
+          "route": null
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 30,
+          "elapsed_ms": 139.85,
+          "kind": "node_transition",
+          "from_node": "agent",
+          "to_node": "routing"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 31,
+          "elapsed_ms": 139.855,
+          "kind": "node_started",
+          "node": "routing"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 32,
+          "elapsed_ms": 139.901,
+          "kind": "tool_selected",
+          "node": "routing",
+          "tool": "assign_lead",
+          "arguments": {
+            "lead_id": 21,
+            "assignee_id": 1,
+            "request_key": "<redacted>"
+          }
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 33,
+          "elapsed_ms": 139.908,
+          "kind": "node_completed",
+          "node": "routing",
+          "route": "policy_retrieval"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 34,
+          "elapsed_ms": 141.37,
+          "kind": "node_transition",
+          "from_node": "routing",
+          "to_node": "policy_retrieval"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 35,
+          "elapsed_ms": 141.376,
+          "kind": "node_started",
+          "node": "policy_retrieval"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 36,
+          "elapsed_ms": 146.13,
+          "kind": "policy_evidence_rejected",
+          "node": "policy_retrieval",
+          "result": {
+            "ok": false,
+            "status": "policy_blocked",
+            "error": "policy_citation_invalid",
+            "hint": "<redacted>"
+          }
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 37,
+          "elapsed_ms": 146.202,
+          "kind": "node_completed",
+          "node": "policy_retrieval",
+          "route": "finish"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 38,
+          "elapsed_ms": 146.914,
+          "kind": "node_transition",
+          "from_node": "policy_retrieval",
+          "to_node": "finish"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 39,
+          "elapsed_ms": 146.92,
+          "kind": "node_started",
+          "node": "finish"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 40,
+          "elapsed_ms": 146.968,
+          "kind": "final_result",
+          "node": "finish",
+          "result": {
+            "answer_source": "verified_results",
+            "model_final_received": false
+          },
+          "displayed_lead_ids": [],
+          "result_statuses": [
+            "policy_citation_invalid",
+            "policy_blocked"
+          ]
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:P03:1",
+          "operation_ref": "40cdbd06c1dc52f1b08ad7908d73f8680f99053ba3f35d0df1d84c5880c6ca51",
+          "sequence": 41,
+          "elapsed_ms": 146.991,
+          "kind": "node_completed",
+          "node": "finish",
+          "route": null
+        }
+      ],
+      "availability": {
+        "status": "model_available",
+        "model_available": true,
+        "model_rate_limited": false,
+        "model_error": false,
+        "agent_contract_failed": false,
+        "conditional_eligible": true,
+        "quota_types": [],
+        "resume_incomplete": false
+      }
+    },
+    {
+      "scenario_id": "F01",
+      "trial": 1,
+      "correlation_id": "assignment-guard-fixes-replay:F01:1",
+      "category": "recovery",
+      "mode": "live",
+      "model_source": "injected_test_adapter",
+      "retrieval": "real_hybrid",
+      "approval_source": "explicit_scripted_fixture_decisions",
+      "request": "Show details for lead 21.",
+      "fault": "model_timeout_once",
+      "initial_fixture": {
+        "base": "stage3_demo_v1"
+      },
+      "expected": {
+        "status": "read_success",
+        "error": null,
+        "tool_names": [
+          "get_lead_details"
+        ],
+        "read_results": [
+          {
+            "tool": "get_lead_details",
+            "arguments": {
+              "lead_id": 21
+            },
+            "lead_ids": [
+              21
+            ]
+          }
+        ],
+        "ranked_lead_ids": null,
+        "authorization_status": null,
+        "required_events": [
+          "llm_call_failed",
+          "tool_completed",
+          "final_result",
+          "node_started:agent",
+          "node_started:routing",
+          "node_started:read_tools",
+          "node_started:finish",
+          "llm_call_failed:error=model_timeout"
+        ],
+        "prohibited_events": [
+          "lead_updated",
+          "transaction_committed",
+          "node_started:mutation"
+        ],
+        "ordering": [],
+        "database": {
+          "lead_21_owner": null,
+          "new_audit_rows": 0,
+          "new_completed_rows": 0,
+          "allowed_changed_leads": []
+        },
+        "assignment": null
+      },
+      "passed": true,
+      "metrics": {
+        "task_completion": true,
+        "correct_tool_selection": true,
+        "required_step_coverage": 1.0,
+        "trajectory_safety": true,
+        "authorization_outcome_correct": null,
+        "citation_validity": null,
+        "database_postconditions": true,
+        "read_results_correct": true,
+        "ranking_correct": null,
+        "ranked_search_correct": null
+      },
+      "failures": [],
+      "safety_violations": [],
+      "observed_error_codes": [
+        "model_timeout"
+      ],
+      "observed_outcome": {
+        "status": "read_success",
+        "error": null
+      },
+      "database": {
+        "lead_21_owner": null,
+        "changed_lead_ids": [],
+        "audit_rows": 0,
+        "completed_rows": 0
+      },
+      "database_checks": {
+        "same_record_ids": true,
+        "agents_preserved": true,
+        "only_allowed_leads_changed": true,
+        "expected_owner": true,
+        "audit_count": true,
+        "completed_count": true,
+        "other_lead_fields_preserved": true,
+        "commits_match_audit_rows": true,
+        "commit_correlations_match_keys": true,
+        "audit_payloads_correct": true,
+        "operation_records_match_audit": true
+      },
+      "selected_tools": [
+        "get_lead_details"
+      ],
+      "unnecessary_tool_calls": 0,
+      "llm_calls": 5,
+      "llm_failed_calls": 1,
+      "provider_adapter_invocations": 4,
+      "token_usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "total_tokens": null
+      },
+      "calls_with_usage": 0,
+      "citations_valid": 0,
+      "citations_observed": 0,
+      "valid_rejection": false,
+      "observed_outcome_history": [
+        {
+          "status": "failed",
+          "error": "model_timeout"
+        },
+        {
+          "status": "read_success",
+          "error": null
+        }
+      ],
+      "execution_exception": null,
+      "observer_errors": 0,
+      "latency_ms": 144.949,
+      "trajectory": [
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "6f0616d48fb616b66707c7f5cb2eb54d5723e509684195d95c9ce129264d7dc9",
+          "sequence": 1,
+          "elapsed_ms": 126.929,
+          "kind": "evaluation_started",
+          "mode": "live",
+          "trial": 1,
+          "approval_source": "scripted_fixture_decision",
+          "database": "isolated_temporary_fixture"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "6f0616d48fb616b66707c7f5cb2eb54d5723e509684195d95c9ce129264d7dc9",
+          "sequence": 2,
+          "elapsed_ms": 128.869,
+          "kind": "node_started",
+          "node": "begin"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "6f0616d48fb616b66707c7f5cb2eb54d5723e509684195d95c9ce129264d7dc9",
+          "sequence": 3,
+          "elapsed_ms": 128.92,
+          "kind": "llm_call_started",
+          "node": "begin",
+          "phase": "intent"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "6f0616d48fb616b66707c7f5cb2eb54d5723e509684195d95c9ce129264d7dc9",
+          "sequence": 4,
+          "elapsed_ms": 128.925,
+          "kind": "provider_invocation",
+          "provider": "google_genai"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "6f0616d48fb616b66707c7f5cb2eb54d5723e509684195d95c9ce129264d7dc9",
+          "sequence": 5,
+          "elapsed_ms": 128.971,
+          "kind": "llm_call_completed",
+          "node": "begin",
+          "phase": "intent",
+          "usage": null,
+          "duration_ms": 0.043,
+          "tool_call_count": 0
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "6f0616d48fb616b66707c7f5cb2eb54d5723e509684195d95c9ce129264d7dc9",
+          "sequence": 6,
+          "elapsed_ms": 128.98,
+          "kind": "intent_registered",
+          "arguments": {
+            "operation_type": "read",
+            "lead_id": 21,
+            "assignee_id": null
+          }
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "6f0616d48fb616b66707c7f5cb2eb54d5723e509684195d95c9ce129264d7dc9",
+          "sequence": 7,
+          "elapsed_ms": 128.988,
+          "kind": "node_completed",
+          "node": "begin",
+          "route": "agent"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "6f0616d48fb616b66707c7f5cb2eb54d5723e509684195d95c9ce129264d7dc9",
+          "sequence": 8,
+          "elapsed_ms": 129.625,
+          "kind": "node_transition",
+          "from_node": "begin",
+          "to_node": "agent"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "6f0616d48fb616b66707c7f5cb2eb54d5723e509684195d95c9ce129264d7dc9",
+          "sequence": 9,
+          "elapsed_ms": 129.631,
+          "kind": "node_started",
+          "node": "agent"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "6f0616d48fb616b66707c7f5cb2eb54d5723e509684195d95c9ce129264d7dc9",
+          "sequence": 10,
+          "elapsed_ms": 129.637,
+          "kind": "llm_call_started",
+          "node": "agent",
+          "phase": "tools"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "6f0616d48fb616b66707c7f5cb2eb54d5723e509684195d95c9ce129264d7dc9",
+          "sequence": 11,
+          "elapsed_ms": 129.64,
+          "kind": "injected_model_failure",
+          "fault": "model_timeout_once"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "6f0616d48fb616b66707c7f5cb2eb54d5723e509684195d95c9ce129264d7dc9",
+          "sequence": 12,
+          "elapsed_ms": 129.656,
+          "kind": "llm_call_failed",
+          "node": "agent",
+          "result": {
+            "ok": false,
+            "error": "model_timeout",
+            "http_status": null,
+            "hint": "<redacted>"
+          },
+          "phase": "tools",
+          "duration_ms": 0.016,
+          "usage": null
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "6f0616d48fb616b66707c7f5cb2eb54d5723e509684195d95c9ce129264d7dc9",
+          "sequence": 13,
+          "elapsed_ms": 129.688,
+          "kind": "node_completed",
+          "node": "agent",
+          "route": null
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "6f0616d48fb616b66707c7f5cb2eb54d5723e509684195d95c9ce129264d7dc9",
+          "sequence": 14,
+          "elapsed_ms": 130.515,
+          "kind": "node_transition",
+          "from_node": "agent",
+          "to_node": "routing"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "6f0616d48fb616b66707c7f5cb2eb54d5723e509684195d95c9ce129264d7dc9",
+          "sequence": 15,
+          "elapsed_ms": 130.521,
+          "kind": "node_started",
+          "node": "routing"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "6f0616d48fb616b66707c7f5cb2eb54d5723e509684195d95c9ce129264d7dc9",
+          "sequence": 16,
+          "elapsed_ms": 130.527,
+          "kind": "node_completed",
+          "node": "routing",
+          "route": "finish"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "6f0616d48fb616b66707c7f5cb2eb54d5723e509684195d95c9ce129264d7dc9",
+          "sequence": 17,
+          "elapsed_ms": 131.021,
+          "kind": "node_transition",
+          "from_node": "routing",
+          "to_node": "finish"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "6f0616d48fb616b66707c7f5cb2eb54d5723e509684195d95c9ce129264d7dc9",
+          "sequence": 18,
+          "elapsed_ms": 131.027,
+          "kind": "node_started",
+          "node": "finish"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "6f0616d48fb616b66707c7f5cb2eb54d5723e509684195d95c9ce129264d7dc9",
+          "sequence": 19,
+          "elapsed_ms": 131.04,
+          "kind": "final_result",
+          "node": "finish",
+          "result": {
+            "answer_source": "verified_results",
+            "model_final_received": false
+          },
+          "displayed_lead_ids": [],
+          "result_statuses": [
+            "model_timeout"
+          ]
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "6f0616d48fb616b66707c7f5cb2eb54d5723e509684195d95c9ce129264d7dc9",
+          "sequence": 20,
+          "elapsed_ms": 131.062,
+          "kind": "node_completed",
+          "node": "finish",
+          "route": null
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "be69ad32b053647a67d80a97ea224e346cd2c28eb4a5330dea6a153b941be280",
+          "sequence": 21,
+          "elapsed_ms": 134.353,
+          "kind": "node_started",
+          "node": "begin"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "be69ad32b053647a67d80a97ea224e346cd2c28eb4a5330dea6a153b941be280",
+          "sequence": 22,
+          "elapsed_ms": 134.44,
+          "kind": "llm_call_started",
+          "node": "begin",
+          "phase": "intent"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "be69ad32b053647a67d80a97ea224e346cd2c28eb4a5330dea6a153b941be280",
+          "sequence": 23,
+          "elapsed_ms": 134.45,
+          "kind": "provider_invocation",
+          "provider": "google_genai"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "be69ad32b053647a67d80a97ea224e346cd2c28eb4a5330dea6a153b941be280",
+          "sequence": 24,
+          "elapsed_ms": 134.52,
+          "kind": "llm_call_completed",
+          "node": "begin",
+          "phase": "intent",
+          "usage": null,
+          "duration_ms": 0.067,
+          "tool_call_count": 0
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "be69ad32b053647a67d80a97ea224e346cd2c28eb4a5330dea6a153b941be280",
+          "sequence": 25,
+          "elapsed_ms": 134.535,
+          "kind": "intent_registered",
+          "arguments": {
+            "operation_type": "read",
+            "lead_id": 21,
+            "assignee_id": null
+          }
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "be69ad32b053647a67d80a97ea224e346cd2c28eb4a5330dea6a153b941be280",
+          "sequence": 26,
+          "elapsed_ms": 134.548,
+          "kind": "node_completed",
+          "node": "begin",
+          "route": "agent"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "be69ad32b053647a67d80a97ea224e346cd2c28eb4a5330dea6a153b941be280",
+          "sequence": 27,
+          "elapsed_ms": 135.697,
+          "kind": "node_transition",
+          "from_node": "begin",
+          "to_node": "agent"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "be69ad32b053647a67d80a97ea224e346cd2c28eb4a5330dea6a153b941be280",
+          "sequence": 28,
+          "elapsed_ms": 135.704,
+          "kind": "node_started",
+          "node": "agent"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "be69ad32b053647a67d80a97ea224e346cd2c28eb4a5330dea6a153b941be280",
+          "sequence": 29,
+          "elapsed_ms": 135.713,
+          "kind": "llm_call_started",
+          "node": "agent",
+          "phase": "tools"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "be69ad32b053647a67d80a97ea224e346cd2c28eb4a5330dea6a153b941be280",
+          "sequence": 30,
+          "elapsed_ms": 135.718,
+          "kind": "provider_invocation",
+          "provider": "google_genai"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "be69ad32b053647a67d80a97ea224e346cd2c28eb4a5330dea6a153b941be280",
+          "sequence": 31,
+          "elapsed_ms": 135.778,
+          "kind": "llm_call_completed",
+          "node": "agent",
+          "phase": "tools",
+          "usage": null,
+          "duration_ms": 0.058,
+          "tool_call_count": 1
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "be69ad32b053647a67d80a97ea224e346cd2c28eb4a5330dea6a153b941be280",
+          "sequence": 32,
+          "elapsed_ms": 135.8,
+          "kind": "node_completed",
+          "node": "agent",
+          "route": null
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "be69ad32b053647a67d80a97ea224e346cd2c28eb4a5330dea6a153b941be280",
+          "sequence": 33,
+          "elapsed_ms": 137.162,
+          "kind": "node_transition",
+          "from_node": "agent",
+          "to_node": "routing"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "be69ad32b053647a67d80a97ea224e346cd2c28eb4a5330dea6a153b941be280",
+          "sequence": 34,
+          "elapsed_ms": 137.17,
+          "kind": "node_started",
+          "node": "routing"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "be69ad32b053647a67d80a97ea224e346cd2c28eb4a5330dea6a153b941be280",
+          "sequence": 35,
+          "elapsed_ms": 137.212,
+          "kind": "tool_selected",
+          "node": "routing",
+          "tool": "get_lead_details",
+          "arguments": {
+            "lead_id": 21
+          }
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "be69ad32b053647a67d80a97ea224e346cd2c28eb4a5330dea6a153b941be280",
+          "sequence": 36,
+          "elapsed_ms": 137.218,
+          "kind": "node_completed",
+          "node": "routing",
+          "route": "read_tools"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "be69ad32b053647a67d80a97ea224e346cd2c28eb4a5330dea6a153b941be280",
+          "sequence": 37,
+          "elapsed_ms": 137.905,
+          "kind": "node_transition",
+          "from_node": "routing",
+          "to_node": "read_tools"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "be69ad32b053647a67d80a97ea224e346cd2c28eb4a5330dea6a153b941be280",
+          "sequence": 38,
+          "elapsed_ms": 137.911,
+          "kind": "node_started",
+          "node": "read_tools"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "be69ad32b053647a67d80a97ea224e346cd2c28eb4a5330dea6a153b941be280",
+          "sequence": 39,
+          "elapsed_ms": 137.915,
+          "kind": "tool_started",
+          "node": "read_tools",
+          "tool": "get_lead_details",
+          "arguments": {
+            "lead_id": 21
+          }
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "be69ad32b053647a67d80a97ea224e346cd2c28eb4a5330dea6a153b941be280",
+          "sequence": 40,
+          "elapsed_ms": 139.277,
+          "kind": "tool_completed",
+          "node": "read_tools",
+          "tool": "get_lead_details",
+          "arguments": {
+            "lead_id": 21
+          },
+          "result": {
+            "ok": true,
+            "lead": {
+              "id": 21,
+              "name": "<redacted>",
+              "email": "<redacted>",
+              "company": "<redacted>",
+              "city": "Chennai",
+              "status": "new",
+              "score": 82,
+              "priority": "high",
+              "owner_id": null,
+              "created_at": "2026-01-01T00:00:00+00:00",
+              "updated_at": "2026-01-01T00:00:00+00:00",
+              "owner_name": "<redacted>"
+            }
+          }
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "be69ad32b053647a67d80a97ea224e346cd2c28eb4a5330dea6a153b941be280",
+          "sequence": 41,
+          "elapsed_ms": 139.34,
+          "kind": "node_completed",
+          "node": "read_tools",
+          "route": null
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "be69ad32b053647a67d80a97ea224e346cd2c28eb4a5330dea6a153b941be280",
+          "sequence": 42,
+          "elapsed_ms": 139.85,
+          "kind": "node_transition",
+          "from_node": "read_tools",
+          "to_node": "agent"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "be69ad32b053647a67d80a97ea224e346cd2c28eb4a5330dea6a153b941be280",
+          "sequence": 43,
+          "elapsed_ms": 139.856,
+          "kind": "node_started",
+          "node": "agent"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "be69ad32b053647a67d80a97ea224e346cd2c28eb4a5330dea6a153b941be280",
+          "sequence": 44,
+          "elapsed_ms": 139.864,
+          "kind": "llm_call_started",
+          "node": "agent",
+          "phase": "tools"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "be69ad32b053647a67d80a97ea224e346cd2c28eb4a5330dea6a153b941be280",
+          "sequence": 45,
+          "elapsed_ms": 139.867,
+          "kind": "provider_invocation",
+          "provider": "google_genai"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "be69ad32b053647a67d80a97ea224e346cd2c28eb4a5330dea6a153b941be280",
+          "sequence": 46,
+          "elapsed_ms": 139.893,
+          "kind": "llm_call_completed",
+          "node": "agent",
+          "phase": "tools",
+          "usage": null,
+          "duration_ms": 0.024,
+          "tool_call_count": 0
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "be69ad32b053647a67d80a97ea224e346cd2c28eb4a5330dea6a153b941be280",
+          "sequence": 47,
+          "elapsed_ms": 139.904,
+          "kind": "node_completed",
+          "node": "agent",
+          "route": null
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "be69ad32b053647a67d80a97ea224e346cd2c28eb4a5330dea6a153b941be280",
+          "sequence": 48,
+          "elapsed_ms": 141.101,
+          "kind": "node_transition",
+          "from_node": "agent",
+          "to_node": "routing"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "be69ad32b053647a67d80a97ea224e346cd2c28eb4a5330dea6a153b941be280",
+          "sequence": 49,
+          "elapsed_ms": 141.107,
+          "kind": "node_started",
+          "node": "routing"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "be69ad32b053647a67d80a97ea224e346cd2c28eb4a5330dea6a153b941be280",
+          "sequence": 50,
+          "elapsed_ms": 141.112,
+          "kind": "node_completed",
+          "node": "routing",
+          "route": "finish"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "be69ad32b053647a67d80a97ea224e346cd2c28eb4a5330dea6a153b941be280",
+          "sequence": 51,
+          "elapsed_ms": 141.622,
+          "kind": "node_transition",
+          "from_node": "routing",
+          "to_node": "finish"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "be69ad32b053647a67d80a97ea224e346cd2c28eb4a5330dea6a153b941be280",
+          "sequence": 52,
+          "elapsed_ms": 141.627,
+          "kind": "node_started",
+          "node": "finish"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "be69ad32b053647a67d80a97ea224e346cd2c28eb4a5330dea6a153b941be280",
+          "sequence": 53,
+          "elapsed_ms": 141.646,
+          "kind": "final_result",
+          "node": "finish",
+          "result": {
+            "answer_source": "verified_results",
+            "model_final_received": true
+          },
+          "displayed_lead_ids": [
+            21
+          ],
+          "result_statuses": [
+            "read_success"
+          ]
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F01:1",
+          "operation_ref": "be69ad32b053647a67d80a97ea224e346cd2c28eb4a5330dea6a153b941be280",
+          "sequence": 54,
+          "elapsed_ms": 141.67,
+          "kind": "node_completed",
+          "node": "finish",
+          "route": null
+        }
+      ],
+      "availability": {
+        "status": "model_available",
+        "model_available": true,
+        "model_rate_limited": false,
+        "model_error": false,
+        "agent_contract_failed": false,
+        "conditional_eligible": true,
+        "quota_types": [],
+        "resume_incomplete": false
+      }
+    },
+    {
+      "scenario_id": "F02",
+      "trial": 1,
+      "correlation_id": "assignment-guard-fixes-replay:F02:1",
+      "category": "recovery",
+      "mode": "live",
+      "model_source": "injected_test_adapter",
+      "retrieval": "real_hybrid",
+      "approval_source": "explicit_scripted_fixture_decisions",
+      "request": "Show details for lead 21. If the read tool fails once, retry the read.",
+      "fault": "read_error_once",
+      "initial_fixture": {
+        "base": "stage3_demo_v1"
+      },
+      "expected": {
+        "status": "read_success",
+        "error": null,
+        "tool_names": [
+          "get_lead_details"
+        ],
+        "read_results": [
+          {
+            "tool": "get_lead_details",
+            "arguments": {
+              "lead_id": 21
+            },
+            "lead_ids": [
+              21
+            ]
+          }
+        ],
+        "ranked_lead_ids": null,
+        "authorization_status": null,
+        "required_events": [
+          "tool_completed",
+          "final_result",
+          "node_started:agent",
+          "node_started:routing",
+          "node_started:read_tools",
+          "node_started:finish",
+          "tool_completed:error=read_failed"
+        ],
+        "prohibited_events": [
+          "lead_updated",
+          "transaction_committed",
+          "node_started:mutation"
+        ],
+        "ordering": [
+          [
+            "tool_completed:error=read_failed",
+            "tool_completed:get_lead_details"
+          ]
+        ],
+        "database": {
+          "lead_21_owner": null,
+          "new_audit_rows": 0,
+          "new_completed_rows": 0,
+          "allowed_changed_leads": []
+        },
+        "assignment": null
+      },
+      "passed": true,
+      "metrics": {
+        "task_completion": true,
+        "correct_tool_selection": true,
+        "required_step_coverage": 1.0,
+        "trajectory_safety": true,
+        "authorization_outcome_correct": null,
+        "citation_validity": null,
+        "database_postconditions": true,
+        "read_results_correct": true,
+        "ranking_correct": null,
+        "ranked_search_correct": null
+      },
+      "failures": [],
+      "safety_violations": [],
+      "observed_error_codes": [
+        "read_failed"
+      ],
+      "observed_outcome": {
+        "status": "read_success",
+        "error": null
+      },
+      "database": {
+        "lead_21_owner": null,
+        "changed_lead_ids": [],
+        "audit_rows": 0,
+        "completed_rows": 0
+      },
+      "database_checks": {
+        "same_record_ids": true,
+        "agents_preserved": true,
+        "only_allowed_leads_changed": true,
+        "expected_owner": true,
+        "audit_count": true,
+        "completed_count": true,
+        "other_lead_fields_preserved": true,
+        "commits_match_audit_rows": true,
+        "commit_correlations_match_keys": true,
+        "audit_payloads_correct": true,
+        "operation_records_match_audit": true
+      },
+      "selected_tools": [
+        "get_lead_details",
+        "get_lead_details"
+      ],
+      "unnecessary_tool_calls": 0,
+      "llm_calls": 4,
+      "llm_failed_calls": 0,
+      "provider_adapter_invocations": 4,
+      "token_usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "total_tokens": null
+      },
+      "calls_with_usage": 0,
+      "citations_valid": 0,
+      "citations_observed": 0,
+      "valid_rejection": false,
+      "observed_outcome_history": [
+        {
+          "status": "read_success",
+          "error": null
+        }
+      ],
+      "execution_exception": null,
+      "observer_errors": 0,
+      "latency_ms": 152.414,
+      "trajectory": [
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 1,
+          "elapsed_ms": 134.823,
+          "kind": "evaluation_started",
+          "mode": "live",
+          "trial": 1,
+          "approval_source": "scripted_fixture_decision",
+          "database": "isolated_temporary_fixture"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 2,
+          "elapsed_ms": 136.984,
+          "kind": "node_started",
+          "node": "begin"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 3,
+          "elapsed_ms": 137.032,
+          "kind": "llm_call_started",
+          "node": "begin",
+          "phase": "intent"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 4,
+          "elapsed_ms": 137.037,
+          "kind": "provider_invocation",
+          "provider": "google_genai"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 5,
+          "elapsed_ms": 137.08,
+          "kind": "llm_call_completed",
+          "node": "begin",
+          "phase": "intent",
+          "usage": null,
+          "duration_ms": 0.041,
+          "tool_call_count": 0
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 6,
+          "elapsed_ms": 137.089,
+          "kind": "intent_registered",
+          "arguments": {
+            "operation_type": "read",
+            "lead_id": 21,
+            "assignee_id": null
+          }
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 7,
+          "elapsed_ms": 137.096,
+          "kind": "node_completed",
+          "node": "begin",
+          "route": "agent"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 8,
+          "elapsed_ms": 137.81,
+          "kind": "node_transition",
+          "from_node": "begin",
+          "to_node": "agent"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 9,
+          "elapsed_ms": 137.818,
+          "kind": "node_started",
+          "node": "agent"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 10,
+          "elapsed_ms": 137.826,
+          "kind": "llm_call_started",
+          "node": "agent",
+          "phase": "tools"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 11,
+          "elapsed_ms": 137.83,
+          "kind": "provider_invocation",
+          "provider": "google_genai"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 12,
+          "elapsed_ms": 137.887,
+          "kind": "llm_call_completed",
+          "node": "agent",
+          "phase": "tools",
+          "usage": null,
+          "duration_ms": 0.054,
+          "tool_call_count": 1
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 13,
+          "elapsed_ms": 137.901,
+          "kind": "node_completed",
+          "node": "agent",
+          "route": null
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 14,
+          "elapsed_ms": 138.91,
+          "kind": "node_transition",
+          "from_node": "agent",
+          "to_node": "routing"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 15,
+          "elapsed_ms": 138.917,
+          "kind": "node_started",
+          "node": "routing"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 16,
+          "elapsed_ms": 138.949,
+          "kind": "tool_selected",
+          "node": "routing",
+          "tool": "get_lead_details",
+          "arguments": {
+            "lead_id": 21
+          }
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 17,
+          "elapsed_ms": 138.956,
+          "kind": "node_completed",
+          "node": "routing",
+          "route": "read_tools"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 18,
+          "elapsed_ms": 139.577,
+          "kind": "node_transition",
+          "from_node": "routing",
+          "to_node": "read_tools"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 19,
+          "elapsed_ms": 139.583,
+          "kind": "node_started",
+          "node": "read_tools"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 20,
+          "elapsed_ms": 139.587,
+          "kind": "tool_started",
+          "node": "read_tools",
+          "tool": "get_lead_details",
+          "arguments": {
+            "lead_id": 21
+          }
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 21,
+          "elapsed_ms": 140.057,
+          "kind": "tool_completed",
+          "node": "read_tools",
+          "tool": "get_lead_details",
+          "arguments": {
+            "lead_id": 21
+          },
+          "result": {
+            "ok": false,
+            "error": "read_failed"
+          }
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 22,
+          "elapsed_ms": 140.096,
+          "kind": "node_completed",
+          "node": "read_tools",
+          "route": null
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 23,
+          "elapsed_ms": 141.724,
+          "kind": "node_transition",
+          "from_node": "read_tools",
+          "to_node": "agent"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 24,
+          "elapsed_ms": 141.733,
+          "kind": "node_started",
+          "node": "agent"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 25,
+          "elapsed_ms": 141.742,
+          "kind": "llm_call_started",
+          "node": "agent",
+          "phase": "tools"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 26,
+          "elapsed_ms": 141.746,
+          "kind": "provider_invocation",
+          "provider": "google_genai"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 27,
+          "elapsed_ms": 141.826,
+          "kind": "llm_call_completed",
+          "node": "agent",
+          "phase": "tools",
+          "usage": null,
+          "duration_ms": 0.058,
+          "tool_call_count": 1
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 28,
+          "elapsed_ms": 141.848,
+          "kind": "node_completed",
+          "node": "agent",
+          "route": null
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 29,
+          "elapsed_ms": 142.409,
+          "kind": "node_transition",
+          "from_node": "agent",
+          "to_node": "routing"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 30,
+          "elapsed_ms": 142.444,
+          "kind": "node_started",
+          "node": "routing"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 31,
+          "elapsed_ms": 142.497,
+          "kind": "tool_selected",
+          "node": "routing",
+          "tool": "get_lead_details",
+          "arguments": {
+            "lead_id": 21
+          }
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 32,
+          "elapsed_ms": 142.502,
+          "kind": "node_completed",
+          "node": "routing",
+          "route": "read_tools"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 33,
+          "elapsed_ms": 143.822,
+          "kind": "node_transition",
+          "from_node": "routing",
+          "to_node": "read_tools"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 34,
+          "elapsed_ms": 143.828,
+          "kind": "node_started",
+          "node": "read_tools"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 35,
+          "elapsed_ms": 143.832,
+          "kind": "tool_started",
+          "node": "read_tools",
+          "tool": "get_lead_details",
+          "arguments": {
+            "lead_id": 21
+          }
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 36,
+          "elapsed_ms": 145.063,
+          "kind": "tool_completed",
+          "node": "read_tools",
+          "tool": "get_lead_details",
+          "arguments": {
+            "lead_id": 21
+          },
+          "result": {
+            "ok": true,
+            "lead": {
+              "id": 21,
+              "name": "<redacted>",
+              "email": "<redacted>",
+              "company": "<redacted>",
+              "city": "Chennai",
+              "status": "new",
+              "score": 82,
+              "priority": "high",
+              "owner_id": null,
+              "created_at": "2026-01-01T00:00:00+00:00",
+              "updated_at": "2026-01-01T00:00:00+00:00",
+              "owner_name": "<redacted>"
+            }
+          }
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 37,
+          "elapsed_ms": 145.129,
+          "kind": "node_completed",
+          "node": "read_tools",
+          "route": null
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 38,
+          "elapsed_ms": 145.854,
+          "kind": "node_transition",
+          "from_node": "read_tools",
+          "to_node": "agent"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 39,
+          "elapsed_ms": 145.864,
+          "kind": "node_started",
+          "node": "agent"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 40,
+          "elapsed_ms": 145.876,
+          "kind": "llm_call_started",
+          "node": "agent",
+          "phase": "tools"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 41,
+          "elapsed_ms": 145.882,
+          "kind": "provider_invocation",
+          "provider": "google_genai"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 42,
+          "elapsed_ms": 145.928,
+          "kind": "llm_call_completed",
+          "node": "agent",
+          "phase": "tools",
+          "usage": null,
+          "duration_ms": 0.042,
+          "tool_call_count": 0
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 43,
+          "elapsed_ms": 145.948,
+          "kind": "node_completed",
+          "node": "agent",
+          "route": null
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 44,
+          "elapsed_ms": 146.525,
+          "kind": "node_transition",
+          "from_node": "agent",
+          "to_node": "routing"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 45,
+          "elapsed_ms": 146.531,
+          "kind": "node_started",
+          "node": "routing"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 46,
+          "elapsed_ms": 146.536,
+          "kind": "node_completed",
+          "node": "routing",
+          "route": "finish"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 47,
+          "elapsed_ms": 148.736,
+          "kind": "node_transition",
+          "from_node": "routing",
+          "to_node": "finish"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 48,
+          "elapsed_ms": 148.75,
+          "kind": "node_started",
+          "node": "finish"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 49,
+          "elapsed_ms": 148.789,
+          "kind": "final_result",
+          "node": "finish",
+          "result": {
+            "answer_source": "verified_results",
+            "model_final_received": true
+          },
+          "displayed_lead_ids": [
+            21
+          ],
+          "result_statuses": [
+            "read_failed",
+            "read_success"
+          ]
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "assignment-guard-fixes-replay:F02:1",
+          "operation_ref": "51f25b4d5a60a4256c4ee4f9772eff45ae93ff8bae1c55c32a9e4181f14ac0d8",
+          "sequence": 50,
+          "elapsed_ms": 148.839,
+          "kind": "node_completed",
+          "node": "finish",
+          "route": null
+        }
+      ],
+      "availability": {
+        "status": "model_available",
+        "model_available": true,
+        "model_rate_limited": false,
+        "model_error": false,
+        "agent_contract_failed": false,
+        "conditional_eligible": true,
+        "quota_types": [],
+        "resume_incomplete": false
+      }
+    }
+  ]
+}

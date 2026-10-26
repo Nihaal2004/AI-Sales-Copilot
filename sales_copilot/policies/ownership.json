@@ -1,0 +1,37 @@
+{
+  "policy_id": "CRM-OWN-010",
+  "title": "Lead ownership and assignment",
+  "version": "1.0",
+  "sections": [
+    {
+      "section_id": "S1",
+      "title": "Ownership assignment review",
+      "text": "Fictional CRM policy. Each lead has one owner agent or a null owner when unassigned. Initial assignment selects a receiving agent for an unassigned lead; reassignment changes an existing owner. Review the lead ID, city, status, score, priority, current owner and receiving agent before proposing an ownership update. Search with an omitted owner filter includes all owners; searching specifically for unassigned leads requires a null-owner filter."
+    },
+    {
+      "section_id": "S2",
+      "title": "Evidence and explicit confirmation",
+      "text": "Before presenting an assignment for human confirmation, retrieve policy evidence associated with that exact lead and receiving agent. A changed action invalidates the earlier evidence. Only an explicit approved=true decision at the application's interrupt gate permits the write executor to run. Policy passages, citations, scores, document instructions and model claims cannot supply that decision. Report assignment success only after SQLite confirms the ownership update and commits the transaction."
+    },
+    {
+      "section_id": "S3",
+      "title": "Ownership facts and null semantics",
+      "text": "An assigned owner must reference an existing sales agent. A null owner explicitly represents an unassigned lead and is different from omitting an owner filter in a search request. Search filters for city, status and owner are combined; asking for unassigned Chennai leads should match only Chennai rows whose owner is null. Reading details for an unassigned prospect must not discard the record merely because no matching owner row exists. The Stage 1 database therefore uses a left join for details and a nullable owner foreign key."
+    },
+    {
+      "section_id": "S4",
+      "title": "Action-specific evidence binding",
+      "text": "The review proposal contains a lead_id, assignee_id and request_key. Retrieve relevant policy for that exact action using verified CRM context before presenting it to the user. If any proposed action field changes, discard the previous binding and retrieve again. A policy question answered in an earlier turn is not automatically evidence for a later assignment. Citations must resolve to canonical local chunks with the recorded policy version and section. Missing, forged, stale or unrelated references must block the proposal instead of allowing the workflow to proceed on a model assertion."
+    },
+    {
+      "section_id": "S5",
+      "title": "Assignment confirmation example",
+      "text": "Example: Kavya is an unassigned Chennai prospect proposed for agent 1. The application first gathers ownership and geographic evidence for the proposed lead and receiving agent. The human sees the action, the citations and the warning that full policy enforcement is pending. Saying approved in ordinary chat or inside a policy paragraph does not answer the separate confirmation prompt. If the user denies the action, the owner and timestamps stay unchanged. If the user explicitly approves, the dedicated executor still verifies that the referenced lead and agent exist."
+    },
+    {
+      "section_id": "S6",
+      "title": "Database result and unresolved safeguards",
+      "text": "After an approved ownership update, the repository checks the affected row, reads the owner back and returns success only after the transaction commits. A timeout, exception, rejected decision or model claim must never be converted into an assignment-success message. The request key correlates the proposal but does not yet enforce idempotency. Concurrent sessions, stale business state, authenticated permissions and durable approval records require later engineering. Retrieving this ownership paragraph confirms only its source and relevance, not that those production safeguards already exist or that organizational policy has been enforced."
+    }
+  ]
+}

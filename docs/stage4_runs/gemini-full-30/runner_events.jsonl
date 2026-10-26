@@ -1,0 +1,5 @@
+{"schema_version": 1, "correlation_id": "gemini-full-30:runner", "operation_ref": null, "sequence": 1, "elapsed_ms": 57104.118, "kind": "provider_wait", "phase": "scenario_batch", "delay_seconds": 15.0}
+{"schema_version": 1, "correlation_id": "gemini-full-30:runner", "operation_ref": null, "sequence": 2, "elapsed_ms": 177984.312, "kind": "provider_wait", "phase": "scenario_batch", "delay_seconds": 15.0}
+{"schema_version": 1, "correlation_id": "gemini-full-30:runner", "operation_ref": null, "sequence": 3, "elapsed_ms": 273718.97, "kind": "provider_wait", "phase": "scenario_batch", "delay_seconds": 15.0}
+{"schema_version": 1, "correlation_id": "gemini-full-30:runner", "operation_ref": null, "sequence": 4, "elapsed_ms": 379342.656, "kind": "provider_wait", "phase": "scenario_batch", "delay_seconds": 15.0}
+{"schema_version": 1, "correlation_id": "gemini-full-30:runner", "operation_ref": null, "sequence": 5, "elapsed_ms": 528079.242, "kind": "provider_wait", "phase": "scenario_batch", "delay_seconds": 15.0}

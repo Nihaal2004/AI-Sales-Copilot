@@ -1,0 +1,517 @@
+{
+  "scenario_id": "R02",
+  "trial": 2,
+  "correlation_id": "host-dispatch-scripted:R02:2",
+  "category": "read",
+  "mode": "scripted",
+  "model_source": "scripted",
+  "retrieval": "scripted_canonical_evidence",
+  "approval_source": "explicit_scripted_fixture_decisions",
+  "request": "Find qualified Bangalore leads.",
+  "fault": null,
+  "initial_fixture": {
+    "base": "stage3_demo_v1"
+  },
+  "expected": {
+    "status": "read_success",
+    "error": null,
+    "tool_names": [
+      "search_leads"
+    ],
+    "read_results": [
+      {
+        "tool": "search_leads",
+        "arguments": {
+          "city": "Bangalore",
+          "status": "qualified"
+        },
+        "lead_ids": [
+          8
+        ]
+      }
+    ],
+    "ranked_lead_ids": null,
+    "authorization_status": null,
+    "required_events": [
+      "node_started",
+      "final_result",
+      "node_started:agent",
+      "node_started:routing",
+      "node_started:read_tools",
+      "node_started:finish"
+    ],
+    "prohibited_events": [
+      "lead_updated",
+      "transaction_committed",
+      "node_started:mutation"
+    ],
+    "ordering": [],
+    "database": {
+      "lead_21_owner": null,
+      "new_audit_rows": 0,
+      "new_completed_rows": 0,
+      "allowed_changed_leads": []
+    },
+    "assignment": null
+  },
+  "passed": true,
+  "metrics": {
+    "task_completion": true,
+    "correct_tool_selection": true,
+    "model_tool_selection": true,
+    "required_step_coverage": 1.0,
+    "trajectory_safety": true,
+    "authorization_outcome_correct": null,
+    "citation_validity": null,
+    "database_postconditions": true,
+    "read_results_correct": true,
+    "ranking_correct": null,
+    "ranked_search_correct": null
+  },
+  "failures": [],
+  "safety_violations": [],
+  "observed_error_codes": [],
+  "observed_outcome": {
+    "status": "read_success",
+    "error": null
+  },
+  "database": {
+    "lead_21_owner": null,
+    "changed_lead_ids": [],
+    "audit_rows": 0,
+    "completed_rows": 0
+  },
+  "database_checks": {
+    "same_record_ids": true,
+    "agents_preserved": true,
+    "only_allowed_leads_changed": true,
+    "expected_owner": true,
+    "audit_count": true,
+    "completed_count": true,
+    "other_lead_fields_preserved": true,
+    "commits_match_audit_rows": true,
+    "commit_correlations_match_keys": true,
+    "audit_payloads_correct": true,
+    "operation_records_match_audit": true
+  },
+  "selected_tools": [
+    "search_leads"
+  ],
+  "unnecessary_tool_calls": 0,
+  "host_selected_tools": [],
+  "model_selected_tools": [
+    "search_leads"
+  ],
+  "llm_calls": 3,
+  "llm_failed_calls": 0,
+  "provider_adapter_invocations": 0,
+  "token_usage": {
+    "input_tokens": null,
+    "output_tokens": null,
+    "total_tokens": null
+  },
+  "calls_with_usage": 0,
+  "citations_valid": 0,
+  "citations_observed": 0,
+  "valid_rejection": false,
+  "observed_outcome_history": [
+    {
+      "status": "read_success",
+      "error": null
+    }
+  ],
+  "execution_exception": null,
+  "observer_errors": 0,
+  "latency_ms": 122.253,
+  "trajectory": [
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-scripted:R02:2",
+      "operation_ref": "5e3594e039ae64ca281096736e18868e5cae23a41644cc653872ff1362d416ec",
+      "sequence": 1,
+      "elapsed_ms": 105.733,
+      "kind": "evaluation_started",
+      "mode": "scripted",
+      "trial": 2,
+      "approval_source": "scripted_fixture_decision",
+      "database": "isolated_temporary_fixture"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-scripted:R02:2",
+      "operation_ref": "5e3594e039ae64ca281096736e18868e5cae23a41644cc653872ff1362d416ec",
+      "sequence": 2,
+      "elapsed_ms": 108.308,
+      "kind": "node_started",
+      "node": "begin"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-scripted:R02:2",
+      "operation_ref": "5e3594e039ae64ca281096736e18868e5cae23a41644cc653872ff1362d416ec",
+      "sequence": 3,
+      "elapsed_ms": 108.362,
+      "kind": "llm_call_started",
+      "node": "begin",
+      "phase": "intent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-scripted:R02:2",
+      "operation_ref": "5e3594e039ae64ca281096736e18868e5cae23a41644cc653872ff1362d416ec",
+      "sequence": 4,
+      "elapsed_ms": 108.413,
+      "kind": "llm_call_completed",
+      "node": "begin",
+      "phase": "intent",
+      "usage": null,
+      "duration_ms": 0.044,
+      "tool_call_count": 0
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-scripted:R02:2",
+      "operation_ref": "5e3594e039ae64ca281096736e18868e5cae23a41644cc653872ff1362d416ec",
+      "sequence": 5,
+      "elapsed_ms": 108.422,
+      "kind": "intent_registered",
+      "arguments": {
+        "operation_type": "read",
+        "lead_id": null,
+        "assignee_id": null
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-scripted:R02:2",
+      "operation_ref": "5e3594e039ae64ca281096736e18868e5cae23a41644cc653872ff1362d416ec",
+      "sequence": 6,
+      "elapsed_ms": 108.43,
+      "kind": "node_completed",
+      "node": "begin",
+      "route": "agent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-scripted:R02:2",
+      "operation_ref": "5e3594e039ae64ca281096736e18868e5cae23a41644cc653872ff1362d416ec",
+      "sequence": 7,
+      "elapsed_ms": 109.189,
+      "kind": "node_transition",
+      "from_node": "begin",
+      "to_node": "agent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-scripted:R02:2",
+      "operation_ref": "5e3594e039ae64ca281096736e18868e5cae23a41644cc653872ff1362d416ec",
+      "sequence": 8,
+      "elapsed_ms": 109.195,
+      "kind": "node_started",
+      "node": "agent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-scripted:R02:2",
+      "operation_ref": "5e3594e039ae64ca281096736e18868e5cae23a41644cc653872ff1362d416ec",
+      "sequence": 9,
+      "elapsed_ms": 109.202,
+      "kind": "llm_call_started",
+      "node": "agent",
+      "phase": "tools"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-scripted:R02:2",
+      "operation_ref": "5e3594e039ae64ca281096736e18868e5cae23a41644cc653872ff1362d416ec",
+      "sequence": 10,
+      "elapsed_ms": 109.244,
+      "kind": "llm_call_completed",
+      "node": "agent",
+      "phase": "tools",
+      "usage": null,
+      "duration_ms": 0.037,
+      "tool_call_count": 1
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-scripted:R02:2",
+      "operation_ref": "5e3594e039ae64ca281096736e18868e5cae23a41644cc653872ff1362d416ec",
+      "sequence": 11,
+      "elapsed_ms": 109.256,
+      "kind": "node_completed",
+      "node": "agent",
+      "route": null
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-scripted:R02:2",
+      "operation_ref": "5e3594e039ae64ca281096736e18868e5cae23a41644cc653872ff1362d416ec",
+      "sequence": 12,
+      "elapsed_ms": 110.755,
+      "kind": "node_transition",
+      "from_node": "agent",
+      "to_node": "routing"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-scripted:R02:2",
+      "operation_ref": "5e3594e039ae64ca281096736e18868e5cae23a41644cc653872ff1362d416ec",
+      "sequence": 13,
+      "elapsed_ms": 110.769,
+      "kind": "node_started",
+      "node": "routing"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-scripted:R02:2",
+      "operation_ref": "5e3594e039ae64ca281096736e18868e5cae23a41644cc653872ff1362d416ec",
+      "sequence": 14,
+      "elapsed_ms": 110.842,
+      "kind": "tool_selected",
+      "node": "routing",
+      "tool": "search_leads",
+      "arguments": {
+        "city": "Bangalore",
+        "status": "qualified",
+        "owner_id": null,
+        "unassigned_only": false,
+        "sort_by": "id",
+        "sort_order": null
+      },
+      "source": "model"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-scripted:R02:2",
+      "operation_ref": "5e3594e039ae64ca281096736e18868e5cae23a41644cc653872ff1362d416ec",
+      "sequence": 15,
+      "elapsed_ms": 110.862,
+      "kind": "node_completed",
+      "node": "routing",
+      "route": "read_tools"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-scripted:R02:2",
+      "operation_ref": "5e3594e039ae64ca281096736e18868e5cae23a41644cc653872ff1362d416ec",
+      "sequence": 16,
+      "elapsed_ms": 112.211,
+      "kind": "node_transition",
+      "from_node": "routing",
+      "to_node": "read_tools"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-scripted:R02:2",
+      "operation_ref": "5e3594e039ae64ca281096736e18868e5cae23a41644cc653872ff1362d416ec",
+      "sequence": 17,
+      "elapsed_ms": 112.219,
+      "kind": "node_started",
+      "node": "read_tools"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-scripted:R02:2",
+      "operation_ref": "5e3594e039ae64ca281096736e18868e5cae23a41644cc653872ff1362d416ec",
+      "sequence": 18,
+      "elapsed_ms": 112.224,
+      "kind": "tool_started",
+      "node": "read_tools",
+      "tool": "search_leads",
+      "arguments": {
+        "city": "Bangalore",
+        "status": "qualified",
+        "owner_id": null,
+        "unassigned_only": false,
+        "sort_by": "id",
+        "sort_order": null
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-scripted:R02:2",
+      "operation_ref": "5e3594e039ae64ca281096736e18868e5cae23a41644cc653872ff1362d416ec",
+      "sequence": 19,
+      "elapsed_ms": 114.381,
+      "kind": "tool_completed",
+      "node": "read_tools",
+      "tool": "search_leads",
+      "arguments": {
+        "city": "Bangalore",
+        "status": "qualified",
+        "owner_id": null,
+        "unassigned_only": false,
+        "sort_by": "id",
+        "sort_order": null
+      },
+      "result": {
+        "ok": true,
+        "leads": [
+          {
+            "id": 8,
+            "name": "<redacted>",
+            "email": "<redacted>",
+            "company": "<redacted>",
+            "city": "Bangalore",
+            "status": "qualified",
+            "score": 35,
+            "priority": "low",
+            "owner_id": 4,
+            "created_at": "2026-01-08T09:00:00+00:00",
+            "updated_at": "2026-01-08T09:00:00+00:00"
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-scripted:R02:2",
+      "operation_ref": "5e3594e039ae64ca281096736e18868e5cae23a41644cc653872ff1362d416ec",
+      "sequence": 20,
+      "elapsed_ms": 114.504,
+      "kind": "node_completed",
+      "node": "read_tools",
+      "route": null
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-scripted:R02:2",
+      "operation_ref": "5e3594e039ae64ca281096736e18868e5cae23a41644cc653872ff1362d416ec",
+      "sequence": 21,
+      "elapsed_ms": 115.367,
+      "kind": "node_transition",
+      "from_node": "read_tools",
+      "to_node": "agent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-scripted:R02:2",
+      "operation_ref": "5e3594e039ae64ca281096736e18868e5cae23a41644cc653872ff1362d416ec",
+      "sequence": 22,
+      "elapsed_ms": 115.375,
+      "kind": "node_started",
+      "node": "agent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-scripted:R02:2",
+      "operation_ref": "5e3594e039ae64ca281096736e18868e5cae23a41644cc653872ff1362d416ec",
+      "sequence": 23,
+      "elapsed_ms": 115.385,
+      "kind": "llm_call_started",
+      "node": "agent",
+      "phase": "tools"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-scripted:R02:2",
+      "operation_ref": "5e3594e039ae64ca281096736e18868e5cae23a41644cc653872ff1362d416ec",
+      "sequence": 24,
+      "elapsed_ms": 115.422,
+      "kind": "llm_call_completed",
+      "node": "agent",
+      "phase": "tools",
+      "usage": null,
+      "duration_ms": 0.028,
+      "tool_call_count": 0
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-scripted:R02:2",
+      "operation_ref": "5e3594e039ae64ca281096736e18868e5cae23a41644cc653872ff1362d416ec",
+      "sequence": 25,
+      "elapsed_ms": 115.439,
+      "kind": "node_completed",
+      "node": "agent",
+      "route": null
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-scripted:R02:2",
+      "operation_ref": "5e3594e039ae64ca281096736e18868e5cae23a41644cc653872ff1362d416ec",
+      "sequence": 26,
+      "elapsed_ms": 116.786,
+      "kind": "node_transition",
+      "from_node": "agent",
+      "to_node": "routing"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-scripted:R02:2",
+      "operation_ref": "5e3594e039ae64ca281096736e18868e5cae23a41644cc653872ff1362d416ec",
+      "sequence": 27,
+      "elapsed_ms": 116.794,
+      "kind": "node_started",
+      "node": "routing"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-scripted:R02:2",
+      "operation_ref": "5e3594e039ae64ca281096736e18868e5cae23a41644cc653872ff1362d416ec",
+      "sequence": 28,
+      "elapsed_ms": 116.801,
+      "kind": "node_completed",
+      "node": "routing",
+      "route": "finish"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-scripted:R02:2",
+      "operation_ref": "5e3594e039ae64ca281096736e18868e5cae23a41644cc653872ff1362d416ec",
+      "sequence": 29,
+      "elapsed_ms": 117.67,
+      "kind": "node_transition",
+      "from_node": "routing",
+      "to_node": "finish"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-scripted:R02:2",
+      "operation_ref": "5e3594e039ae64ca281096736e18868e5cae23a41644cc653872ff1362d416ec",
+      "sequence": 30,
+      "elapsed_ms": 117.677,
+      "kind": "node_started",
+      "node": "finish"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-scripted:R02:2",
+      "operation_ref": "5e3594e039ae64ca281096736e18868e5cae23a41644cc653872ff1362d416ec",
+      "sequence": 31,
+      "elapsed_ms": 117.708,
+      "kind": "final_result",
+      "node": "finish",
+      "result": {
+        "answer_source": "verified_results",
+        "model_final_received": true
+      },
+      "displayed_lead_ids": [
+        8
+      ],
+      "result_statuses": [
+        "read_success"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-scripted:R02:2",
+      "operation_ref": "5e3594e039ae64ca281096736e18868e5cae23a41644cc653872ff1362d416ec",
+      "sequence": 32,
+      "elapsed_ms": 117.741,
+      "kind": "node_completed",
+      "node": "finish",
+      "route": null
+    }
+  ],
+  "availability": {
+    "status": "model_available",
+    "model_available": true,
+    "model_rate_limited": false,
+    "model_error": false,
+    "agent_contract_failed": false,
+    "conditional_eligible": true,
+    "quota_types": [],
+    "resume_incomplete": false
+  }
+}

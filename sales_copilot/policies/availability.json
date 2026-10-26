@@ -1,0 +1,37 @@
+{
+  "policy_id": "CRM-AVAIL-007",
+  "title": "Agent availability",
+  "version": "1.0",
+  "sections": [
+    {
+      "section_id": "S1",
+      "title": "Leave and receiving availability",
+      "text": "Fictional CRM policy. Do not treat an agent on leave, suspended duty or an unavailable roster slot as ready to receive a new lead. Confirm the receiving agent's availability for the expected first-contact window and review any scheduled absence. Existing ownership does not prove current availability. The city stored on an agent record represents territory, not whether the person is working today."
+    },
+    {
+      "section_id": "S2",
+      "title": "Coverage and absence",
+      "text": "For urgent leads while the normal owner is absent, ask the sales manager to identify temporary coverage and document the handover period. Temporary coverage must still consider territory and required certification. The prototype CRM has no leave calendar or live roster, so it cannot assert an agent's availability from the four seeded agent records."
+    },
+    {
+      "section_id": "S3",
+      "title": "Availability sources and time windows",
+      "text": "A useful availability review needs the receiving agent identifier, working date, expected first-contact window, known leave, duty suspension and coverage schedule. A calendar entry should be interpreted in its stated time zone and checked for the relevant period. The fact that a representative currently owns several leads does not prove availability for a new one. The seeded agent table has no roster status or calendar, so any answer about whether Anika, Ravi, Meera or Dev is working today would require information outside this prototype."
+    },
+    {
+      "section_id": "S4",
+      "title": "Temporary coverage review",
+      "text": "Coverage during a planned absence should specify the start and end of the coverage period, who will contact the prospect and whether the formal owner will change. An out-of-office message alone does not identify an eligible replacement. Ask the manager to consider geography, qualifications, existing workload and customer commitments together. If a proposed substitute belongs to another city, retrieve both availability and territory guidance. Keep a coverage explanation distinct from an actual ownership update; only the explicit approved application action can enter the mutation node."
+    },
+    {
+      "section_id": "S5",
+      "title": "Unavailable agent example",
+      "text": "Example: a high-priority Bangalore prospect is waiting for contact, but the normal Bangalore representative is on leave. The policy calls for a manager-led coverage plan, not an automatic transfer to any agent whose city is nearby. A Chennai colleague might provide temporary coverage only after the separate business review addresses territory and qualifications. The application should present the missing availability facts clearly. It must not infer that an agent is available because the row exists, because there is no leave field, or because the model suggests that person."
+    },
+    {
+      "section_id": "S6",
+      "title": "Unexpected absence and incomplete rosters",
+      "text": "If an unexpected absence is reported during a handover, request an updated coverage decision and preserve the commitments already made to the customer. Conflicting roster messages should be presented as unresolved evidence. A stale calendar or an unverified chat statement should not become a definitive availability claim. In Stage 2 the retrieval service can identify the correct review passages, but it cannot authenticate the roster author, enforce future working schedules or establish that an organizational manager has approved an exception."
+    }
+  ]
+}

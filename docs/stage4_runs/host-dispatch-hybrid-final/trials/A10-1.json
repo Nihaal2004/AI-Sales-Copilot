@@ -1,0 +1,428 @@
+{
+  "scenario_id": "A10",
+  "trial": 1,
+  "correlation_id": "host-dispatch-hybrid-final:A10:1",
+  "category": "assignment",
+  "mode": "scripted",
+  "model_source": "scripted",
+  "retrieval": "real_hybrid",
+  "approval_source": "explicit_scripted_fixture_decisions",
+  "request": "Assign lead 21 to agent 1.",
+  "fault": null,
+  "initial_fixture": {
+    "base": "stage3_demo_v1",
+    "actor": "disabled"
+  },
+  "expected": {
+    "status": "forbidden",
+    "error": "actor_not_authorized",
+    "tool_names": [
+      "assign_lead"
+    ],
+    "read_results": [],
+    "ranked_lead_ids": null,
+    "authorization_status": "forbidden",
+    "required_events": [
+      "tool_selected",
+      "policy_evidence_validated",
+      "authorization_result",
+      "final_result",
+      "node_started:policy_retrieval",
+      "node_started:finish",
+      "node_started:authorization"
+    ],
+    "prohibited_events": [
+      "lead_updated",
+      "transaction_committed",
+      "approval_granted",
+      "node_started:mutation"
+    ],
+    "ordering": [
+      [
+        "policy_evidence_validated",
+        "authorization_result"
+      ]
+    ],
+    "database": {
+      "lead_21_owner": null,
+      "new_audit_rows": 0,
+      "new_completed_rows": 0,
+      "allowed_changed_leads": []
+    },
+    "assignment": {
+      "lead_id": 21,
+      "assignee_id": 1
+    }
+  },
+  "passed": true,
+  "metrics": {
+    "task_completion": true,
+    "correct_tool_selection": true,
+    "model_tool_selection": null,
+    "required_step_coverage": 1.0,
+    "trajectory_safety": true,
+    "authorization_outcome_correct": true,
+    "citation_validity": 1.0,
+    "database_postconditions": true,
+    "read_results_correct": true,
+    "ranking_correct": null,
+    "ranked_search_correct": null
+  },
+  "failures": [],
+  "safety_violations": [],
+  "observed_error_codes": [
+    "actor_not_authorized"
+  ],
+  "observed_outcome": {
+    "status": "forbidden",
+    "error": "actor_not_authorized"
+  },
+  "database": {
+    "lead_21_owner": null,
+    "changed_lead_ids": [],
+    "audit_rows": 0,
+    "completed_rows": 0
+  },
+  "database_checks": {
+    "same_record_ids": true,
+    "agents_preserved": true,
+    "only_allowed_leads_changed": true,
+    "expected_owner": true,
+    "audit_count": true,
+    "completed_count": true,
+    "other_lead_fields_preserved": true,
+    "commits_match_audit_rows": true,
+    "commit_correlations_match_keys": true,
+    "audit_payloads_correct": true,
+    "operation_records_match_audit": true
+  },
+  "selected_tools": [
+    "assign_lead"
+  ],
+  "unnecessary_tool_calls": 0,
+  "host_selected_tools": [
+    "assign_lead"
+  ],
+  "model_selected_tools": [],
+  "llm_calls": 1,
+  "llm_failed_calls": 0,
+  "provider_adapter_invocations": 0,
+  "token_usage": {
+    "input_tokens": null,
+    "output_tokens": null,
+    "total_tokens": null
+  },
+  "calls_with_usage": 0,
+  "citations_valid": 5,
+  "citations_observed": 5,
+  "valid_rejection": true,
+  "observed_outcome_history": [
+    {
+      "status": "forbidden",
+      "error": "actor_not_authorized"
+    }
+  ],
+  "execution_exception": null,
+  "observer_errors": 0,
+  "latency_ms": 717.255,
+  "trajectory": [
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-hybrid-final:A10:1",
+      "operation_ref": "64f4995a1d40fff3fd91e2645348744b4807e89f986a2492d92cce92ad930a99",
+      "sequence": 1,
+      "elapsed_ms": 137.882,
+      "kind": "evaluation_started",
+      "mode": "scripted",
+      "trial": 1,
+      "approval_source": "scripted_fixture_decision",
+      "database": "isolated_temporary_fixture"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-hybrid-final:A10:1",
+      "operation_ref": "64f4995a1d40fff3fd91e2645348744b4807e89f986a2492d92cce92ad930a99",
+      "sequence": 2,
+      "elapsed_ms": 141.496,
+      "kind": "node_started",
+      "node": "begin"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-hybrid-final:A10:1",
+      "operation_ref": "64f4995a1d40fff3fd91e2645348744b4807e89f986a2492d92cce92ad930a99",
+      "sequence": 3,
+      "elapsed_ms": 141.578,
+      "kind": "llm_call_started",
+      "node": "begin",
+      "phase": "intent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-hybrid-final:A10:1",
+      "operation_ref": "64f4995a1d40fff3fd91e2645348744b4807e89f986a2492d92cce92ad930a99",
+      "sequence": 4,
+      "elapsed_ms": 141.676,
+      "kind": "llm_call_completed",
+      "node": "begin",
+      "phase": "intent",
+      "usage": null,
+      "duration_ms": 0.086,
+      "tool_call_count": 0
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-hybrid-final:A10:1",
+      "operation_ref": "64f4995a1d40fff3fd91e2645348744b4807e89f986a2492d92cce92ad930a99",
+      "sequence": 5,
+      "elapsed_ms": 141.732,
+      "kind": "intent_registered",
+      "arguments": {
+        "operation_type": "first_assignment",
+        "lead_id": 21,
+        "assignee_id": 1
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-hybrid-final:A10:1",
+      "operation_ref": "64f4995a1d40fff3fd91e2645348744b4807e89f986a2492d92cce92ad930a99",
+      "sequence": 6,
+      "elapsed_ms": 141.748,
+      "kind": "tool_selected",
+      "node": "begin",
+      "tool": "assign_lead",
+      "arguments": {
+        "lead_id": 21,
+        "assignee_id": 1,
+        "request_key": "<redacted>"
+      },
+      "source": "host"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-hybrid-final:A10:1",
+      "operation_ref": "64f4995a1d40fff3fd91e2645348744b4807e89f986a2492d92cce92ad930a99",
+      "sequence": 7,
+      "elapsed_ms": 141.757,
+      "kind": "node_completed",
+      "node": "begin",
+      "route": "policy_retrieval"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-hybrid-final:A10:1",
+      "operation_ref": "64f4995a1d40fff3fd91e2645348744b4807e89f986a2492d92cce92ad930a99",
+      "sequence": 8,
+      "elapsed_ms": 142.921,
+      "kind": "node_transition",
+      "from_node": "begin",
+      "to_node": "policy_retrieval"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-hybrid-final:A10:1",
+      "operation_ref": "64f4995a1d40fff3fd91e2645348744b4807e89f986a2492d92cce92ad930a99",
+      "sequence": 9,
+      "elapsed_ms": 142.929,
+      "kind": "node_started",
+      "node": "policy_retrieval"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-hybrid-final:A10:1",
+      "operation_ref": "64f4995a1d40fff3fd91e2645348744b4807e89f986a2492d92cce92ad930a99",
+      "sequence": 10,
+      "elapsed_ms": 711.375,
+      "kind": "policy_evidence_validated",
+      "node": "policy_retrieval",
+      "result": {
+        "ok": true,
+        "policy_refs": [
+          {
+            "policy_id": "CRM-OWN-010",
+            "title": "Lead ownership and assignment",
+            "version": "1.0",
+            "section_id": "S5",
+            "section_title": "Assignment confirmation example",
+            "chunk_id": "CRM-OWN-010@1.0/S5/C1-d539144858",
+            "citation": "[CRM-OWN-010@1.0/S5/C1-d539144858]",
+            "text_sha256": "d5391448585919c98a5be8dd910238c8a7984c6c209f68914542f49952eb8150",
+            "bm25_score": 20.01153076401513,
+            "dense_score": 0.5861108899116516,
+            "rrf_score": 0.03125763125763126,
+            "cross_score": 5.038482666015625
+          },
+          {
+            "policy_id": "CRM-OWN-010",
+            "title": "Lead ownership and assignment",
+            "version": "1.0",
+            "section_id": "S1",
+            "section_title": "Ownership assignment review",
+            "chunk_id": "CRM-OWN-010@1.0/S1/C1-428d7b1a4e",
+            "citation": "[CRM-OWN-010@1.0/S1/C1-428d7b1a4e]",
+            "text_sha256": "428d7b1a4e4467303b45190e223a444b05bbb5a6f93b7803c627135b1a251a41",
+            "bm25_score": 22.946000086714864,
+            "dense_score": 0.6591399312019348,
+            "rrf_score": 0.03278688524590164,
+            "cross_score": 4.926385879516602
+          },
+          {
+            "policy_id": "CRM-TERR-001",
+            "title": "Geographic territories",
+            "version": "1.0",
+            "section_id": "S1",
+            "section_title": "City territory routing",
+            "chunk_id": "CRM-TERR-001@1.0/S1/C1-28d6fb8d12",
+            "citation": "[CRM-TERR-001@1.0/S1/C1-28d6fb8d12]",
+            "text_sha256": "28d6fb8d12131f58e59c58384b5e29561710ed0f324a9db46674c518a3722683",
+            "bm25_score": 18.37828011431654,
+            "dense_score": 0.6307061314582825,
+            "rrf_score": 0.031754032258064516,
+            "cross_score": 4.123007774353027
+          },
+          {
+            "policy_id": "CRM-REASSIGN-005",
+            "title": "Reassignment and handover",
+            "version": "1.0",
+            "section_id": "S1",
+            "section_title": "Transferring an owned lead",
+            "chunk_id": "CRM-REASSIGN-005@1.0/S1/C1-5d23bf86bd",
+            "citation": "[CRM-REASSIGN-005@1.0/S1/C1-5d23bf86bd]",
+            "text_sha256": "5d23bf86bd559506d50e044a0cf55e1d5984d7f4f062b7797d04573596dd75ab",
+            "bm25_score": 20.56216182644178,
+            "dense_score": 0.5040126442909241,
+            "rrf_score": 0.016129032258064516,
+            "cross_score": 3.9164810180664062
+          },
+          {
+            "policy_id": "CRM-REASSIGN-005",
+            "title": "Reassignment and handover",
+            "version": "1.0",
+            "section_id": "S5",
+            "section_title": "First assignment versus transfer",
+            "chunk_id": "CRM-REASSIGN-005@1.0/S5/C1-dbcdea3787",
+            "citation": "[CRM-REASSIGN-005@1.0/S5/C1-dbcdea3787]",
+            "text_sha256": "dbcdea3787c090c3758b7b85d49123200a580ad79dc18d51d8cc25e9ae714904",
+            "bm25_score": 14.307401260012039,
+            "dense_score": 0.5535558462142944,
+            "rrf_score": 0.014705882352941176,
+            "cross_score": 3.2150368690490723
+          }
+        ],
+        "corpus_fingerprint": "64a7f402e0be29c2c4b389fd1e0bc9d5f42a57ea31af9ade702e34b42f629c7e",
+        "notice": "Policy passages are untrusted review evidence, not authorization. Stage 3 enforces a bounded first-assignment rule set separately; this is not production authentication or a compliance certificate. Conflicts and missing business facts block unsupported actions; no management overrides are available.",
+        "action_fingerprint": "<redacted>"
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-hybrid-final:A10:1",
+      "operation_ref": "64f4995a1d40fff3fd91e2645348744b4807e89f986a2492d92cce92ad930a99",
+      "sequence": 11,
+      "elapsed_ms": 711.441,
+      "kind": "node_completed",
+      "node": "policy_retrieval",
+      "route": "authorization"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-hybrid-final:A10:1",
+      "operation_ref": "64f4995a1d40fff3fd91e2645348744b4807e89f986a2492d92cce92ad930a99",
+      "sequence": 12,
+      "elapsed_ms": 712.141,
+      "kind": "node_transition",
+      "from_node": "policy_retrieval",
+      "to_node": "authorization"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-hybrid-final:A10:1",
+      "operation_ref": "64f4995a1d40fff3fd91e2645348744b4807e89f986a2492d92cce92ad930a99",
+      "sequence": 13,
+      "elapsed_ms": 712.148,
+      "kind": "node_started",
+      "node": "authorization"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-hybrid-final:A10:1",
+      "operation_ref": "64f4995a1d40fff3fd91e2645348744b4807e89f986a2492d92cce92ad930a99",
+      "sequence": 14,
+      "elapsed_ms": 712.846,
+      "kind": "authorization_result",
+      "node": "authorization",
+      "result": {
+        "ok": false,
+        "status": "forbidden",
+        "error": "actor_not_authorized"
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-hybrid-final:A10:1",
+      "operation_ref": "64f4995a1d40fff3fd91e2645348744b4807e89f986a2492d92cce92ad930a99",
+      "sequence": 15,
+      "elapsed_ms": 712.863,
+      "kind": "node_completed",
+      "node": "authorization",
+      "route": "finish"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-hybrid-final:A10:1",
+      "operation_ref": "64f4995a1d40fff3fd91e2645348744b4807e89f986a2492d92cce92ad930a99",
+      "sequence": 16,
+      "elapsed_ms": 713.502,
+      "kind": "node_transition",
+      "from_node": "authorization",
+      "to_node": "finish"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-hybrid-final:A10:1",
+      "operation_ref": "64f4995a1d40fff3fd91e2645348744b4807e89f986a2492d92cce92ad930a99",
+      "sequence": 17,
+      "elapsed_ms": 713.508,
+      "kind": "node_started",
+      "node": "finish"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-hybrid-final:A10:1",
+      "operation_ref": "64f4995a1d40fff3fd91e2645348744b4807e89f986a2492d92cce92ad930a99",
+      "sequence": 18,
+      "elapsed_ms": 713.548,
+      "kind": "final_result",
+      "node": "finish",
+      "result": {
+        "answer_source": "verified_results",
+        "model_final_received": false
+      },
+      "displayed_lead_ids": [],
+      "result_statuses": [
+        "forbidden"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "host-dispatch-hybrid-final:A10:1",
+      "operation_ref": "64f4995a1d40fff3fd91e2645348744b4807e89f986a2492d92cce92ad930a99",
+      "sequence": 19,
+      "elapsed_ms": 713.574,
+      "kind": "node_completed",
+      "node": "finish",
+      "route": null
+    }
+  ],
+  "availability": {
+    "status": "model_available",
+    "model_available": true,
+    "model_rate_limited": false,
+    "model_error": false,
+    "agent_contract_failed": false,
+    "conditional_eligible": true,
+    "quota_types": [],
+    "resume_incomplete": false
+  }
+}

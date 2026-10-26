@@ -1,0 +1,240 @@
+{
+  "analysis_only": true,
+  "provider_calls_made": 0,
+  "run_id": "719d4b8f-38f0-4be2-b8ca-6fd51f1bdb8b",
+  "source_results_sha256": "6bc582d4eed48ce0027fe73d4fde6e2a857b1ad3972f2464e343960a49f6c432",
+  "original_summary": {
+    "scenario_trials": 30,
+    "fully_passing_trials": 15,
+    "metrics": {
+      "task_completion": {
+        "value": 0.5,
+        "denominator": 30
+      },
+      "correct_tool_selection": {
+        "value": 0.5333333333333333,
+        "denominator": 30
+      },
+      "required_step_coverage": {
+        "value": 0.6786309523809524,
+        "denominator": 30
+      },
+      "trajectory_safety": {
+        "value": 0.6333333333333333,
+        "denominator": 30
+      },
+      "authorization_outcome_correct": {
+        "value": 0.3333333333333333,
+        "denominator": 18
+      },
+      "citation_validity": {
+        "value": 1.0,
+        "denominator": 8
+      },
+      "database_postconditions": {
+        "value": 0.9666666666666667,
+        "denominator": 30
+      }
+    },
+    "valid_rejections": 3,
+    "unnecessary_tool_calls": 18,
+    "llm_calls": 63,
+    "llm_failed_calls": 16,
+    "provider_adapter_invocations": 62,
+    "calls_with_usage": 47,
+    "citations_valid": 59,
+    "citations_observed": 59,
+    "token_usage": {
+      "input_tokens": 84301,
+      "output_tokens": 3674,
+      "total_tokens": 87975
+    },
+    "total_latency_ms": 150078.795
+  },
+  "availability": {
+    "trial_counts": {
+      "model_available": 15,
+      "model_rate_limited": 15,
+      "model_error": 0,
+      "agent_contract_failed": 0
+    },
+    "status_counts": {
+      "model_available": 15,
+      "model_rate_limited": 15,
+      "model_error": 0,
+      "agent_contract_failed": 0
+    },
+    "overall_pass_rate": 0.5,
+    "conditional_agent_success": {
+      "value": 1.0,
+      "numerator": 15,
+      "denominator": 15
+    },
+    "conditional_task_completion": {
+      "value": 1.0,
+      "denominator": 15
+    }
+  },
+  "failed_llm_calls": [
+    {
+      "scenario_id": "A06",
+      "trial": 1,
+      "sequence": 38,
+      "error": "model_rate_limited",
+      "http_status": 429,
+      "injected": false,
+      "quota_type": "unknown",
+      "trial_passed": false
+    },
+    {
+      "scenario_id": "A07",
+      "trial": 1,
+      "sequence": 8,
+      "error": "model_rate_limited",
+      "http_status": 429,
+      "injected": false,
+      "quota_type": "unknown",
+      "trial_passed": false
+    },
+    {
+      "scenario_id": "A08",
+      "trial": 1,
+      "sequence": 8,
+      "error": "model_rate_limited",
+      "http_status": 429,
+      "injected": false,
+      "quota_type": "unknown",
+      "trial_passed": false
+    },
+    {
+      "scenario_id": "A09",
+      "trial": 1,
+      "sequence": 8,
+      "error": "model_rate_limited",
+      "http_status": 429,
+      "injected": false,
+      "quota_type": "unknown",
+      "trial_passed": false
+    },
+    {
+      "scenario_id": "A10",
+      "trial": 1,
+      "sequence": 8,
+      "error": "model_rate_limited",
+      "http_status": 429,
+      "injected": false,
+      "quota_type": "unknown",
+      "trial_passed": false
+    },
+    {
+      "scenario_id": "A11",
+      "trial": 1,
+      "sequence": 8,
+      "error": "model_rate_limited",
+      "http_status": 429,
+      "injected": false,
+      "quota_type": "unknown",
+      "trial_passed": false
+    },
+    {
+      "scenario_id": "A12",
+      "trial": 1,
+      "sequence": 8,
+      "error": "model_rate_limited",
+      "http_status": 429,
+      "injected": false,
+      "quota_type": "unknown",
+      "trial_passed": false
+    },
+    {
+      "scenario_id": "A13",
+      "trial": 1,
+      "sequence": 8,
+      "error": "model_rate_limited",
+      "http_status": 429,
+      "injected": false,
+      "quota_type": "unknown",
+      "trial_passed": false
+    },
+    {
+      "scenario_id": "P01",
+      "trial": 1,
+      "sequence": 8,
+      "error": "model_rate_limited",
+      "http_status": 429,
+      "injected": false,
+      "quota_type": "unknown",
+      "trial_passed": false
+    },
+    {
+      "scenario_id": "P02",
+      "trial": 1,
+      "sequence": 8,
+      "error": "model_rate_limited",
+      "http_status": 429,
+      "injected": false,
+      "quota_type": "unknown",
+      "trial_passed": false
+    },
+    {
+      "scenario_id": "P03",
+      "trial": 1,
+      "sequence": 8,
+      "error": "model_rate_limited",
+      "http_status": 429,
+      "injected": false,
+      "quota_type": "unknown",
+      "trial_passed": false
+    },
+    {
+      "scenario_id": "I01",
+      "trial": 1,
+      "sequence": 8,
+      "error": "model_rate_limited",
+      "http_status": 429,
+      "injected": false,
+      "quota_type": "unknown",
+      "trial_passed": false
+    },
+    {
+      "scenario_id": "I02",
+      "trial": 1,
+      "sequence": 8,
+      "error": "model_rate_limited",
+      "http_status": 429,
+      "injected": false,
+      "quota_type": "unknown",
+      "trial_passed": false
+    },
+    {
+      "scenario_id": "D01",
+      "trial": 1,
+      "sequence": 8,
+      "error": "model_rate_limited",
+      "http_status": 429,
+      "injected": false,
+      "quota_type": "unknown",
+      "trial_passed": false
+    },
+    {
+      "scenario_id": "F01",
+      "trial": 1,
+      "sequence": 8,
+      "error": "model_timeout",
+      "http_status": null,
+      "injected": true,
+      "quota_type": null,
+      "trial_passed": true
+    },
+    {
+      "scenario_id": "F03",
+      "trial": 1,
+      "sequence": 68,
+      "error": "model_rate_limited",
+      "http_status": 429,
+      "injected": false,
+      "quota_type": "unknown",
+      "trial_passed": false
+    }
+  ]
+}

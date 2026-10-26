@@ -1,0 +1,672 @@
+{
+  "scenario_id": "R05",
+  "trial": 1,
+  "correlation_id": "deterministic-routing-full-live:R05:1",
+  "category": "read",
+  "mode": "live",
+  "model_source": "real_gemini",
+  "retrieval": "real_hybrid",
+  "approval_source": "explicit_scripted_fixture_decisions",
+  "request": "Show full details for leads 1 and 21.",
+  "fault": null,
+  "initial_fixture": {
+    "base": "stage3_demo_v1"
+  },
+  "expected": {
+    "status": "read_success",
+    "error": null,
+    "tool_names": [
+      "get_lead_details"
+    ],
+    "read_results": [
+      {
+        "tool": "get_lead_details",
+        "arguments": {
+          "lead_id": 1
+        },
+        "lead_ids": [
+          1
+        ]
+      },
+      {
+        "tool": "get_lead_details",
+        "arguments": {
+          "lead_id": 21
+        },
+        "lead_ids": [
+          21
+        ]
+      }
+    ],
+    "ranked_lead_ids": null,
+    "authorization_status": null,
+    "required_events": [
+      "node_started",
+      "final_result",
+      "node_started:agent",
+      "node_started:routing",
+      "node_started:read_tools",
+      "node_started:finish"
+    ],
+    "prohibited_events": [
+      "lead_updated",
+      "transaction_committed",
+      "node_started:mutation"
+    ],
+    "ordering": [],
+    "database": {
+      "lead_21_owner": null,
+      "new_audit_rows": 0,
+      "new_completed_rows": 0,
+      "allowed_changed_leads": []
+    },
+    "assignment": null
+  },
+  "passed": true,
+  "metrics": {
+    "task_completion": true,
+    "correct_tool_selection": true,
+    "model_tool_selection": true,
+    "required_step_coverage": 1.0,
+    "trajectory_safety": true,
+    "authorization_outcome_correct": null,
+    "citation_validity": null,
+    "database_postconditions": true,
+    "read_results_correct": true,
+    "ranking_correct": null,
+    "ranked_search_correct": null
+  },
+  "failures": [],
+  "safety_violations": [],
+  "observed_error_codes": [],
+  "observed_outcome": {
+    "status": "read_success",
+    "error": null
+  },
+  "database": {
+    "lead_21_owner": null,
+    "changed_lead_ids": [],
+    "audit_rows": 0,
+    "completed_rows": 0
+  },
+  "database_checks": {
+    "same_record_ids": true,
+    "agents_preserved": true,
+    "only_allowed_leads_changed": true,
+    "expected_owner": true,
+    "audit_count": true,
+    "completed_count": true,
+    "other_lead_fields_preserved": true,
+    "commits_match_audit_rows": true,
+    "commit_correlations_match_keys": true,
+    "audit_payloads_correct": true,
+    "operation_records_match_audit": true
+  },
+  "selected_tools": [
+    "get_lead_details",
+    "get_lead_details"
+  ],
+  "unnecessary_tool_calls": 0,
+  "host_selected_tools": [],
+  "model_selected_tools": [
+    "get_lead_details",
+    "get_lead_details"
+  ],
+  "llm_calls": 3,
+  "llm_failed_calls": 0,
+  "provider_adapter_invocations": 3,
+  "token_usage": {
+    "input_tokens": 2240,
+    "output_tokens": 308,
+    "total_tokens": 2548
+  },
+  "calls_with_usage": 3,
+  "citations_valid": 0,
+  "citations_observed": 0,
+  "valid_rejection": false,
+  "observed_outcome_history": [
+    {
+      "status": "read_success",
+      "error": null
+    }
+  ],
+  "execution_exception": null,
+  "observer_errors": 0,
+  "latency_ms": 18979.657,
+  "trajectory": [
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 1,
+      "elapsed_ms": 774.189,
+      "kind": "evaluation_started",
+      "mode": "live",
+      "trial": 1,
+      "approval_source": "scripted_fixture_decision",
+      "database": "isolated_temporary_fixture"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 2,
+      "elapsed_ms": 776.222,
+      "kind": "node_started",
+      "node": "begin"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 3,
+      "elapsed_ms": 778.565,
+      "kind": "llm_call_started",
+      "node": "begin",
+      "phase": "intent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 4,
+      "elapsed_ms": 778.578,
+      "kind": "provider_wait",
+      "phase": "call_pacing",
+      "delay_seconds": 3.921795
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 5,
+      "elapsed_ms": 4701.269,
+      "kind": "provider_invocation",
+      "provider": "google_genai",
+      "attempt": 1
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 6,
+      "elapsed_ms": 5599.708,
+      "kind": "provider_attempt_completed",
+      "attempt": 1,
+      "availability": "model_available"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 7,
+      "elapsed_ms": 5599.746,
+      "kind": "llm_call_completed",
+      "node": "begin",
+      "phase": "intent",
+      "usage": {
+        "input_tokens": 240,
+        "output_tokens": 24,
+        "total_tokens": 264
+      },
+      "duration_ms": 4821.166,
+      "tool_call_count": 0
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 8,
+      "elapsed_ms": 5599.798,
+      "kind": "intent_registered",
+      "arguments": {
+        "operation_type": "read",
+        "lead_id": 1,
+        "assignee_id": null
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 9,
+      "elapsed_ms": 5599.817,
+      "kind": "node_completed",
+      "node": "begin",
+      "route": "agent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 10,
+      "elapsed_ms": 5601.42,
+      "kind": "node_transition",
+      "from_node": "begin",
+      "to_node": "agent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 11,
+      "elapsed_ms": 5601.434,
+      "kind": "node_started",
+      "node": "agent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 12,
+      "elapsed_ms": 5601.447,
+      "kind": "llm_call_started",
+      "node": "agent",
+      "phase": "tools"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 13,
+      "elapsed_ms": 5601.463,
+      "kind": "provider_wait",
+      "phase": "call_pacing",
+      "delay_seconds": 5.099795
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 14,
+      "elapsed_ms": 10701.657,
+      "kind": "provider_invocation",
+      "provider": "google_genai",
+      "attempt": 1
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 15,
+      "elapsed_ms": 12866.383,
+      "kind": "provider_attempt_completed",
+      "attempt": 1,
+      "availability": "model_available"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 16,
+      "elapsed_ms": 12866.439,
+      "kind": "llm_call_completed",
+      "node": "agent",
+      "phase": "tools",
+      "usage": {
+        "input_tokens": 827,
+        "output_tokens": 37,
+        "total_tokens": 864
+      },
+      "duration_ms": 7264.976,
+      "tool_call_count": 2
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 17,
+      "elapsed_ms": 12866.494,
+      "kind": "node_completed",
+      "node": "agent",
+      "route": null
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 18,
+      "elapsed_ms": 12868.536,
+      "kind": "node_transition",
+      "from_node": "agent",
+      "to_node": "routing"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 19,
+      "elapsed_ms": 12868.56,
+      "kind": "node_started",
+      "node": "routing"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 20,
+      "elapsed_ms": 12868.699,
+      "kind": "tool_selected",
+      "node": "routing",
+      "tool": "get_lead_details",
+      "arguments": {
+        "lead_id": 1
+      },
+      "source": "model"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 21,
+      "elapsed_ms": 12868.722,
+      "kind": "tool_selected",
+      "node": "routing",
+      "tool": "get_lead_details",
+      "arguments": {
+        "lead_id": 21
+      },
+      "source": "model"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 22,
+      "elapsed_ms": 12868.906,
+      "kind": "node_completed",
+      "node": "routing",
+      "route": "read_tools"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 23,
+      "elapsed_ms": 12875.641,
+      "kind": "node_transition",
+      "from_node": "routing",
+      "to_node": "read_tools"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 24,
+      "elapsed_ms": 12875.669,
+      "kind": "node_started",
+      "node": "read_tools"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 25,
+      "elapsed_ms": 12875.686,
+      "kind": "tool_started",
+      "node": "read_tools",
+      "tool": "get_lead_details",
+      "arguments": {
+        "lead_id": 1
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 26,
+      "elapsed_ms": 12880.119,
+      "kind": "tool_completed",
+      "node": "read_tools",
+      "tool": "get_lead_details",
+      "arguments": {
+        "lead_id": 1
+      },
+      "result": {
+        "ok": true,
+        "lead": {
+          "id": 1,
+          "name": "<redacted>",
+          "email": "<redacted>",
+          "company": "<redacted>",
+          "city": "Chennai",
+          "status": "new",
+          "score": 17,
+          "priority": "low",
+          "owner_id": 1,
+          "created_at": "2026-01-01T09:00:00+00:00",
+          "updated_at": "2026-01-01T09:00:00+00:00",
+          "owner_name": "<redacted>"
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 27,
+      "elapsed_ms": 12880.334,
+      "kind": "tool_started",
+      "node": "read_tools",
+      "tool": "get_lead_details",
+      "arguments": {
+        "lead_id": 21
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 28,
+      "elapsed_ms": 12884.141,
+      "kind": "tool_completed",
+      "node": "read_tools",
+      "tool": "get_lead_details",
+      "arguments": {
+        "lead_id": 21
+      },
+      "result": {
+        "ok": true,
+        "lead": {
+          "id": 21,
+          "name": "<redacted>",
+          "email": "<redacted>",
+          "company": "<redacted>",
+          "city": "Chennai",
+          "status": "new",
+          "score": 82,
+          "priority": "high",
+          "owner_id": null,
+          "created_at": "2026-01-01T00:00:00+00:00",
+          "updated_at": "2026-01-01T00:00:00+00:00",
+          "owner_name": "<redacted>"
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 29,
+      "elapsed_ms": 12884.348,
+      "kind": "node_completed",
+      "node": "read_tools",
+      "route": null
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 30,
+      "elapsed_ms": 12891.878,
+      "kind": "node_transition",
+      "from_node": "read_tools",
+      "to_node": "agent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 31,
+      "elapsed_ms": 12891.912,
+      "kind": "node_started",
+      "node": "agent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 32,
+      "elapsed_ms": 12891.949,
+      "kind": "llm_call_started",
+      "node": "agent",
+      "phase": "tools"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 33,
+      "elapsed_ms": 12891.987,
+      "kind": "provider_wait",
+      "phase": "call_pacing",
+      "delay_seconds": 3.809666
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 34,
+      "elapsed_ms": 16702.078,
+      "kind": "provider_invocation",
+      "provider": "google_genai",
+      "attempt": 1
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 35,
+      "elapsed_ms": 18935.032,
+      "kind": "provider_attempt_completed",
+      "attempt": 1,
+      "availability": "model_available"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 36,
+      "elapsed_ms": 18935.293,
+      "kind": "llm_call_completed",
+      "node": "agent",
+      "phase": "tools",
+      "usage": {
+        "input_tokens": 1173,
+        "output_tokens": 247,
+        "total_tokens": 1420
+      },
+      "duration_ms": 6043.295,
+      "tool_call_count": 0
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 37,
+      "elapsed_ms": 18935.813,
+      "kind": "node_completed",
+      "node": "agent",
+      "route": null
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 38,
+      "elapsed_ms": 18941.591,
+      "kind": "node_transition",
+      "from_node": "agent",
+      "to_node": "routing"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 39,
+      "elapsed_ms": 18941.636,
+      "kind": "node_started",
+      "node": "routing"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 40,
+      "elapsed_ms": 18941.67,
+      "kind": "node_completed",
+      "node": "routing",
+      "route": "finish"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 41,
+      "elapsed_ms": 18948.062,
+      "kind": "node_transition",
+      "from_node": "routing",
+      "to_node": "finish"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 42,
+      "elapsed_ms": 18948.095,
+      "kind": "node_started",
+      "node": "finish"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 43,
+      "elapsed_ms": 18948.239,
+      "kind": "final_result",
+      "node": "finish",
+      "result": {
+        "answer_source": "verified_results",
+        "model_final_received": true
+      },
+      "displayed_lead_ids": [
+        1,
+        21
+      ],
+      "result_statuses": [
+        "read_success",
+        "read_success"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "deterministic-routing-full-live:R05:1",
+      "operation_ref": "5a8e18fa986651c7288353d7dde5b5cf9b7db29b471eaf1c9bb1d53703a35908",
+      "sequence": 44,
+      "elapsed_ms": 18948.362,
+      "kind": "node_completed",
+      "node": "finish",
+      "route": null
+    }
+  ],
+  "availability": {
+    "status": "model_available",
+    "model_available": true,
+    "model_rate_limited": false,
+    "model_error": false,
+    "agent_contract_failed": false,
+    "conditional_eligible": true,
+    "quota_types": [],
+    "resume_incomplete": false
+  }
+}

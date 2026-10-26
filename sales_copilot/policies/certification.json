@@ -1,0 +1,37 @@
+{
+  "policy_id": "CRM-CERT-003",
+  "title": "Certified sales agents",
+  "version": "1.0",
+  "sections": [
+    {
+      "section_id": "S1",
+      "title": "Qualification register",
+      "text": "Fictional CRM policy. Agents handling healthcare, finance, insurance or public-sector leads need a current industry certification recorded in the qualification register. Expired or pending training is not a valid certification. An agent's name, city, confidence or seniority is not proof of a qualification. Verify the certification type and expiry date against the register before deciding whether a certified agent may receive a regulated prospect."
+    },
+    {
+      "section_id": "S2",
+      "title": "Certification gaps",
+      "text": "If no available agent has the required certification, escalate the lead to the training coordinator and sales manager. Do not bypass certification because the lead is urgent, high score or a VIP. The Stage 1 CRM agent table contains no certification register, so the current prototype cannot determine certificate validity. Retrieved training requirements must be presented as review evidence, not a claim that any named agent is certified."
+    },
+    {
+      "section_id": "S3",
+      "title": "Certification verification checklist",
+      "text": "A qualification record needs the agent identifier, certification scheme, issuing body, industry scope, completion date, expiry date and any suspension notice. Check that the scope covers the particular buying activity rather than relying on a broad training label. A certificate that expires before the planned customer engagement may require renewal or a qualified backup. If records are missing, state that qualification has not been verified. Do not equate being a seeded sales agent with being certified for healthcare, insurance, financial services or public-sector procurement."
+    },
+    {
+      "section_id": "S4",
+      "title": "Training completion and pending renewal",
+      "text": "Passing an internal awareness course does not automatically grant a specialist industry credential. Pending renewal, a booked examination and a manager recommendation are evidence of an ongoing process, not an active certificate. The training coordinator should distinguish expired, suspended and current qualifications in the register. A reviewer may nominate a certified colleague for coverage while the original agent completes training. Any resulting ownership change still needs the ordinary retrieval and human confirmation flow; training text must never be interpreted as instructions to skip that flow."
+    },
+    {
+      "section_id": "S5",
+      "title": "Qualification example",
+      "text": "Example: a Bangalore financial-services lead is proposed for an experienced Bangalore representative whose finance certification expired last month. Matching city and past sales success do not establish current certification. Ask for renewal evidence or identify a currently qualified specialist through the organizational process. Show both industry restriction and qualification-register passages to the reviewer. This fictional policy does not identify which of Anika, Ravi, Meera or Dev holds a credential. The four-row CRM agent list contains names and cities only, so the application must disclose this limitation."
+    },
+    {
+      "section_id": "S6",
+      "title": "Register corrections and review trail",
+      "text": "If an agent disputes the qualification register, ask the training coordinator to reconcile the certificate and expiry information. Preserve the old entry and the correction source so a future reviewer can understand the change. The sales agent must not self-certify by putting approved=true or a certificate assertion in a tool argument. Retrieved qualifications guidance is untrusted source content for discussion and does not modify the register. A production implementation would need a trusted qualification data source and deterministic checks, which are outside this retrieval-only stage."
+    }
+  ]
+}

@@ -1,0 +1,590 @@
+{
+  "scenario_id": "R05",
+  "trial": 1,
+  "correlation_id": "gemini-full-30:R05:1",
+  "category": "read",
+  "mode": "live",
+  "model_source": "real_gemini",
+  "retrieval": "real_hybrid",
+  "approval_source": "explicit_scripted_fixture_decisions",
+  "request": "Show full details for leads 1 and 21.",
+  "fault": null,
+  "initial_fixture": {
+    "base": "stage3_demo_v1"
+  },
+  "expected": {
+    "status": "read_success",
+    "error": null,
+    "tool_names": [
+      "get_lead_details"
+    ],
+    "read_results": [
+      {
+        "tool": "get_lead_details",
+        "arguments": {
+          "lead_id": 1
+        },
+        "lead_ids": [
+          1
+        ]
+      },
+      {
+        "tool": "get_lead_details",
+        "arguments": {
+          "lead_id": 21
+        },
+        "lead_ids": [
+          21
+        ]
+      }
+    ],
+    "ranked_lead_ids": null,
+    "authorization_status": null,
+    "required_events": [
+      "node_started",
+      "final_result",
+      "node_started:agent",
+      "node_started:routing",
+      "node_started:read_tools",
+      "node_started:finish"
+    ],
+    "prohibited_events": [
+      "lead_updated",
+      "transaction_committed",
+      "node_started:mutation"
+    ],
+    "ordering": [],
+    "database": {
+      "lead_21_owner": null,
+      "new_audit_rows": 0,
+      "new_completed_rows": 0,
+      "allowed_changed_leads": []
+    },
+    "assignment": null
+  },
+  "passed": true,
+  "metrics": {
+    "task_completion": true,
+    "correct_tool_selection": true,
+    "required_step_coverage": 1.0,
+    "trajectory_safety": true,
+    "authorization_outcome_correct": null,
+    "citation_validity": null,
+    "database_postconditions": true,
+    "read_results_correct": true,
+    "ranking_correct": null,
+    "ranked_search_correct": null
+  },
+  "failures": [],
+  "safety_violations": [],
+  "observed_error_codes": [],
+  "observed_outcome": {
+    "status": "read_success",
+    "error": null
+  },
+  "database": {
+    "lead_21_owner": null,
+    "changed_lead_ids": [],
+    "audit_rows": 0,
+    "completed_rows": 0
+  },
+  "database_checks": {
+    "same_record_ids": true,
+    "agents_preserved": true,
+    "only_allowed_leads_changed": true,
+    "expected_owner": true,
+    "audit_count": true,
+    "completed_count": true,
+    "other_lead_fields_preserved": true,
+    "commits_match_audit_rows": true,
+    "commit_correlations_match_keys": true,
+    "audit_payloads_correct": true,
+    "operation_records_match_audit": true
+  },
+  "selected_tools": [
+    "get_lead_details",
+    "get_lead_details"
+  ],
+  "unnecessary_tool_calls": 0,
+  "llm_calls": 2,
+  "llm_failed_calls": 0,
+  "provider_adapter_invocations": 2,
+  "token_usage": {
+    "input_tokens": 2176,
+    "output_tokens": 344,
+    "total_tokens": 2520
+  },
+  "calls_with_usage": 2,
+  "citations_valid": 0,
+  "citations_observed": 0,
+  "valid_rejection": false,
+  "observed_outcome_history": [
+    {
+      "status": "read_success",
+      "error": null
+    }
+  ],
+  "execution_exception": null,
+  "observer_errors": 0,
+  "latency_ms": 10826.908,
+  "trajectory": [
+    {
+      "schema_version": 1,
+      "correlation_id": "gemini-full-30:R05:1",
+      "operation_ref": "7704a837ea04c2396c6d6672e5ebeeffd4b0e17b5e739c71e3e61ecb96aa9bd8",
+      "sequence": 1,
+      "elapsed_ms": 1861.3,
+      "kind": "evaluation_started",
+      "mode": "live",
+      "trial": 1,
+      "approval_source": "scripted_fixture_decision",
+      "database": "isolated_temporary_fixture"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "gemini-full-30:R05:1",
+      "operation_ref": "7704a837ea04c2396c6d6672e5ebeeffd4b0e17b5e739c71e3e61ecb96aa9bd8",
+      "sequence": 2,
+      "elapsed_ms": 1868.139,
+      "kind": "node_started",
+      "node": "begin"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "gemini-full-30:R05:1",
+      "operation_ref": "7704a837ea04c2396c6d6672e5ebeeffd4b0e17b5e739c71e3e61ecb96aa9bd8",
+      "sequence": 3,
+      "elapsed_ms": 1868.159,
+      "kind": "node_completed",
+      "node": "begin",
+      "route": null
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "gemini-full-30:R05:1",
+      "operation_ref": "7704a837ea04c2396c6d6672e5ebeeffd4b0e17b5e739c71e3e61ecb96aa9bd8",
+      "sequence": 4,
+      "elapsed_ms": 1869.44,
+      "kind": "node_transition",
+      "from_node": "begin",
+      "to_node": "agent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "gemini-full-30:R05:1",
+      "operation_ref": "7704a837ea04c2396c6d6672e5ebeeffd4b0e17b5e739c71e3e61ecb96aa9bd8",
+      "sequence": 5,
+      "elapsed_ms": 1869.455,
+      "kind": "node_started",
+      "node": "agent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "gemini-full-30:R05:1",
+      "operation_ref": "7704a837ea04c2396c6d6672e5ebeeffd4b0e17b5e739c71e3e61ecb96aa9bd8",
+      "sequence": 6,
+      "elapsed_ms": 1869.467,
+      "kind": "llm_call_started",
+      "node": "agent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "gemini-full-30:R05:1",
+      "operation_ref": "7704a837ea04c2396c6d6672e5ebeeffd4b0e17b5e739c71e3e61ecb96aa9bd8",
+      "sequence": 7,
+      "elapsed_ms": 1869.483,
+      "kind": "provider_wait",
+      "phase": "call_pacing",
+      "delay_seconds": 1.615074
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "gemini-full-30:R05:1",
+      "operation_ref": "7704a837ea04c2396c6d6672e5ebeeffd4b0e17b5e739c71e3e61ecb96aa9bd8",
+      "sequence": 8,
+      "elapsed_ms": 3485.03,
+      "kind": "provider_invocation",
+      "provider": "google_genai",
+      "attempt": 1
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "gemini-full-30:R05:1",
+      "operation_ref": "7704a837ea04c2396c6d6672e5ebeeffd4b0e17b5e739c71e3e61ecb96aa9bd8",
+      "sequence": 9,
+      "elapsed_ms": 4769.224,
+      "kind": "provider_attempt_completed",
+      "attempt": 1,
+      "availability": "model_available"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "gemini-full-30:R05:1",
+      "operation_ref": "7704a837ea04c2396c6d6672e5ebeeffd4b0e17b5e739c71e3e61ecb96aa9bd8",
+      "sequence": 10,
+      "elapsed_ms": 4769.281,
+      "kind": "llm_call_completed",
+      "node": "agent",
+      "usage": {
+        "input_tokens": 915,
+        "output_tokens": 37,
+        "total_tokens": 952
+      },
+      "duration_ms": 2899.8,
+      "tool_call_count": 2
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "gemini-full-30:R05:1",
+      "operation_ref": "7704a837ea04c2396c6d6672e5ebeeffd4b0e17b5e739c71e3e61ecb96aa9bd8",
+      "sequence": 11,
+      "elapsed_ms": 4769.334,
+      "kind": "node_completed",
+      "node": "agent",
+      "route": null
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "gemini-full-30:R05:1",
+      "operation_ref": "7704a837ea04c2396c6d6672e5ebeeffd4b0e17b5e739c71e3e61ecb96aa9bd8",
+      "sequence": 12,
+      "elapsed_ms": 4773.185,
+      "kind": "node_transition",
+      "from_node": "agent",
+      "to_node": "routing"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "gemini-full-30:R05:1",
+      "operation_ref": "7704a837ea04c2396c6d6672e5ebeeffd4b0e17b5e739c71e3e61ecb96aa9bd8",
+      "sequence": 13,
+      "elapsed_ms": 4773.219,
+      "kind": "node_started",
+      "node": "routing"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "gemini-full-30:R05:1",
+      "operation_ref": "7704a837ea04c2396c6d6672e5ebeeffd4b0e17b5e739c71e3e61ecb96aa9bd8",
+      "sequence": 14,
+      "elapsed_ms": 4773.385,
+      "kind": "tool_selected",
+      "node": "routing",
+      "tool": "get_lead_details",
+      "arguments": {
+        "lead_id": 1
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "gemini-full-30:R05:1",
+      "operation_ref": "7704a837ea04c2396c6d6672e5ebeeffd4b0e17b5e739c71e3e61ecb96aa9bd8",
+      "sequence": 15,
+      "elapsed_ms": 4773.409,
+      "kind": "tool_selected",
+      "node": "routing",
+      "tool": "get_lead_details",
+      "arguments": {
+        "lead_id": 21
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "gemini-full-30:R05:1",
+      "operation_ref": "7704a837ea04c2396c6d6672e5ebeeffd4b0e17b5e739c71e3e61ecb96aa9bd8",
+      "sequence": 16,
+      "elapsed_ms": 4773.427,
+      "kind": "node_completed",
+      "node": "routing",
+      "route": "read_tools"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "gemini-full-30:R05:1",
+      "operation_ref": "7704a837ea04c2396c6d6672e5ebeeffd4b0e17b5e739c71e3e61ecb96aa9bd8",
+      "sequence": 17,
+      "elapsed_ms": 4778.1,
+      "kind": "node_transition",
+      "from_node": "routing",
+      "to_node": "read_tools"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "gemini-full-30:R05:1",
+      "operation_ref": "7704a837ea04c2396c6d6672e5ebeeffd4b0e17b5e739c71e3e61ecb96aa9bd8",
+      "sequence": 18,
+      "elapsed_ms": 4778.131,
+      "kind": "node_started",
+      "node": "read_tools"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "gemini-full-30:R05:1",
+      "operation_ref": "7704a837ea04c2396c6d6672e5ebeeffd4b0e17b5e739c71e3e61ecb96aa9bd8",
+      "sequence": 19,
+      "elapsed_ms": 4778.15,
+      "kind": "tool_started",
+      "node": "read_tools",
+      "tool": "get_lead_details",
+      "arguments": {
+        "lead_id": 1
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "gemini-full-30:R05:1",
+      "operation_ref": "7704a837ea04c2396c6d6672e5ebeeffd4b0e17b5e739c71e3e61ecb96aa9bd8",
+      "sequence": 20,
+      "elapsed_ms": 4782.752,
+      "kind": "tool_completed",
+      "node": "read_tools",
+      "tool": "get_lead_details",
+      "arguments": {
+        "lead_id": 1
+      },
+      "result": {
+        "ok": true,
+        "lead": {
+          "id": 1,
+          "name": "<redacted>",
+          "email": "<redacted>",
+          "company": "<redacted>",
+          "city": "Chennai",
+          "status": "new",
+          "score": 17,
+          "priority": "low",
+          "owner_id": 1,
+          "created_at": "2026-01-01T09:00:00+00:00",
+          "updated_at": "2026-01-01T09:00:00+00:00",
+          "owner_name": "<redacted>"
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "gemini-full-30:R05:1",
+      "operation_ref": "7704a837ea04c2396c6d6672e5ebeeffd4b0e17b5e739c71e3e61ecb96aa9bd8",
+      "sequence": 21,
+      "elapsed_ms": 4782.999,
+      "kind": "tool_started",
+      "node": "read_tools",
+      "tool": "get_lead_details",
+      "arguments": {
+        "lead_id": 21
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "gemini-full-30:R05:1",
+      "operation_ref": "7704a837ea04c2396c6d6672e5ebeeffd4b0e17b5e739c71e3e61ecb96aa9bd8",
+      "sequence": 22,
+      "elapsed_ms": 4787.134,
+      "kind": "tool_completed",
+      "node": "read_tools",
+      "tool": "get_lead_details",
+      "arguments": {
+        "lead_id": 21
+      },
+      "result": {
+        "ok": true,
+        "lead": {
+          "id": 21,
+          "name": "<redacted>",
+          "email": "<redacted>",
+          "company": "<redacted>",
+          "city": "Chennai",
+          "status": "new",
+          "score": 82,
+          "priority": "high",
+          "owner_id": null,
+          "created_at": "2026-01-01T00:00:00+00:00",
+          "updated_at": "2026-01-01T00:00:00+00:00",
+          "owner_name": "<redacted>"
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "gemini-full-30:R05:1",
+      "operation_ref": "7704a837ea04c2396c6d6672e5ebeeffd4b0e17b5e739c71e3e61ecb96aa9bd8",
+      "sequence": 23,
+      "elapsed_ms": 4787.614,
+      "kind": "node_completed",
+      "node": "read_tools",
+      "route": null
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "gemini-full-30:R05:1",
+      "operation_ref": "7704a837ea04c2396c6d6672e5ebeeffd4b0e17b5e739c71e3e61ecb96aa9bd8",
+      "sequence": 24,
+      "elapsed_ms": 4791.077,
+      "kind": "node_transition",
+      "from_node": "read_tools",
+      "to_node": "agent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "gemini-full-30:R05:1",
+      "operation_ref": "7704a837ea04c2396c6d6672e5ebeeffd4b0e17b5e739c71e3e61ecb96aa9bd8",
+      "sequence": 25,
+      "elapsed_ms": 4791.11,
+      "kind": "node_started",
+      "node": "agent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "gemini-full-30:R05:1",
+      "operation_ref": "7704a837ea04c2396c6d6672e5ebeeffd4b0e17b5e739c71e3e61ecb96aa9bd8",
+      "sequence": 26,
+      "elapsed_ms": 4791.139,
+      "kind": "llm_call_started",
+      "node": "agent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "gemini-full-30:R05:1",
+      "operation_ref": "7704a837ea04c2396c6d6672e5ebeeffd4b0e17b5e739c71e3e61ecb96aa9bd8",
+      "sequence": 27,
+      "elapsed_ms": 4791.173,
+      "kind": "provider_wait",
+      "phase": "call_pacing",
+      "delay_seconds": 4.693843
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "gemini-full-30:R05:1",
+      "operation_ref": "7704a837ea04c2396c6d6672e5ebeeffd4b0e17b5e739c71e3e61ecb96aa9bd8",
+      "sequence": 28,
+      "elapsed_ms": 9487.612,
+      "kind": "provider_invocation",
+      "provider": "google_genai",
+      "attempt": 1
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "gemini-full-30:R05:1",
+      "operation_ref": "7704a837ea04c2396c6d6672e5ebeeffd4b0e17b5e739c71e3e61ecb96aa9bd8",
+      "sequence": 29,
+      "elapsed_ms": 10807.747,
+      "kind": "provider_attempt_completed",
+      "attempt": 1,
+      "availability": "model_available"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "gemini-full-30:R05:1",
+      "operation_ref": "7704a837ea04c2396c6d6672e5ebeeffd4b0e17b5e739c71e3e61ecb96aa9bd8",
+      "sequence": 30,
+      "elapsed_ms": 10807.789,
+      "kind": "llm_call_completed",
+      "node": "agent",
+      "usage": {
+        "input_tokens": 1261,
+        "output_tokens": 307,
+        "total_tokens": 1568
+      },
+      "duration_ms": 6016.631,
+      "tool_call_count": 0
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "gemini-full-30:R05:1",
+      "operation_ref": "7704a837ea04c2396c6d6672e5ebeeffd4b0e17b5e739c71e3e61ecb96aa9bd8",
+      "sequence": 31,
+      "elapsed_ms": 10807.852,
+      "kind": "node_completed",
+      "node": "agent",
+      "route": null
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "gemini-full-30:R05:1",
+      "operation_ref": "7704a837ea04c2396c6d6672e5ebeeffd4b0e17b5e739c71e3e61ecb96aa9bd8",
+      "sequence": 32,
+      "elapsed_ms": 10809.551,
+      "kind": "node_transition",
+      "from_node": "agent",
+      "to_node": "routing"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "gemini-full-30:R05:1",
+      "operation_ref": "7704a837ea04c2396c6d6672e5ebeeffd4b0e17b5e739c71e3e61ecb96aa9bd8",
+      "sequence": 33,
+      "elapsed_ms": 10809.569,
+      "kind": "node_started",
+      "node": "routing"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "gemini-full-30:R05:1",
+      "operation_ref": "7704a837ea04c2396c6d6672e5ebeeffd4b0e17b5e739c71e3e61ecb96aa9bd8",
+      "sequence": 34,
+      "elapsed_ms": 10809.583,
+      "kind": "node_completed",
+      "node": "routing",
+      "route": "finish"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "gemini-full-30:R05:1",
+      "operation_ref": "7704a837ea04c2396c6d6672e5ebeeffd4b0e17b5e739c71e3e61ecb96aa9bd8",
+      "sequence": 35,
+      "elapsed_ms": 10813.526,
+      "kind": "node_transition",
+      "from_node": "routing",
+      "to_node": "finish"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "gemini-full-30:R05:1",
+      "operation_ref": "7704a837ea04c2396c6d6672e5ebeeffd4b0e17b5e739c71e3e61ecb96aa9bd8",
+      "sequence": 36,
+      "elapsed_ms": 10813.559,
+      "kind": "node_started",
+      "node": "finish"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "gemini-full-30:R05:1",
+      "operation_ref": "7704a837ea04c2396c6d6672e5ebeeffd4b0e17b5e739c71e3e61ecb96aa9bd8",
+      "sequence": 37,
+      "elapsed_ms": 10813.699,
+      "kind": "final_result",
+      "node": "finish",
+      "result": {
+        "answer_source": "verified_results",
+        "model_final_received": true
+      },
+      "displayed_lead_ids": [
+        1,
+        21
+      ],
+      "result_statuses": [
+        "read_success",
+        "read_success"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "gemini-full-30:R05:1",
+      "operation_ref": "7704a837ea04c2396c6d6672e5ebeeffd4b0e17b5e739c71e3e61ecb96aa9bd8",
+      "sequence": 38,
+      "elapsed_ms": 10813.823,
+      "kind": "node_completed",
+      "node": "finish",
+      "route": null
+    }
+  ],
+  "availability": {
+    "status": "model_available",
+    "model_available": true,
+    "model_rate_limited": false,
+    "model_error": false,
+    "agent_contract_failed": false,
+    "conditional_eligible": true,
+    "quota_types": [],
+    "resume_incomplete": false
+  }
+}

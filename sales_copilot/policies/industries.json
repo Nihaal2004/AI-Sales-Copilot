@@ -1,0 +1,37 @@
+{
+  "policy_id": "CRM-IND-002",
+  "title": "Industry restrictions",
+  "version": "1.0",
+  "sections": [
+    {
+      "section_id": "S1",
+      "title": "Restricted industries",
+      "text": "Fictional CRM policy. Healthcare, financial services, insurance and public-sector prospects are restricted industries. Before assigning these leads, obtain a compliance intake review and identify an agent with the relevant industry qualification. Retail, manufacturing and general software prospects follow ordinary routing unless a regulated buying division is involved. Industry must come from verified CRM intake information; do not infer it from a fictional company name."
+    },
+    {
+      "section_id": "S2",
+      "title": "Unknown industry",
+      "text": "An unknown industry is a missing intake fact, not permission to treat the lead as unrestricted. Request the buyer's industry and regulated activity before making an industry compliance determination. If a prospect operates in several sectors, refer the most restrictive relevant buying activity to compliance. A human review of retrieval evidence does not itself certify industry eligibility."
+    },
+    {
+      "section_id": "S3",
+      "title": "Intake questionnaire for regulated buyers",
+      "text": "The intake questionnaire should ask what products the buying unit offers, which regulated activities it performs, whether patient or financial information is involved, and whether public procurement rules apply. A software vendor selling to a bank is not necessarily itself a bank; the nature of the buying unit and transaction matters. Capture the source and date of the industry statement. A free-text company name, domain suffix or model guess must not be substituted for verified industry data. Missing answers should remain explicitly unknown in the review."
+    },
+    {
+      "section_id": "S4",
+      "title": "Restricted-industry example",
+      "text": "Example: a Hyderabad insurance prospect has a high score and an available Hyderabad agent. Geographic alignment and a promising sales score do not remove the need for insurance intake review and an appropriate qualification check. A compliance reviewer may request additional information about the product, customer category and proposed sales activity. The CRM prototype has no verified industry field, so it cannot conclude that this prospect is unrestricted or that the receiving agent satisfies industry conditions. Present the relevant industry and certification passages together when explaining the evidence gap."
+    },
+    {
+      "section_id": "S5",
+      "title": "Mixed business units",
+      "text": "When a group contains retail, lending and healthcare divisions, identify which division is buying and who will receive the service. Do not classify the whole group using the least restrictive division merely because it appears first on a website. Compliance review can distinguish separate buying activities, but its outcome needs an explicit record. If two intake notes disagree about the business sector, preserve both statements and request reconciliation. Policy retrieval should surface the restriction and uncertainty guidance without translating that disagreement into automatic approval."
+    },
+    {
+      "section_id": "S6",
+      "title": "Industry exception evidence",
+      "text": "An industry exception request should identify the restricted activity, the reason normal routing is unavailable, the proposed certified specialist and the compliance role asked to review it. Record the exception scope and expiry if an authorized organizational process grants one. A policy excerpt mentioning exceptions is not an exception record. High priority, customer pressure and a manager name typed in chat do not supply missing compliance evidence. The Stage 2 agent can retrieve and quote requirements, while the future enforcement layer will need trustworthy business facts and approval identities."
+    }
+  ]
+}

@@ -1,0 +1,623 @@
+[
+  {
+    "id": "b8aa6695-2471-47f8-937e-5215ce61c9fc",
+    "trace_id": "9ae7e943-1236-4152-a0f3-74c02229e41f",
+    "dotted_order": "20261026T053155675459Z9ae7e943-1236-4152-a0f3-74c02229e41f.20261026T053155685260Z1aaa7f87-15d3-4822-a30e-ede3521ab252.20261026T053155691643Zb8aa6695-2471-47f8-937e-5215ce61c9fc",
+    "start_time": "2026-10-26 05:31:55.691643+00:00",
+    "end_time": "2026-10-26 05:31:58.545505+00:00",
+    "outputs": {
+      "usage_metadata": {
+        "input_tokens": 250,
+        "output_tokens": 33,
+        "total_tokens": 283
+      }
+    },
+    "extra": {
+      "metadata": {
+        "duration_ms": 2853.848,
+        "status": "ok"
+      }
+    },
+    "error": null,
+    "parent_run_id": "1aaa7f87-15d3-4822-a30e-ede3521ab252",
+    "session_name": "sales-copilot",
+    "name": "llm.intent",
+    "inputs": {},
+    "run_type": "llm"
+  },
+  {
+    "id": "1aaa7f87-15d3-4822-a30e-ede3521ab252",
+    "trace_id": "9ae7e943-1236-4152-a0f3-74c02229e41f",
+    "dotted_order": "20261026T053155675459Z9ae7e943-1236-4152-a0f3-74c02229e41f.20261026T053155685260Z1aaa7f87-15d3-4822-a30e-ede3521ab252",
+    "start_time": "2026-10-26 05:31:55.685260+00:00",
+    "end_time": "2026-10-26 05:31:58.551874+00:00",
+    "outputs": {},
+    "extra": {
+      "metadata": {
+        "duration_ms": 2866.608,
+        "status": "ok"
+      }
+    },
+    "error": null,
+    "parent_run_id": "9ae7e943-1236-4152-a0f3-74c02229e41f",
+    "session_name": "sales-copilot",
+    "name": "node.begin",
+    "inputs": {},
+    "run_type": "chain"
+  },
+  {
+    "id": "34c62852-4166-4e1b-b57f-a4835af61ccf",
+    "trace_id": "9ae7e943-1236-4152-a0f3-74c02229e41f",
+    "dotted_order": "20261026T053155675459Z9ae7e943-1236-4152-a0f3-74c02229e41f.20261026T053158553343Zd08fddfa-3aa0-4493-b30b-7278406a9441.20261026T053158553415Z34c62852-4166-4e1b-b57f-a4835af61ccf",
+    "start_time": "2026-10-26 05:31:58.553415+00:00",
+    "end_time": "2026-10-26 05:32:04.526408+00:00",
+    "outputs": {
+      "usage_metadata": {
+        "input_tokens": 837,
+        "output_tokens": 38,
+        "total_tokens": 875
+      }
+    },
+    "extra": {
+      "metadata": {
+        "duration_ms": 5972.961,
+        "status": "ok"
+      }
+    },
+    "error": null,
+    "parent_run_id": "d08fddfa-3aa0-4493-b30b-7278406a9441",
+    "session_name": "sales-copilot",
+    "name": "llm.tools",
+    "inputs": {},
+    "run_type": "llm"
+  },
+  {
+    "id": "d08fddfa-3aa0-4493-b30b-7278406a9441",
+    "trace_id": "9ae7e943-1236-4152-a0f3-74c02229e41f",
+    "dotted_order": "20261026T053155675459Z9ae7e943-1236-4152-a0f3-74c02229e41f.20261026T053158553343Zd08fddfa-3aa0-4493-b30b-7278406a9441",
+    "start_time": "2026-10-26 05:31:58.553343+00:00",
+    "end_time": "2026-10-26 05:32:04.529761+00:00",
+    "outputs": {},
+    "extra": {
+      "metadata": {
+        "duration_ms": 5976.403,
+        "status": "ok"
+      }
+    },
+    "error": null,
+    "parent_run_id": "9ae7e943-1236-4152-a0f3-74c02229e41f",
+    "session_name": "sales-copilot",
+    "name": "node.agent",
+    "inputs": {},
+    "run_type": "chain"
+  },
+  {
+    "id": "d1e6bcad-c58a-4f2c-a6e8-48e8a48d378f",
+    "trace_id": "9ae7e943-1236-4152-a0f3-74c02229e41f",
+    "dotted_order": "20261026T053155675459Z9ae7e943-1236-4152-a0f3-74c02229e41f.20261026T053204534581Zd1e6bcad-c58a-4f2c-a6e8-48e8a48d378f",
+    "start_time": "2026-10-26 05:32:04.534581+00:00",
+    "end_time": "2026-10-26 05:32:04.535541+00:00",
+    "outputs": {},
+    "extra": {
+      "metadata": {
+        "duration_ms": 0.941,
+        "status": "ok"
+      }
+    },
+    "error": null,
+    "parent_run_id": "9ae7e943-1236-4152-a0f3-74c02229e41f",
+    "session_name": "sales-copilot",
+    "name": "node.routing",
+    "inputs": {},
+    "run_type": "chain"
+  },
+  {
+    "id": "44acca9d-16ee-4651-9b22-694cb105e5b2",
+    "trace_id": "9ae7e943-1236-4152-a0f3-74c02229e41f",
+    "dotted_order": "20261026T053155675459Z9ae7e943-1236-4152-a0f3-74c02229e41f.20261026T053204543262Zd54a2929-1c0d-4755-929c-ecb249646d43.20261026T053204543584Z44acca9d-16ee-4651-9b22-694cb105e5b2",
+    "start_time": "2026-10-26 05:32:04.543584+00:00",
+    "end_time": "2026-10-26 05:32:04.548719+00:00",
+    "outputs": {},
+    "extra": {
+      "metadata": {
+        "duration_ms": 5.108,
+        "status": "ok"
+      }
+    },
+    "error": null,
+    "parent_run_id": "d54a2929-1c0d-4755-929c-ecb249646d43",
+    "session_name": "sales-copilot",
+    "name": "tool.get_lead_details",
+    "inputs": {},
+    "run_type": "tool"
+  },
+  {
+    "id": "1f7244ce-7d3d-47bf-934e-c09e8ad96a88",
+    "trace_id": "9ae7e943-1236-4152-a0f3-74c02229e41f",
+    "dotted_order": "20261026T053155675459Z9ae7e943-1236-4152-a0f3-74c02229e41f.20261026T053204543262Zd54a2929-1c0d-4755-929c-ecb249646d43.20261026T053204552298Zc2de03bf-50f6-4ad8-8371-f8095049a726.20261026T053204556306Z30f259af-70a3-47cf-9da2-315ba9b75922.20261026T053204556604Zb59edb4d-636a-4dbe-ac6c-c1817e3242c8.20261026T053204556770Z1f7244ce-7d3d-47bf-934e-c09e8ad96a88",
+    "start_time": "2026-10-26 05:32:04.556770+00:00",
+    "end_time": "2026-10-26 05:32:04.556936+00:00",
+    "outputs": {},
+    "extra": {
+      "metadata": {
+        "duration_ms": 0.149,
+        "status": "ok"
+      }
+    },
+    "error": null,
+    "parent_run_id": "b59edb4d-636a-4dbe-ac6c-c1817e3242c8",
+    "session_name": "sales-copilot",
+    "name": "retrieval.prepare",
+    "inputs": {},
+    "run_type": "retriever"
+  },
+  {
+    "id": "b59edb4d-636a-4dbe-ac6c-c1817e3242c8",
+    "trace_id": "9ae7e943-1236-4152-a0f3-74c02229e41f",
+    "dotted_order": "20261026T053155675459Z9ae7e943-1236-4152-a0f3-74c02229e41f.20261026T053204543262Zd54a2929-1c0d-4755-929c-ecb249646d43.20261026T053204552298Zc2de03bf-50f6-4ad8-8371-f8095049a726.20261026T053204556306Z30f259af-70a3-47cf-9da2-315ba9b75922.20261026T053204556604Zb59edb4d-636a-4dbe-ac6c-c1817e3242c8",
+    "start_time": "2026-10-26 05:32:04.556604+00:00",
+    "end_time": "2026-10-26 05:32:05.001830+00:00",
+    "outputs": {},
+    "extra": {
+      "metadata": {
+        "duration_ms": 445.222,
+        "status": "ok"
+      }
+    },
+    "error": null,
+    "parent_run_id": "30f259af-70a3-47cf-9da2-315ba9b75922",
+    "session_name": "sales-copilot",
+    "name": "retrieval.rank",
+    "inputs": {},
+    "run_type": "retriever"
+  },
+  {
+    "id": "30f259af-70a3-47cf-9da2-315ba9b75922",
+    "trace_id": "9ae7e943-1236-4152-a0f3-74c02229e41f",
+    "dotted_order": "20261026T053155675459Z9ae7e943-1236-4152-a0f3-74c02229e41f.20261026T053204543262Zd54a2929-1c0d-4755-929c-ecb249646d43.20261026T053204552298Zc2de03bf-50f6-4ad8-8371-f8095049a726.20261026T053204556306Z30f259af-70a3-47cf-9da2-315ba9b75922",
+    "start_time": "2026-10-26 05:32:04.556306+00:00",
+    "end_time": "2026-10-26 05:32:05.002229+00:00",
+    "outputs": {},
+    "extra": {
+      "metadata": {
+        "duration_ms": 445.925,
+        "status": "ok"
+      }
+    },
+    "error": null,
+    "parent_run_id": "c2de03bf-50f6-4ad8-8371-f8095049a726",
+    "session_name": "sales-copilot",
+    "name": "retrieval.search",
+    "inputs": {},
+    "run_type": "retriever"
+  },
+  {
+    "id": "c2de03bf-50f6-4ad8-8371-f8095049a726",
+    "trace_id": "9ae7e943-1236-4152-a0f3-74c02229e41f",
+    "dotted_order": "20261026T053155675459Z9ae7e943-1236-4152-a0f3-74c02229e41f.20261026T053204543262Zd54a2929-1c0d-4755-929c-ecb249646d43.20261026T053204552298Zc2de03bf-50f6-4ad8-8371-f8095049a726",
+    "start_time": "2026-10-26 05:32:04.552298+00:00",
+    "end_time": "2026-10-26 05:32:05.002549+00:00",
+    "outputs": {},
+    "extra": {
+      "metadata": {
+        "duration_ms": 450.254,
+        "status": "ok"
+      }
+    },
+    "error": null,
+    "parent_run_id": "d54a2929-1c0d-4755-929c-ecb249646d43",
+    "session_name": "sales-copilot",
+    "name": "tool.retrieve_policy",
+    "inputs": {},
+    "run_type": "tool"
+  },
+  {
+    "id": "d54a2929-1c0d-4755-929c-ecb249646d43",
+    "trace_id": "9ae7e943-1236-4152-a0f3-74c02229e41f",
+    "dotted_order": "20261026T053155675459Z9ae7e943-1236-4152-a0f3-74c02229e41f.20261026T053204543262Zd54a2929-1c0d-4755-929c-ecb249646d43",
+    "start_time": "2026-10-26 05:32:04.543262+00:00",
+    "end_time": "2026-10-26 05:32:05.006044+00:00",
+    "outputs": {},
+    "extra": {
+      "metadata": {
+        "duration_ms": 462.782,
+        "status": "ok"
+      }
+    },
+    "error": null,
+    "parent_run_id": "9ae7e943-1236-4152-a0f3-74c02229e41f",
+    "session_name": "sales-copilot",
+    "name": "node.read_tools",
+    "inputs": {},
+    "run_type": "chain"
+  },
+  {
+    "id": "71a92f99-144f-4a2a-8d21-ca5dac563eae",
+    "trace_id": "9ae7e943-1236-4152-a0f3-74c02229e41f",
+    "dotted_order": "20261026T053155675459Z9ae7e943-1236-4152-a0f3-74c02229e41f.20261026T053205006929Z8016c48a-05b9-4225-9bac-c5850cc453e5.20261026T053205013384Z71a92f99-144f-4a2a-8d21-ca5dac563eae",
+    "start_time": "2026-10-26 05:32:05.013384+00:00",
+    "end_time": "2026-10-26 05:32:10.310637+00:00",
+    "outputs": {
+      "usage_metadata": {
+        "input_tokens": 3150,
+        "output_tokens": 329,
+        "total_tokens": 3479
+      }
+    },
+    "extra": {
+      "metadata": {
+        "duration_ms": 5297.222,
+        "status": "ok"
+      }
+    },
+    "error": null,
+    "parent_run_id": "8016c48a-05b9-4225-9bac-c5850cc453e5",
+    "session_name": "sales-copilot",
+    "name": "llm.tools",
+    "inputs": {},
+    "run_type": "llm"
+  },
+  {
+    "id": "8016c48a-05b9-4225-9bac-c5850cc453e5",
+    "trace_id": "9ae7e943-1236-4152-a0f3-74c02229e41f",
+    "dotted_order": "20261026T053155675459Z9ae7e943-1236-4152-a0f3-74c02229e41f.20261026T053205006929Z8016c48a-05b9-4225-9bac-c5850cc453e5",
+    "start_time": "2026-10-26 05:32:05.006929+00:00",
+    "end_time": "2026-10-26 05:32:10.314413+00:00",
+    "outputs": {},
+    "extra": {
+      "metadata": {
+        "duration_ms": 5307.459,
+        "status": "ok"
+      }
+    },
+    "error": null,
+    "parent_run_id": "9ae7e943-1236-4152-a0f3-74c02229e41f",
+    "session_name": "sales-copilot",
+    "name": "node.agent",
+    "inputs": {},
+    "run_type": "chain"
+  },
+  {
+    "id": "f743a879-1a2f-4879-8a04-a7b225b538e5",
+    "trace_id": "9ae7e943-1236-4152-a0f3-74c02229e41f",
+    "dotted_order": "20261026T053155675459Z9ae7e943-1236-4152-a0f3-74c02229e41f.20261026T053210321748Zf743a879-1a2f-4879-8a04-a7b225b538e5",
+    "start_time": "2026-10-26 05:32:10.321748+00:00",
+    "end_time": "2026-10-26 05:32:10.322066+00:00",
+    "outputs": {},
+    "extra": {
+      "metadata": {
+        "duration_ms": 0.308,
+        "status": "ok"
+      }
+    },
+    "error": null,
+    "parent_run_id": "9ae7e943-1236-4152-a0f3-74c02229e41f",
+    "session_name": "sales-copilot",
+    "name": "node.routing",
+    "inputs": {},
+    "run_type": "chain"
+  },
+  {
+    "id": "903f2ddd-b7ef-4c8a-a196-0ca4ce6964f8",
+    "trace_id": "9ae7e943-1236-4152-a0f3-74c02229e41f",
+    "dotted_order": "20261026T053155675459Z9ae7e943-1236-4152-a0f3-74c02229e41f.20261026T053210327635Z903f2ddd-b7ef-4c8a-a196-0ca4ce6964f8",
+    "start_time": "2026-10-26 05:32:10.327635+00:00",
+    "end_time": "2026-10-26 05:32:10.362484+00:00",
+    "outputs": {},
+    "extra": {
+      "metadata": {
+        "duration_ms": 34.843,
+        "status": "ok"
+      }
+    },
+    "error": null,
+    "parent_run_id": "9ae7e943-1236-4152-a0f3-74c02229e41f",
+    "session_name": "sales-copilot",
+    "name": "node.finish",
+    "inputs": {},
+    "run_type": "chain"
+  },
+  {
+    "id": "9ae7e943-1236-4152-a0f3-74c02229e41f",
+    "trace_id": "9ae7e943-1236-4152-a0f3-74c02229e41f",
+    "dotted_order": "20261026T053155675459Z9ae7e943-1236-4152-a0f3-74c02229e41f",
+    "start_time": "2026-10-26 05:31:55.675459+00:00",
+    "end_time": "2026-10-26 05:32:10.368952+00:00",
+    "outputs": {},
+    "extra": {
+      "metadata": {
+        "duration_ms": 14693.473,
+        "status": "ok"
+      }
+    },
+    "error": null,
+    "session_name": "sales-copilot",
+    "name": "graph.invoke",
+    "inputs": {},
+    "run_type": "chain"
+  },
+  {
+    "id": "68255e43-61ce-43ef-9f27-b8494ac37905",
+    "trace_id": "77795006-7d84-4a96-b4f8-cb6b284895a7",
+    "dotted_order": "20261026T053210376280Z77795006-7d84-4a96-b4f8-cb6b284895a7.20261026T053210381927Z6cc077c7-9720-4f21-9846-ee01253458b5.20261026T053210388072Z68255e43-61ce-43ef-9f27-b8494ac37905",
+    "start_time": "2026-10-26 05:32:10.388072+00:00",
+    "end_time": "2026-10-26 05:32:14.587393+00:00",
+    "outputs": {
+      "usage_metadata": {
+        "input_tokens": 238,
+        "output_tokens": 36,
+        "total_tokens": 274
+      }
+    },
+    "extra": {
+      "metadata": {
+        "duration_ms": 4199.307,
+        "status": "ok"
+      }
+    },
+    "error": null,
+    "parent_run_id": "6cc077c7-9720-4f21-9846-ee01253458b5",
+    "session_name": "sales-copilot",
+    "name": "llm.intent",
+    "inputs": {},
+    "run_type": "llm"
+  },
+  {
+    "id": "6cc077c7-9720-4f21-9846-ee01253458b5",
+    "trace_id": "77795006-7d84-4a96-b4f8-cb6b284895a7",
+    "dotted_order": "20261026T053210376280Z77795006-7d84-4a96-b4f8-cb6b284895a7.20261026T053210381927Z6cc077c7-9720-4f21-9846-ee01253458b5",
+    "start_time": "2026-10-26 05:32:10.381927+00:00",
+    "end_time": "2026-10-26 05:32:14.589036+00:00",
+    "outputs": {},
+    "extra": {
+      "metadata": {
+        "duration_ms": 4207.106,
+        "status": "ok"
+      }
+    },
+    "error": null,
+    "parent_run_id": "77795006-7d84-4a96-b4f8-cb6b284895a7",
+    "session_name": "sales-copilot",
+    "name": "node.begin",
+    "inputs": {},
+    "run_type": "chain"
+  },
+  {
+    "id": "94a83a3c-30f1-4694-8cbf-32c1c5e43e43",
+    "trace_id": "77795006-7d84-4a96-b4f8-cb6b284895a7",
+    "dotted_order": "20261026T053210376280Z77795006-7d84-4a96-b4f8-cb6b284895a7.20261026T053214590189Z9c7e3a31-fe98-40d6-b7ed-dede3ee9746d.20261026T053214591712Z25e62ef5-66f7-427a-9256-159a85e020d3.20261026T053214591803Z6c21626a-f51f-4850-8ccb-4aa300844d09.20261026T053214591859Z94a83a3c-30f1-4694-8cbf-32c1c5e43e43",
+    "start_time": "2026-10-26 05:32:14.591859+00:00",
+    "end_time": "2026-10-26 05:32:14.591918+00:00",
+    "outputs": {},
+    "extra": {
+      "metadata": {
+        "duration_ms": 0.052,
+        "status": "ok"
+      }
+    },
+    "error": null,
+    "parent_run_id": "6c21626a-f51f-4850-8ccb-4aa300844d09",
+    "session_name": "sales-copilot",
+    "name": "retrieval.prepare",
+    "inputs": {},
+    "run_type": "retriever"
+  },
+  {
+    "id": "6c21626a-f51f-4850-8ccb-4aa300844d09",
+    "trace_id": "77795006-7d84-4a96-b4f8-cb6b284895a7",
+    "dotted_order": "20261026T053210376280Z77795006-7d84-4a96-b4f8-cb6b284895a7.20261026T053214590189Z9c7e3a31-fe98-40d6-b7ed-dede3ee9746d.20261026T053214591712Z25e62ef5-66f7-427a-9256-159a85e020d3.20261026T053214591803Z6c21626a-f51f-4850-8ccb-4aa300844d09",
+    "start_time": "2026-10-26 05:32:14.591803+00:00",
+    "end_time": "2026-10-26 05:32:15.238275+00:00",
+    "outputs": {},
+    "extra": {
+      "metadata": {
+        "duration_ms": 646.464,
+        "status": "ok"
+      }
+    },
+    "error": null,
+    "parent_run_id": "25e62ef5-66f7-427a-9256-159a85e020d3",
+    "session_name": "sales-copilot",
+    "name": "retrieval.rank",
+    "inputs": {},
+    "run_type": "retriever"
+  },
+  {
+    "id": "25e62ef5-66f7-427a-9256-159a85e020d3",
+    "trace_id": "77795006-7d84-4a96-b4f8-cb6b284895a7",
+    "dotted_order": "20261026T053210376280Z77795006-7d84-4a96-b4f8-cb6b284895a7.20261026T053214590189Z9c7e3a31-fe98-40d6-b7ed-dede3ee9746d.20261026T053214591712Z25e62ef5-66f7-427a-9256-159a85e020d3",
+    "start_time": "2026-10-26 05:32:14.591712+00:00",
+    "end_time": "2026-10-26 05:32:15.239324+00:00",
+    "outputs": {},
+    "extra": {
+      "metadata": {
+        "duration_ms": 647.603,
+        "status": "ok"
+      }
+    },
+    "error": null,
+    "parent_run_id": "9c7e3a31-fe98-40d6-b7ed-dede3ee9746d",
+    "session_name": "sales-copilot",
+    "name": "retrieval.search",
+    "inputs": {},
+    "run_type": "retriever"
+  },
+  {
+    "id": "9c7e3a31-fe98-40d6-b7ed-dede3ee9746d",
+    "trace_id": "77795006-7d84-4a96-b4f8-cb6b284895a7",
+    "dotted_order": "20261026T053210376280Z77795006-7d84-4a96-b4f8-cb6b284895a7.20261026T053214590189Z9c7e3a31-fe98-40d6-b7ed-dede3ee9746d",
+    "start_time": "2026-10-26 05:32:14.590189+00:00",
+    "end_time": "2026-10-26 05:32:15.247348+00:00",
+    "outputs": {},
+    "extra": {
+      "metadata": {
+        "duration_ms": 657.153,
+        "status": "ok"
+      }
+    },
+    "error": null,
+    "parent_run_id": "77795006-7d84-4a96-b4f8-cb6b284895a7",
+    "session_name": "sales-copilot",
+    "name": "node.policy_retrieval",
+    "inputs": {},
+    "run_type": "chain"
+  },
+  {
+    "id": "cad213b8-4663-41fe-99f2-364c92058965",
+    "trace_id": "77795006-7d84-4a96-b4f8-cb6b284895a7",
+    "dotted_order": "20261026T053210376280Z77795006-7d84-4a96-b4f8-cb6b284895a7.20261026T053215248591Zcad213b8-4663-41fe-99f2-364c92058965",
+    "start_time": "2026-10-26 05:32:15.248591+00:00",
+    "end_time": "2026-10-26 05:32:15.262419+00:00",
+    "outputs": {},
+    "extra": {
+      "metadata": {
+        "duration_ms": 13.817,
+        "status": "ok"
+      }
+    },
+    "error": null,
+    "parent_run_id": "77795006-7d84-4a96-b4f8-cb6b284895a7",
+    "session_name": "sales-copilot",
+    "name": "node.authorization",
+    "inputs": {},
+    "run_type": "chain"
+  },
+  {
+    "id": "c9f07b94-5782-438a-9ef5-3244f9c051fe",
+    "trace_id": "77795006-7d84-4a96-b4f8-cb6b284895a7",
+    "dotted_order": "20261026T053210376280Z77795006-7d84-4a96-b4f8-cb6b284895a7.20261026T053215263869Zc9f07b94-5782-438a-9ef5-3244f9c051fe",
+    "start_time": "2026-10-26 05:32:15.263869+00:00",
+    "end_time": "2026-10-26 05:32:15.271564+00:00",
+    "outputs": {},
+    "extra": {
+      "metadata": {
+        "duration_ms": 7.688,
+        "status": "interrupted"
+      }
+    },
+    "error": null,
+    "parent_run_id": "77795006-7d84-4a96-b4f8-cb6b284895a7",
+    "session_name": "sales-copilot",
+    "name": "node.approval",
+    "inputs": {},
+    "run_type": "chain"
+  },
+  {
+    "id": "77795006-7d84-4a96-b4f8-cb6b284895a7",
+    "trace_id": "77795006-7d84-4a96-b4f8-cb6b284895a7",
+    "dotted_order": "20261026T053210376280Z77795006-7d84-4a96-b4f8-cb6b284895a7",
+    "start_time": "2026-10-26 05:32:10.376280+00:00",
+    "end_time": "2026-10-26 05:32:15.273274+00:00",
+    "outputs": {},
+    "extra": {
+      "metadata": {
+        "duration_ms": 4896.986,
+        "status": "interrupted"
+      }
+    },
+    "error": null,
+    "session_name": "sales-copilot",
+    "name": "graph.invoke",
+    "inputs": {},
+    "run_type": "chain"
+  },
+  {
+    "id": "abed7401-7485-4b73-a394-8998606db918",
+    "trace_id": "364cf7ab-1e00-402b-bf76-d96a55cefdb4",
+    "dotted_order": "20261026T053215274856Z364cf7ab-1e00-402b-bf76-d96a55cefdb4.20261026T053215277230Zabed7401-7485-4b73-a394-8998606db918",
+    "start_time": "2026-10-26 05:32:15.277230+00:00",
+    "end_time": "2026-10-26 05:32:15.287314+00:00",
+    "outputs": {},
+    "extra": {
+      "metadata": {
+        "duration_ms": 10.081,
+        "status": "ok"
+      }
+    },
+    "error": null,
+    "parent_run_id": "364cf7ab-1e00-402b-bf76-d96a55cefdb4",
+    "session_name": "sales-copilot",
+    "name": "node.approval",
+    "inputs": {},
+    "run_type": "chain"
+  },
+  {
+    "id": "ef80f919-ab74-49a6-aa3f-7f883d4f0f48",
+    "trace_id": "364cf7ab-1e00-402b-bf76-d96a55cefdb4",
+    "dotted_order": "20261026T053215274856Z364cf7ab-1e00-402b-bf76-d96a55cefdb4.20261026T053215288788Z7bd414a7-ca64-47f4-931c-556e705bdb0d.20261026T053215292183Zef80f919-ab74-49a6-aa3f-7f883d4f0f48",
+    "start_time": "2026-10-26 05:32:15.292183+00:00",
+    "end_time": "2026-10-26 05:32:15.311176+00:00",
+    "outputs": {},
+    "extra": {
+      "metadata": {
+        "duration_ms": 18.988,
+        "status": "ok"
+      }
+    },
+    "error": null,
+    "parent_run_id": "7bd414a7-ca64-47f4-931c-556e705bdb0d",
+    "session_name": "sales-copilot",
+    "name": "tool.assign_lead",
+    "inputs": {},
+    "run_type": "tool"
+  },
+  {
+    "id": "7bd414a7-ca64-47f4-931c-556e705bdb0d",
+    "trace_id": "364cf7ab-1e00-402b-bf76-d96a55cefdb4",
+    "dotted_order": "20261026T053215274856Z364cf7ab-1e00-402b-bf76-d96a55cefdb4.20261026T053215288788Z7bd414a7-ca64-47f4-931c-556e705bdb0d",
+    "start_time": "2026-10-26 05:32:15.288788+00:00",
+    "end_time": "2026-10-26 05:32:15.311829+00:00",
+    "outputs": {},
+    "extra": {
+      "metadata": {
+        "duration_ms": 23.036,
+        "status": "ok"
+      }
+    },
+    "error": null,
+    "parent_run_id": "364cf7ab-1e00-402b-bf76-d96a55cefdb4",
+    "session_name": "sales-copilot",
+    "name": "node.mutation",
+    "inputs": {},
+    "run_type": "chain"
+  },
+  {
+    "id": "dcb11f9a-1a16-4a40-8eb4-6c95d5457e61",
+    "trace_id": "364cf7ab-1e00-402b-bf76-d96a55cefdb4",
+    "dotted_order": "20261026T053215274856Z364cf7ab-1e00-402b-bf76-d96a55cefdb4.20261026T053215313273Zdcb11f9a-1a16-4a40-8eb4-6c95d5457e61",
+    "start_time": "2026-10-26 05:32:15.313273+00:00",
+    "end_time": "2026-10-26 05:32:15.313506+00:00",
+    "outputs": {},
+    "extra": {
+      "metadata": {
+        "duration_ms": 0.23,
+        "status": "ok"
+      }
+    },
+    "error": null,
+    "parent_run_id": "364cf7ab-1e00-402b-bf76-d96a55cefdb4",
+    "session_name": "sales-copilot",
+    "name": "node.finish",
+    "inputs": {},
+    "run_type": "chain"
+  },
+  {
+    "id": "364cf7ab-1e00-402b-bf76-d96a55cefdb4",
+    "trace_id": "364cf7ab-1e00-402b-bf76-d96a55cefdb4",
+    "dotted_order": "20261026T053215274856Z364cf7ab-1e00-402b-bf76-d96a55cefdb4",
+    "start_time": "2026-10-26 05:32:15.274856+00:00",
+    "end_time": "2026-10-26 05:32:15.317600+00:00",
+    "outputs": {},
+    "extra": {
+      "metadata": {
+        "duration_ms": 42.735,
+        "status": "ok"
+      }
+    },
+    "error": null,
+    "session_name": "sales-copilot",
+    "name": "graph.invoke",
+    "inputs": {},
+    "run_type": "chain"
+  }
+]

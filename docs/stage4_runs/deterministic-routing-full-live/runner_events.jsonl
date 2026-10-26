@@ -1,0 +1,5 @@
+{"schema_version": 1, "correlation_id": "deterministic-routing-full-live:runner", "operation_ref": null, "sequence": 1, "elapsed_ms": 88373.719, "kind": "provider_wait", "phase": "scenario_batch", "delay_seconds": 15.0}
+{"schema_version": 1, "correlation_id": "deterministic-routing-full-live:runner", "operation_ref": null, "sequence": 2, "elapsed_ms": 178396.294, "kind": "provider_wait", "phase": "scenario_batch", "delay_seconds": 15.0}
+{"schema_version": 1, "correlation_id": "deterministic-routing-full-live:runner", "operation_ref": null, "sequence": 3, "elapsed_ms": 220116.236, "kind": "provider_wait", "phase": "scenario_batch", "delay_seconds": 15.0}
+{"schema_version": 1, "correlation_id": "deterministic-routing-full-live:runner", "operation_ref": null, "sequence": 4, "elapsed_ms": 261796.409, "kind": "provider_wait", "phase": "scenario_batch", "delay_seconds": 15.0}
+{"schema_version": 1, "correlation_id": "deterministic-routing-full-live:runner", "operation_ref": null, "sequence": 5, "elapsed_ms": 303544.292, "kind": "provider_wait", "phase": "scenario_batch", "delay_seconds": 15.0}

@@ -1,0 +1,5 @@
+{"schema_version": 1, "correlation_id": "final-live-regression:runner", "operation_ref": null, "sequence": 1, "elapsed_ms": 87280.208, "kind": "provider_wait", "phase": "scenario_batch", "delay_seconds": 15.0}
+{"schema_version": 1, "correlation_id": "final-live-regression:runner", "operation_ref": null, "sequence": 2, "elapsed_ms": 235189.345, "kind": "provider_wait", "phase": "scenario_batch", "delay_seconds": 15.0}
+{"schema_version": 1, "correlation_id": "final-live-regression:runner", "operation_ref": null, "sequence": 3, "elapsed_ms": 371522.89, "kind": "provider_wait", "phase": "scenario_batch", "delay_seconds": 15.0}
+{"schema_version": 1, "correlation_id": "final-live-regression:runner", "operation_ref": null, "sequence": 4, "elapsed_ms": 498710.014, "kind": "provider_wait", "phase": "scenario_batch", "delay_seconds": 15.0}
+{"schema_version": 1, "correlation_id": "final-live-regression:runner", "operation_ref": null, "sequence": 5, "elapsed_ms": 607449.99, "kind": "provider_wait", "phase": "scenario_batch", "delay_seconds": 15.0}

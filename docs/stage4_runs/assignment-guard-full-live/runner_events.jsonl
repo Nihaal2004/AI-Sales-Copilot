@@ -1,0 +1,5 @@
+{"schema_version": 1, "correlation_id": "assignment-guard-full-live:runner", "operation_ref": null, "sequence": 1, "elapsed_ms": 93993.238, "kind": "provider_wait", "phase": "scenario_batch", "delay_seconds": 15.0}
+{"schema_version": 1, "correlation_id": "assignment-guard-full-live:runner", "operation_ref": null, "sequence": 2, "elapsed_ms": 287333.886, "kind": "provider_wait", "phase": "scenario_batch", "delay_seconds": 15.0}
+{"schema_version": 1, "correlation_id": "assignment-guard-full-live:runner", "operation_ref": null, "sequence": 3, "elapsed_ms": 418915.774, "kind": "provider_wait", "phase": "scenario_batch", "delay_seconds": 15.0}
+{"schema_version": 1, "correlation_id": "assignment-guard-full-live:runner", "operation_ref": null, "sequence": 4, "elapsed_ms": 550518.772, "kind": "provider_wait", "phase": "scenario_batch", "delay_seconds": 15.0}
+{"schema_version": 1, "correlation_id": "assignment-guard-full-live:runner", "operation_ref": null, "sequence": 5, "elapsed_ms": 714184.216, "kind": "provider_wait", "phase": "scenario_batch", "delay_seconds": 15.0}

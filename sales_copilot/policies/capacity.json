@@ -1,0 +1,37 @@
+{
+  "policy_id": "CRM-CAP-006",
+  "title": "Lead capacity and workload",
+  "version": "1.0",
+  "sections": [
+    {
+      "section_id": "S1",
+      "title": "Active lead capacity",
+      "text": "Fictional CRM policy. A sales agent's ordinary workload ceiling is 25 active leads. New, contacted and qualified statuses count as active work; won and lost leads do not count toward this capacity total. Before adding ownership, review the receiving agent's active count and planned handovers. High lead scores and city matches do not prove that the agent has room for another prospect."
+    },
+    {
+      "section_id": "S2",
+      "title": "Temporary workload exceptions",
+      "text": "A temporary workload above 25 active leads requires a sales-manager exception with a duration and a plan to reduce the backlog. An informal message that the agent can cope is not a recorded capacity exception. Retrieval explains which workload information to review; Stage 2 does not enforce lead-capacity ceilings or calculate production eligibility."
+    },
+    {
+      "section_id": "S3",
+      "title": "Counting active work consistently",
+      "text": "Count each new, contacted and qualified lead owned by the receiving agent once when discussing ordinary workload. Exclude won and lost leads from the active total even though those records remain in the CRM. A lead that is about to be reassigned away remains relevant until ownership actually changes. Queue size, a single search result page and a model estimate are not authoritative workload measurements. A complete enforcement implementation would need a consistent view of current ownership and simultaneous activity, which this Stage 2 retrieval prototype does not provide."
+    },
+    {
+      "section_id": "S4",
+      "title": "Capacity planning review",
+      "text": "Review how many active opportunities need first contact, how many require ongoing negotiation and whether the representative has scheduled coverage duties. The ordinary numerical ceiling is 25 active leads, but qualitative workload can still require manager attention below that number. Conversely, a documented temporary exception can describe a managed overload without removing the need for follow-up. Retrieval should expose both the ordinary ceiling and exception process. It must not silently interpret a high similarity score as evidence that an exception has been approved."
+    },
+    {
+      "section_id": "S5",
+      "title": "Workload ceiling examples",
+      "text": "Example: a receiving agent has 24 active leads and 10 won records. The won records do not count toward the ordinary active ceiling; adding one new active lead would bring the active total to 25. If the agent already has 25 active leads, the reviewer needs the capacity exception process before claiming organizational eligibility for another one. These are explanatory examples rather than computed decisions about the seeded agents. The Stage 2 graph does not implement concurrent workload reservations or a complete capacity authorization check."
+    },
+    {
+      "section_id": "S6",
+      "title": "Temporary overload documentation",
+      "text": "A proposed overload review should describe the active count, lead urgency, expected handover dates, coverage resources and the date the manager will review the backlog again. Record the scope of any organizational exception instead of treating it as unlimited permission for future assignments. If an urgent response target conflicts with ordinary capacity, show the priority and workload passages together. A user confirmation in the CLI remains action-specific and must not be labelled a production capacity override or evidence of compliance with all workload rules."
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "policy_id": "CRM-TERR-001",
+  "title": "Geographic territories",
+  "version": "1.0",
+  "sections": [
+    {
+      "section_id": "S1",
+      "title": "City territory routing",
+      "text": "Fictional CRM policy. Lead assignment follows geographic sales territories. Chennai leads normally go to Chennai agents Anika Demo or Dev Fiction. Bangalore leads normally go to Bangalore agent Ravi Example. Hyderabad leads normally go to Hyderabad agent Meera Sample. The lead city determines territory, not the contact's email domain. Cross-city ownership is an exception requiring a documented territory-manager review; an available agent in another city does not automatically qualify."
+    },
+    {
+      "section_id": "S2",
+      "title": "Territory exceptions",
+      "text": "When a lead has offices in multiple cities, record the primary buying office and ask the territory manager to resolve routing. Territory exceptions must identify the lead, receiving agent, cities involved, business reason and expiry. High priority and VIP labels do not waive geographic territory review. A retrieved paragraph describing an exception is evidence for review, not proof that an exception has been granted."
+    },
+    {
+      "section_id": "S3",
+      "title": "Primary buying office evidence",
+      "text": "For a multi-office business, record where the purchasing team will evaluate and sign the proposal. A Hyderabad head office with a Chennai buying team can require a Chennai territory review; the postal address alone is not conclusive. Ask intake staff to attach the buying-office confirmation and retain both cities in the review notes. Remote meetings, an agent working from home, and a contact travelling temporarily do not change the sales territory. If the primary office is unresolved, present the uncertainty to the territory manager instead of inventing a routing fact."
+    },
+    {
+      "section_id": "S4",
+      "title": "Cross-city assignment example",
+      "text": "Example: a new Chennai retail lead is proposed for Ravi Example in Bangalore because the Chennai team is busy. The normal city mapping points to Chennai, while the proposed receiving agent belongs to Bangalore. The reviewer needs the cross-territory reason and manager exception, plus separate capacity and availability facts. Neither a high score nor a short response target supplies that exception. This example explains evidence to gather; it does not decide eligibility for a real lead or authorize the application to perform the transfer."
+    },
+    {
+      "section_id": "S5",
+      "title": "Territory review record",
+      "text": "A geographic review note should include the lead identifier, recorded lead city, primary buying office, current owner, proposed receiving agent and receiving territory. Record who owns any open customer commitments during a temporary cross-city coverage period. When the lead city is blank or differs between systems, ask the record steward to reconcile the discrepancy before asserting territory eligibility. A retrieval score estimates whether this paragraph answers the question. It does not establish that the underlying city or exception facts are correct or current."
+    },
+    {
+      "section_id": "S6",
+      "title": "Boundary cases and escalation",
+      "text": "A city name embedded in a company title is not geographic evidence. Overseas prospects and cities outside Chennai, Bangalore and Hyderabad require a territory-manager decision because this fictional document does not define their normal routing. A request to move ownership between two Chennai agents still needs reassignment review even though it is within territory. If an urgent coverage instruction appears to conflict with geographic restrictions, show both the coverage and territory passages to the human reviewer. Do not select the convenient passage and suppress the other one."
+    }
+  ]
+}

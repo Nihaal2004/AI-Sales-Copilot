@@ -1,0 +1,12 @@
+{
+  "passed": 27,
+  "failed": 0,
+  "seconds": 29.47,
+  "command": "python -m pytest tests/test_observability.py tests/test_rag_eval.py tests/test_ragas_sdk.py",
+  "isolated_dependencies": [
+    ".cache/ragas-compat",
+    ".cache/ragas-sdk"
+  ],
+  "application_code_modified": false,
+  "final_driver_sha256": "7ffefe07652388616ce07594d3a1a33c7eaf2f808f144fd82447ed39145b2352"
+}

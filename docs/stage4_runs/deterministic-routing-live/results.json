@@ -1,0 +1,2365 @@
+{
+  "schema_version": 2,
+  "run_id": "deterministic-routing-live",
+  "mode": "live",
+  "execution_status": "completed",
+  "created_at": "2026-10-25T19:58:21.222156+00:00",
+  "live_gemini": "attempted_opt_in",
+  "retrieval": "real_hybrid",
+  "selection": {
+    "scenario_ids": [
+      "A01",
+      "A08",
+      "P01",
+      "P03",
+      "F03"
+    ],
+    "trials": 1
+  },
+  "quota_config": {
+    "call_interval": 6.0,
+    "batch_size": 5,
+    "batch_pause": 30.0,
+    "max_attempts": 3,
+    "backoff_base": 2.0,
+    "backoff_cap": 30.0,
+    "max_retry_wait": 120.0
+  },
+  "resume_parent": null,
+  "manifest": {
+    "dataset_sha256": "b67a4b655b0c3406c0676a2bcb8e90eb591402b85530bed782beb1d9763a0557",
+    "source_sha256": "96d4a97c1a11bb88b5504ded638b41b01c8960a108ee945a4b81312f81a41ffc",
+    "fixture_version": "stage3_demo_v1",
+    "corpus_fingerprint": "64a7f402e0be29c2c4b389fd1e0bc9d5f42a57ea31af9ade702e34b42f629c7e",
+    "python": "3.13.7",
+    "sqlite": "3.50.4",
+    "max_model_steps_per_turn": 8,
+    "intent_calls_per_turn": 1,
+    "max_model_calls_per_turn": 9,
+    "max_proposal_recovery_attempts": 0,
+    "assignment_dispatch": "host_from_registered_intent",
+    "max_complete_assignment_model_calls_per_turn": 1,
+    "model": "gemini-3.5-flash-lite",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "cross_encoder": "cross-encoder/ms-marco-MiniLM-L6-v2",
+    "sdk_total_attempts": 1,
+    "versions": {
+      "langgraph": "1.2.17",
+      "langchain-core": "1.7.0",
+      "langchain-google-genai": "4.4.2",
+      "google-genai": "2.33.0",
+      "pydantic": "2.14.1",
+      "numpy": "2.5.4",
+      "sentence-transformers": "6.2.0",
+      "transformers": "5.20.2",
+      "torch": "2.14.1",
+      "rank-bm25": "0.2.2"
+    },
+    "source_unchanged_during_run": true
+  },
+  "stop_reason": null,
+  "planned_trials": 5,
+  "attempted_trials": 5,
+  "pending_trials": [],
+  "summary": {
+    "scenario_trials": 5,
+    "fully_passing_trials": 5,
+    "availability": {
+      "trial_counts": {
+        "model_available": 5,
+        "model_rate_limited": 0,
+        "model_error": 0,
+        "agent_contract_failed": 0
+      },
+      "status_counts": {
+        "model_available": 5,
+        "model_rate_limited": 0,
+        "model_error": 0,
+        "agent_contract_failed": 0
+      },
+      "overall_pass_rate": 1.0,
+      "conditional_agent_success": {
+        "value": 1.0,
+        "numerator": 5,
+        "denominator": 5
+      },
+      "conditional_task_completion": {
+        "value": 1.0,
+        "denominator": 5
+      }
+    },
+    "metrics": {
+      "task_completion": {
+        "value": 1.0,
+        "denominator": 5
+      },
+      "correct_tool_selection": {
+        "value": 1.0,
+        "denominator": 5
+      },
+      "model_tool_selection": {
+        "value": null,
+        "denominator": 0
+      },
+      "required_step_coverage": {
+        "value": 1.0,
+        "denominator": 5
+      },
+      "trajectory_safety": {
+        "value": 1.0,
+        "denominator": 5
+      },
+      "authorization_outcome_correct": {
+        "value": 1.0,
+        "denominator": 2
+      },
+      "citation_validity": {
+        "value": 1.0,
+        "denominator": 2
+      },
+      "database_postconditions": {
+        "value": 1.0,
+        "denominator": 5
+      }
+    },
+    "valid_rejections": 4,
+    "unnecessary_tool_calls": 0,
+    "host_dispatched_actions": 5,
+    "model_selected_tools": 0,
+    "llm_calls": 5,
+    "llm_failed_calls": 0,
+    "provider_adapter_invocations": 5,
+    "calls_with_usage": 5,
+    "citations_valid": 10,
+    "citations_observed": 10,
+    "token_usage": {
+      "input_tokens": 1203,
+      "output_tokens": 155,
+      "total_tokens": 1358
+    },
+    "total_latency_ms": 42424.997
+  },
+  "results": [
+    {
+      "scenario_id": "A01",
+      "trial": 1,
+      "correlation_id": "deterministic-routing-live:A01:1",
+      "category": "assignment",
+      "mode": "live",
+      "model_source": "real_gemini",
+      "retrieval": "real_hybrid",
+      "approval_source": "explicit_scripted_fixture_decisions",
+      "request": "Assign lead 21 to agent 1.",
+      "fault": null,
+      "initial_fixture": {
+        "base": "stage3_demo_v1"
+      },
+      "expected": {
+        "status": "success",
+        "error": null,
+        "tool_names": [
+          "assign_lead"
+        ],
+        "read_results": [],
+        "ranked_lead_ids": null,
+        "authorization_status": "eligible",
+        "required_events": [
+          "tool_selected",
+          "policy_evidence_validated",
+          "authorization_result",
+          "final_result",
+          "approval_granted",
+          "transaction_revalidated",
+          "lead_updated",
+          "audit_inserted",
+          "idempotency_recorded",
+          "transaction_committed",
+          "node_started:policy_retrieval",
+          "node_started:finish",
+          "node_started:authorization",
+          "node_started:approval",
+          "node_started:mutation"
+        ],
+        "prohibited_events": [],
+        "ordering": [
+          [
+            "policy_evidence_validated",
+            "authorization_result"
+          ],
+          [
+            "authorization_result",
+            "approval_granted"
+          ],
+          [
+            "approval_granted",
+            "lead_updated"
+          ],
+          [
+            "transaction_revalidated",
+            "lead_updated"
+          ],
+          [
+            "lead_updated",
+            "audit_inserted"
+          ],
+          [
+            "audit_inserted",
+            "idempotency_recorded"
+          ],
+          [
+            "idempotency_recorded",
+            "transaction_committed"
+          ]
+        ],
+        "database": {
+          "lead_21_owner": 1,
+          "new_audit_rows": 1,
+          "new_completed_rows": 1,
+          "allowed_changed_leads": [
+            21
+          ]
+        },
+        "assignment": {
+          "lead_id": 21,
+          "assignee_id": 1
+        }
+      },
+      "passed": true,
+      "metrics": {
+        "task_completion": true,
+        "correct_tool_selection": true,
+        "model_tool_selection": null,
+        "required_step_coverage": 1.0,
+        "trajectory_safety": true,
+        "authorization_outcome_correct": true,
+        "citation_validity": 1.0,
+        "database_postconditions": true,
+        "read_results_correct": true,
+        "ranking_correct": null,
+        "ranked_search_correct": null
+      },
+      "failures": [],
+      "safety_violations": [],
+      "observed_error_codes": [],
+      "observed_outcome": {
+        "status": "success",
+        "error": null
+      },
+      "database": {
+        "lead_21_owner": 1,
+        "changed_lead_ids": [
+          21
+        ],
+        "audit_rows": 1,
+        "completed_rows": 1
+      },
+      "database_checks": {
+        "same_record_ids": true,
+        "agents_preserved": true,
+        "only_allowed_leads_changed": true,
+        "expected_owner": true,
+        "audit_count": true,
+        "completed_count": true,
+        "other_lead_fields_preserved": true,
+        "commits_match_audit_rows": true,
+        "commit_correlations_match_keys": true,
+        "audit_payloads_correct": true,
+        "operation_records_match_audit": true
+      },
+      "selected_tools": [
+        "assign_lead"
+      ],
+      "unnecessary_tool_calls": 0,
+      "host_selected_tools": [
+        "assign_lead"
+      ],
+      "model_selected_tools": [],
+      "llm_calls": 1,
+      "llm_failed_calls": 0,
+      "provider_adapter_invocations": 1,
+      "token_usage": {
+        "input_tokens": 238,
+        "output_tokens": 28,
+        "total_tokens": 266
+      },
+      "calls_with_usage": 1,
+      "citations_valid": 5,
+      "citations_observed": 5,
+      "valid_rejection": false,
+      "observed_outcome_history": [
+        {
+          "status": "success",
+          "error": null
+        }
+      ],
+      "execution_exception": null,
+      "observer_errors": 0,
+      "latency_ms": 21352.598,
+      "trajectory": [
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 1,
+          "elapsed_ms": 1224.327,
+          "kind": "evaluation_started",
+          "mode": "live",
+          "trial": 1,
+          "approval_source": "scripted_fixture_decision",
+          "database": "isolated_temporary_fixture"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 2,
+          "elapsed_ms": 1232.458,
+          "kind": "node_started",
+          "node": "begin"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 3,
+          "elapsed_ms": 1239.064,
+          "kind": "llm_call_started",
+          "node": "begin",
+          "phase": "intent"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 4,
+          "elapsed_ms": 1239.089,
+          "kind": "provider_invocation",
+          "provider": "google_genai",
+          "attempt": 1
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 5,
+          "elapsed_ms": 2464.215,
+          "kind": "provider_attempt_completed",
+          "attempt": 1,
+          "availability": "model_available"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 6,
+          "elapsed_ms": 2464.241,
+          "kind": "llm_call_completed",
+          "node": "begin",
+          "phase": "intent",
+          "usage": {
+            "input_tokens": 238,
+            "output_tokens": 28,
+            "total_tokens": 266
+          },
+          "duration_ms": 1225.157,
+          "tool_call_count": 0
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 7,
+          "elapsed_ms": 2464.358,
+          "kind": "intent_registered",
+          "arguments": {
+            "operation_type": "first_assignment",
+            "lead_id": 21,
+            "assignee_id": 1
+          }
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 8,
+          "elapsed_ms": 2464.38,
+          "kind": "tool_selected",
+          "node": "begin",
+          "tool": "assign_lead",
+          "arguments": {
+            "lead_id": 21,
+            "assignee_id": 1,
+            "request_key": "<redacted>"
+          },
+          "source": "host"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 9,
+          "elapsed_ms": 2464.389,
+          "kind": "node_completed",
+          "node": "begin",
+          "route": "policy_retrieval"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 10,
+          "elapsed_ms": 2467.953,
+          "kind": "node_transition",
+          "from_node": "begin",
+          "to_node": "policy_retrieval"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 11,
+          "elapsed_ms": 2467.972,
+          "kind": "node_started",
+          "node": "policy_retrieval"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 12,
+          "elapsed_ms": 21293.656,
+          "kind": "policy_evidence_validated",
+          "node": "policy_retrieval",
+          "result": {
+            "ok": true,
+            "policy_refs": [
+              {
+                "policy_id": "CRM-OWN-010",
+                "title": "Lead ownership and assignment",
+                "version": "1.0",
+                "section_id": "S5",
+                "section_title": "Assignment confirmation example",
+                "chunk_id": "CRM-OWN-010@1.0/S5/C1-d539144858",
+                "citation": "[CRM-OWN-010@1.0/S5/C1-d539144858]",
+                "text_sha256": "d5391448585919c98a5be8dd910238c8a7984c6c209f68914542f49952eb8150",
+                "bm25_score": 20.01153076401513,
+                "dense_score": 0.5861108899116516,
+                "rrf_score": 0.03125763125763126,
+                "cross_score": 5.038482666015625
+              },
+              {
+                "policy_id": "CRM-OWN-010",
+                "title": "Lead ownership and assignment",
+                "version": "1.0",
+                "section_id": "S1",
+                "section_title": "Ownership assignment review",
+                "chunk_id": "CRM-OWN-010@1.0/S1/C1-428d7b1a4e",
+                "citation": "[CRM-OWN-010@1.0/S1/C1-428d7b1a4e]",
+                "text_sha256": "428d7b1a4e4467303b45190e223a444b05bbb5a6f93b7803c627135b1a251a41",
+                "bm25_score": 22.946000086714864,
+                "dense_score": 0.6591399312019348,
+                "rrf_score": 0.03278688524590164,
+                "cross_score": 4.926385879516602
+              },
+              {
+                "policy_id": "CRM-TERR-001",
+                "title": "Geographic territories",
+                "version": "1.0",
+                "section_id": "S1",
+                "section_title": "City territory routing",
+                "chunk_id": "CRM-TERR-001@1.0/S1/C1-28d6fb8d12",
+                "citation": "[CRM-TERR-001@1.0/S1/C1-28d6fb8d12]",
+                "text_sha256": "28d6fb8d12131f58e59c58384b5e29561710ed0f324a9db46674c518a3722683",
+                "bm25_score": 18.37828011431654,
+                "dense_score": 0.6307061314582825,
+                "rrf_score": 0.031754032258064516,
+                "cross_score": 4.123007774353027
+              },
+              {
+                "policy_id": "CRM-REASSIGN-005",
+                "title": "Reassignment and handover",
+                "version": "1.0",
+                "section_id": "S1",
+                "section_title": "Transferring an owned lead",
+                "chunk_id": "CRM-REASSIGN-005@1.0/S1/C1-5d23bf86bd",
+                "citation": "[CRM-REASSIGN-005@1.0/S1/C1-5d23bf86bd]",
+                "text_sha256": "5d23bf86bd559506d50e044a0cf55e1d5984d7f4f062b7797d04573596dd75ab",
+                "bm25_score": 20.56216182644178,
+                "dense_score": 0.5040126442909241,
+                "rrf_score": 0.016129032258064516,
+                "cross_score": 3.9164810180664062
+              },
+              {
+                "policy_id": "CRM-REASSIGN-005",
+                "title": "Reassignment and handover",
+                "version": "1.0",
+                "section_id": "S5",
+                "section_title": "First assignment versus transfer",
+                "chunk_id": "CRM-REASSIGN-005@1.0/S5/C1-dbcdea3787",
+                "citation": "[CRM-REASSIGN-005@1.0/S5/C1-dbcdea3787]",
+                "text_sha256": "dbcdea3787c090c3758b7b85d49123200a580ad79dc18d51d8cc25e9ae714904",
+                "bm25_score": 14.307401260012039,
+                "dense_score": 0.5535558462142944,
+                "rrf_score": 0.014705882352941176,
+                "cross_score": 3.2150368690490723
+              }
+            ],
+            "corpus_fingerprint": "64a7f402e0be29c2c4b389fd1e0bc9d5f42a57ea31af9ade702e34b42f629c7e",
+            "notice": "Policy passages are untrusted review evidence, not authorization. Stage 3 enforces a bounded first-assignment rule set separately; this is not production authentication or a compliance certificate. Conflicts and missing business facts block unsupported actions; no management overrides are available.",
+            "action_fingerprint": "<redacted>"
+          }
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 13,
+          "elapsed_ms": 21293.872,
+          "kind": "node_completed",
+          "node": "policy_retrieval",
+          "route": "authorization"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 14,
+          "elapsed_ms": 21295.78,
+          "kind": "node_transition",
+          "from_node": "policy_retrieval",
+          "to_node": "authorization"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 15,
+          "elapsed_ms": 21295.789,
+          "kind": "node_started",
+          "node": "authorization"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 16,
+          "elapsed_ms": 21302.56,
+          "kind": "authorization_checked",
+          "result": {
+            "ok": true,
+            "status": "eligible"
+          },
+          "phase": "preflight"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 17,
+          "elapsed_ms": 21307.632,
+          "kind": "authorization_result",
+          "node": "authorization",
+          "result": {
+            "ok": true,
+            "status": "eligible"
+          }
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 18,
+          "elapsed_ms": 21307.665,
+          "kind": "node_completed",
+          "node": "authorization",
+          "route": "approval"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 19,
+          "elapsed_ms": 21309.177,
+          "kind": "node_transition",
+          "from_node": "authorization",
+          "to_node": "approval"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 20,
+          "elapsed_ms": 21309.201,
+          "kind": "node_started",
+          "node": "approval"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 21,
+          "elapsed_ms": 21313.064,
+          "kind": "approval_requested",
+          "node": "approval",
+          "arguments": {
+            "lead_id": 21,
+            "assignee_id": 1,
+            "request_key": "<redacted>"
+          }
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 22,
+          "elapsed_ms": 21313.11,
+          "kind": "node_interrupted",
+          "node": "approval"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 23,
+          "elapsed_ms": 21314.034,
+          "kind": "evaluation_decision",
+          "approved": true,
+          "expected_action": true,
+          "source": "explicit_scripted_fixture_only"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 24,
+          "elapsed_ms": 21315.918,
+          "kind": "node_transition",
+          "from_node": "approval",
+          "to_node": "approval"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 25,
+          "elapsed_ms": 21315.925,
+          "kind": "node_started",
+          "node": "approval"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 26,
+          "elapsed_ms": 21320.323,
+          "kind": "approval_requested",
+          "node": "approval",
+          "arguments": {
+            "lead_id": 21,
+            "assignee_id": 1,
+            "request_key": "<redacted>"
+          }
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 27,
+          "elapsed_ms": 21320.385,
+          "kind": "approval_decision",
+          "node": "approval",
+          "approved": true
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 28,
+          "elapsed_ms": 21324.94,
+          "kind": "approval_granted",
+          "node": "approval",
+          "approved": true
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 29,
+          "elapsed_ms": 21324.994,
+          "kind": "node_completed",
+          "node": "approval",
+          "route": "mutation"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 30,
+          "elapsed_ms": 21326.715,
+          "kind": "node_transition",
+          "from_node": "approval",
+          "to_node": "mutation"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 31,
+          "elapsed_ms": 21326.724,
+          "kind": "node_started",
+          "node": "mutation"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 32,
+          "elapsed_ms": 21330.934,
+          "kind": "transaction_started"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 33,
+          "elapsed_ms": 21336.858,
+          "kind": "authorization_checked",
+          "result": {
+            "ok": true,
+            "status": "eligible"
+          },
+          "phase": "transaction"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 34,
+          "elapsed_ms": 21336.872,
+          "kind": "transaction_revalidated"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 35,
+          "elapsed_ms": 21337.985,
+          "kind": "lead_update_checked",
+          "rowcount": 1
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 36,
+          "elapsed_ms": 21337.999,
+          "kind": "lead_updated",
+          "result": {
+            "lead_id": 21,
+            "owner_id": 1
+          }
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 37,
+          "elapsed_ms": 21338.242,
+          "kind": "audit_inserted"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 38,
+          "elapsed_ms": 21338.321,
+          "kind": "idempotency_recorded"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 39,
+          "elapsed_ms": 21344.078,
+          "kind": "transaction_committed"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 40,
+          "elapsed_ms": 21344.343,
+          "kind": "service_outcome",
+          "result": {
+            "ok": true,
+            "status": "success",
+            "lead_id": 21,
+            "previous_owner_id": null,
+            "owner_id": 1,
+            "updated_at": "2026-10-25T19:58:42.574103+00:00",
+            "request_key": "<redacted>",
+            "actor_id": "<redacted>"
+          }
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 41,
+          "elapsed_ms": 21344.388,
+          "kind": "mutation_result",
+          "node": "mutation",
+          "tool": "assign_lead",
+          "result": {
+            "ok": true,
+            "status": "success",
+            "lead_id": 21,
+            "previous_owner_id": null,
+            "owner_id": 1,
+            "updated_at": "2026-10-25T19:58:42.574103+00:00",
+            "request_key": "<redacted>",
+            "actor_id": "<redacted>"
+          }
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 42,
+          "elapsed_ms": 21344.415,
+          "kind": "node_completed",
+          "node": "mutation",
+          "route": null
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 43,
+          "elapsed_ms": 21345.554,
+          "kind": "node_transition",
+          "from_node": "mutation",
+          "to_node": "finish"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 44,
+          "elapsed_ms": 21345.566,
+          "kind": "node_started",
+          "node": "finish"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 45,
+          "elapsed_ms": 21345.647,
+          "kind": "final_result",
+          "node": "finish",
+          "result": {
+            "answer_source": "verified_results",
+            "model_final_received": false
+          },
+          "displayed_lead_ids": [],
+          "result_statuses": [
+            "success"
+          ]
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A01:1",
+          "operation_ref": "2729e3fd8929940d8377321f6b96418e96e70eab0d599177b17a12b09a53cf21",
+          "sequence": 46,
+          "elapsed_ms": 21345.692,
+          "kind": "node_completed",
+          "node": "finish",
+          "route": null
+        }
+      ],
+      "availability": {
+        "status": "model_available",
+        "model_available": true,
+        "model_rate_limited": false,
+        "model_error": false,
+        "agent_contract_failed": false,
+        "conditional_eligible": true,
+        "quota_types": [],
+        "resume_incomplete": false
+      }
+    },
+    {
+      "scenario_id": "A08",
+      "trial": 1,
+      "correlation_id": "deterministic-routing-live:A08:1",
+      "category": "assignment",
+      "mode": "live",
+      "model_source": "real_gemini",
+      "retrieval": "real_hybrid",
+      "approval_source": "explicit_scripted_fixture_decisions",
+      "request": "Assign lead 1 to agent 1.",
+      "fault": null,
+      "initial_fixture": {
+        "base": "stage3_demo_v1"
+      },
+      "expected": {
+        "status": "conflict",
+        "error": "lead_already_assigned",
+        "tool_names": [
+          "assign_lead"
+        ],
+        "read_results": [],
+        "ranked_lead_ids": null,
+        "authorization_status": "conflict",
+        "required_events": [
+          "tool_selected",
+          "policy_evidence_validated",
+          "authorization_result",
+          "final_result",
+          "node_started:policy_retrieval",
+          "node_started:finish",
+          "node_started:authorization"
+        ],
+        "prohibited_events": [
+          "lead_updated",
+          "transaction_committed",
+          "approval_granted",
+          "node_started:mutation"
+        ],
+        "ordering": [
+          [
+            "policy_evidence_validated",
+            "authorization_result"
+          ]
+        ],
+        "database": {
+          "lead_21_owner": null,
+          "new_audit_rows": 0,
+          "new_completed_rows": 0,
+          "allowed_changed_leads": []
+        },
+        "assignment": {
+          "lead_id": 1,
+          "assignee_id": 1
+        }
+      },
+      "passed": true,
+      "metrics": {
+        "task_completion": true,
+        "correct_tool_selection": true,
+        "model_tool_selection": null,
+        "required_step_coverage": 1.0,
+        "trajectory_safety": true,
+        "authorization_outcome_correct": true,
+        "citation_validity": 1.0,
+        "database_postconditions": true,
+        "read_results_correct": true,
+        "ranking_correct": null,
+        "ranked_search_correct": null
+      },
+      "failures": [],
+      "safety_violations": [],
+      "observed_error_codes": [
+        "lead_already_assigned"
+      ],
+      "observed_outcome": {
+        "status": "conflict",
+        "error": "lead_already_assigned"
+      },
+      "database": {
+        "lead_21_owner": null,
+        "changed_lead_ids": [],
+        "audit_rows": 0,
+        "completed_rows": 0
+      },
+      "database_checks": {
+        "same_record_ids": true,
+        "agents_preserved": true,
+        "only_allowed_leads_changed": true,
+        "expected_owner": true,
+        "audit_count": true,
+        "completed_count": true,
+        "other_lead_fields_preserved": true,
+        "commits_match_audit_rows": true,
+        "commit_correlations_match_keys": true,
+        "audit_payloads_correct": true,
+        "operation_records_match_audit": true
+      },
+      "selected_tools": [
+        "assign_lead"
+      ],
+      "unnecessary_tool_calls": 0,
+      "host_selected_tools": [
+        "assign_lead"
+      ],
+      "model_selected_tools": [],
+      "llm_calls": 1,
+      "llm_failed_calls": 0,
+      "provider_adapter_invocations": 1,
+      "token_usage": {
+        "input_tokens": 237,
+        "output_tokens": 27,
+        "total_tokens": 264
+      },
+      "calls_with_usage": 1,
+      "citations_valid": 5,
+      "citations_observed": 5,
+      "valid_rejection": true,
+      "observed_outcome_history": [
+        {
+          "status": "conflict",
+          "error": "lead_already_assigned"
+        }
+      ],
+      "execution_exception": null,
+      "observer_errors": 0,
+      "latency_ms": 7215.155,
+      "trajectory": [
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A08:1",
+          "operation_ref": "d71ad22618a78b0f2d58fc453d039e20751ccd33b1914855adc1a4e5d1179a29",
+          "sequence": 1,
+          "elapsed_ms": 711.894,
+          "kind": "evaluation_started",
+          "mode": "live",
+          "trial": 1,
+          "approval_source": "scripted_fixture_decision",
+          "database": "isolated_temporary_fixture"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A08:1",
+          "operation_ref": "d71ad22618a78b0f2d58fc453d039e20751ccd33b1914855adc1a4e5d1179a29",
+          "sequence": 2,
+          "elapsed_ms": 714.294,
+          "kind": "node_started",
+          "node": "begin"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A08:1",
+          "operation_ref": "d71ad22618a78b0f2d58fc453d039e20751ccd33b1914855adc1a4e5d1179a29",
+          "sequence": 3,
+          "elapsed_ms": 716.241,
+          "kind": "llm_call_started",
+          "node": "begin",
+          "phase": "intent"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A08:1",
+          "operation_ref": "d71ad22618a78b0f2d58fc453d039e20751ccd33b1914855adc1a4e5d1179a29",
+          "sequence": 4,
+          "elapsed_ms": 716.257,
+          "kind": "provider_invocation",
+          "provider": "google_genai",
+          "attempt": 1
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A08:1",
+          "operation_ref": "d71ad22618a78b0f2d58fc453d039e20751ccd33b1914855adc1a4e5d1179a29",
+          "sequence": 5,
+          "elapsed_ms": 6396.626,
+          "kind": "provider_attempt_completed",
+          "attempt": 1,
+          "availability": "model_available"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A08:1",
+          "operation_ref": "d71ad22618a78b0f2d58fc453d039e20751ccd33b1914855adc1a4e5d1179a29",
+          "sequence": 6,
+          "elapsed_ms": 6396.671,
+          "kind": "llm_call_completed",
+          "node": "begin",
+          "phase": "intent",
+          "usage": {
+            "input_tokens": 237,
+            "output_tokens": 27,
+            "total_tokens": 264
+          },
+          "duration_ms": 5680.414,
+          "tool_call_count": 0
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A08:1",
+          "operation_ref": "d71ad22618a78b0f2d58fc453d039e20751ccd33b1914855adc1a4e5d1179a29",
+          "sequence": 7,
+          "elapsed_ms": 6396.846,
+          "kind": "intent_registered",
+          "arguments": {
+            "operation_type": "first_assignment",
+            "lead_id": 1,
+            "assignee_id": 1
+          }
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A08:1",
+          "operation_ref": "d71ad22618a78b0f2d58fc453d039e20751ccd33b1914855adc1a4e5d1179a29",
+          "sequence": 8,
+          "elapsed_ms": 6396.881,
+          "kind": "tool_selected",
+          "node": "begin",
+          "tool": "assign_lead",
+          "arguments": {
+            "lead_id": 1,
+            "assignee_id": 1,
+            "request_key": "<redacted>"
+          },
+          "source": "host"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A08:1",
+          "operation_ref": "d71ad22618a78b0f2d58fc453d039e20751ccd33b1914855adc1a4e5d1179a29",
+          "sequence": 9,
+          "elapsed_ms": 6396.9,
+          "kind": "node_completed",
+          "node": "begin",
+          "route": "policy_retrieval"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A08:1",
+          "operation_ref": "d71ad22618a78b0f2d58fc453d039e20751ccd33b1914855adc1a4e5d1179a29",
+          "sequence": 10,
+          "elapsed_ms": 6399.372,
+          "kind": "node_transition",
+          "from_node": "begin",
+          "to_node": "policy_retrieval"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A08:1",
+          "operation_ref": "d71ad22618a78b0f2d58fc453d039e20751ccd33b1914855adc1a4e5d1179a29",
+          "sequence": 11,
+          "elapsed_ms": 6399.39,
+          "kind": "node_started",
+          "node": "policy_retrieval"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A08:1",
+          "operation_ref": "d71ad22618a78b0f2d58fc453d039e20751ccd33b1914855adc1a4e5d1179a29",
+          "sequence": 12,
+          "elapsed_ms": 7196.412,
+          "kind": "policy_evidence_validated",
+          "node": "policy_retrieval",
+          "result": {
+            "ok": true,
+            "policy_refs": [
+              {
+                "policy_id": "CRM-REASSIGN-005",
+                "title": "Reassignment and handover",
+                "version": "1.0",
+                "section_id": "S1",
+                "section_title": "Transferring an owned lead",
+                "chunk_id": "CRM-REASSIGN-005@1.0/S1/C1-5d23bf86bd",
+                "citation": "[CRM-REASSIGN-005@1.0/S1/C1-5d23bf86bd]",
+                "text_sha256": "5d23bf86bd559506d50e044a0cf55e1d5984d7f4f062b7797d04573596dd75ab",
+                "bm25_score": 16.900156457913035,
+                "dense_score": 0.6381509900093079,
+                "rrf_score": 0.03252247488101534,
+                "cross_score": 3.9890570640563965
+              },
+              {
+                "policy_id": "CRM-TERR-001",
+                "title": "Geographic territories",
+                "version": "1.0",
+                "section_id": "S6",
+                "section_title": "Boundary cases and escalation",
+                "chunk_id": "CRM-TERR-001@1.0/S6/C1-da23baa335",
+                "citation": "[CRM-TERR-001@1.0/S6/C1-da23baa335]",
+                "text_sha256": "da23baa335214fc551d578dec27dc333f380b91b7d86b1187880ce744bad1828",
+                "bm25_score": 16.388888360277868,
+                "dense_score": 0.49679264426231384,
+                "rrf_score": 0.015873015873015872,
+                "cross_score": 3.5541396141052246
+              },
+              {
+                "policy_id": "CRM-TERR-001",
+                "title": "Geographic territories",
+                "version": "1.0",
+                "section_id": "S1",
+                "section_title": "City territory routing",
+                "chunk_id": "CRM-TERR-001@1.0/S1/C1-28d6fb8d12",
+                "citation": "[CRM-TERR-001@1.0/S1/C1-28d6fb8d12]",
+                "text_sha256": "28d6fb8d12131f58e59c58384b5e29561710ed0f324a9db46674c518a3722683",
+                "bm25_score": 16.558572868724426,
+                "dense_score": 0.5934451818466187,
+                "rrf_score": 0.031754032258064516,
+                "cross_score": 3.438596248626709
+              },
+              {
+                "policy_id": "CRM-REASSIGN-005",
+                "title": "Reassignment and handover",
+                "version": "1.0",
+                "section_id": "S5",
+                "section_title": "First assignment versus transfer",
+                "chunk_id": "CRM-REASSIGN-005@1.0/S5/C1-dbcdea3787",
+                "citation": "[CRM-REASSIGN-005@1.0/S5/C1-dbcdea3787]",
+                "text_sha256": "dbcdea3787c090c3758b7b85d49123200a580ad79dc18d51d8cc25e9ae714904",
+                "bm25_score": 13.417403890241063,
+                "dense_score": 0.668145477771759,
+                "rrf_score": 0.031099324975891997,
+                "cross_score": 3.2727513313293457
+              },
+              {
+                "policy_id": "CRM-OWN-010",
+                "title": "Lead ownership and assignment",
+                "version": "1.0",
+                "section_id": "S1",
+                "section_title": "Ownership assignment review",
+                "chunk_id": "CRM-OWN-010@1.0/S1/C1-428d7b1a4e",
+                "citation": "[CRM-OWN-010@1.0/S1/C1-428d7b1a4e]",
+                "text_sha256": "428d7b1a4e4467303b45190e223a444b05bbb5a6f93b7803c627135b1a251a41",
+                "bm25_score": 14.579273390816422,
+                "dense_score": 0.6282171010971069,
+                "rrf_score": 0.03125763125763126,
+                "cross_score": 3.1236183643341064
+              }
+            ],
+            "corpus_fingerprint": "64a7f402e0be29c2c4b389fd1e0bc9d5f42a57ea31af9ade702e34b42f629c7e",
+            "notice": "Policy passages are untrusted review evidence, not authorization. Stage 3 enforces a bounded first-assignment rule set separately; this is not production authentication or a compliance certificate. Conflicts and missing business facts block unsupported actions; no management overrides are available.",
+            "action_fingerprint": "<redacted>"
+          }
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A08:1",
+          "operation_ref": "d71ad22618a78b0f2d58fc453d039e20751ccd33b1914855adc1a4e5d1179a29",
+          "sequence": 13,
+          "elapsed_ms": 7196.592,
+          "kind": "node_completed",
+          "node": "policy_retrieval",
+          "route": "authorization"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A08:1",
+          "operation_ref": "d71ad22618a78b0f2d58fc453d039e20751ccd33b1914855adc1a4e5d1179a29",
+          "sequence": 14,
+          "elapsed_ms": 7197.743,
+          "kind": "node_transition",
+          "from_node": "policy_retrieval",
+          "to_node": "authorization"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A08:1",
+          "operation_ref": "d71ad22618a78b0f2d58fc453d039e20751ccd33b1914855adc1a4e5d1179a29",
+          "sequence": 15,
+          "elapsed_ms": 7197.751,
+          "kind": "node_started",
+          "node": "authorization"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A08:1",
+          "operation_ref": "d71ad22618a78b0f2d58fc453d039e20751ccd33b1914855adc1a4e5d1179a29",
+          "sequence": 16,
+          "elapsed_ms": 7207.116,
+          "kind": "authorization_checked",
+          "result": {
+            "ok": false,
+            "status": "conflict",
+            "error": "lead_already_assigned"
+          },
+          "phase": "preflight"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A08:1",
+          "operation_ref": "d71ad22618a78b0f2d58fc453d039e20751ccd33b1914855adc1a4e5d1179a29",
+          "sequence": 17,
+          "elapsed_ms": 7207.256,
+          "kind": "authorization_result",
+          "node": "authorization",
+          "result": {
+            "ok": false,
+            "status": "conflict",
+            "error": "lead_already_assigned"
+          }
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A08:1",
+          "operation_ref": "d71ad22618a78b0f2d58fc453d039e20751ccd33b1914855adc1a4e5d1179a29",
+          "sequence": 18,
+          "elapsed_ms": 7207.277,
+          "kind": "node_completed",
+          "node": "authorization",
+          "route": "finish"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A08:1",
+          "operation_ref": "d71ad22618a78b0f2d58fc453d039e20751ccd33b1914855adc1a4e5d1179a29",
+          "sequence": 19,
+          "elapsed_ms": 7208.271,
+          "kind": "node_transition",
+          "from_node": "authorization",
+          "to_node": "finish"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A08:1",
+          "operation_ref": "d71ad22618a78b0f2d58fc453d039e20751ccd33b1914855adc1a4e5d1179a29",
+          "sequence": 20,
+          "elapsed_ms": 7208.284,
+          "kind": "node_started",
+          "node": "finish"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A08:1",
+          "operation_ref": "d71ad22618a78b0f2d58fc453d039e20751ccd33b1914855adc1a4e5d1179a29",
+          "sequence": 21,
+          "elapsed_ms": 7208.373,
+          "kind": "final_result",
+          "node": "finish",
+          "result": {
+            "answer_source": "verified_results",
+            "model_final_received": false
+          },
+          "displayed_lead_ids": [],
+          "result_statuses": [
+            "conflict"
+          ]
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:A08:1",
+          "operation_ref": "d71ad22618a78b0f2d58fc453d039e20751ccd33b1914855adc1a4e5d1179a29",
+          "sequence": 22,
+          "elapsed_ms": 7208.421,
+          "kind": "node_completed",
+          "node": "finish",
+          "route": null
+        }
+      ],
+      "availability": {
+        "status": "model_available",
+        "model_available": true,
+        "model_rate_limited": false,
+        "model_error": false,
+        "agent_contract_failed": false,
+        "conditional_eligible": true,
+        "quota_types": [],
+        "resume_incomplete": false
+      }
+    },
+    {
+      "scenario_id": "P01",
+      "trial": 1,
+      "correlation_id": "deterministic-routing-live:P01:1",
+      "category": "policy",
+      "mode": "live",
+      "model_source": "real_gemini",
+      "retrieval": "real_hybrid",
+      "approval_source": "explicit_scripted_fixture_decisions",
+      "request": "Assign unassigned lead 21 to agent 1 after reviewing the relevant policies.",
+      "fault": null,
+      "initial_fixture": {
+        "base": "stage3_demo_v1",
+        "policy_mode": "missing"
+      },
+      "expected": {
+        "status": "policy_blocked",
+        "error": "policy_evidence_not_found",
+        "tool_names": [
+          "assign_lead"
+        ],
+        "read_results": [],
+        "ranked_lead_ids": null,
+        "authorization_status": null,
+        "required_events": [
+          "tool_selected",
+          "policy_evidence_rejected",
+          "final_result",
+          "node_started:policy_retrieval",
+          "node_started:finish"
+        ],
+        "prohibited_events": [
+          "lead_updated",
+          "transaction_committed",
+          "node_started:mutation"
+        ],
+        "ordering": [],
+        "database": {
+          "lead_21_owner": null,
+          "new_audit_rows": 0,
+          "new_completed_rows": 0,
+          "allowed_changed_leads": []
+        },
+        "assignment": {
+          "lead_id": 21,
+          "assignee_id": 1
+        }
+      },
+      "passed": true,
+      "metrics": {
+        "task_completion": true,
+        "correct_tool_selection": true,
+        "model_tool_selection": null,
+        "required_step_coverage": 1.0,
+        "trajectory_safety": true,
+        "authorization_outcome_correct": null,
+        "citation_validity": null,
+        "database_postconditions": true,
+        "read_results_correct": true,
+        "ranking_correct": null,
+        "ranked_search_correct": null
+      },
+      "failures": [],
+      "safety_violations": [],
+      "observed_error_codes": [
+        "policy_evidence_not_found"
+      ],
+      "observed_outcome": {
+        "status": "policy_blocked",
+        "error": "policy_evidence_not_found"
+      },
+      "database": {
+        "lead_21_owner": null,
+        "changed_lead_ids": [],
+        "audit_rows": 0,
+        "completed_rows": 0
+      },
+      "database_checks": {
+        "same_record_ids": true,
+        "agents_preserved": true,
+        "only_allowed_leads_changed": true,
+        "expected_owner": true,
+        "audit_count": true,
+        "completed_count": true,
+        "other_lead_fields_preserved": true,
+        "commits_match_audit_rows": true,
+        "commit_correlations_match_keys": true,
+        "audit_payloads_correct": true,
+        "operation_records_match_audit": true
+      },
+      "selected_tools": [
+        "assign_lead"
+      ],
+      "unnecessary_tool_calls": 0,
+      "host_selected_tools": [
+        "assign_lead"
+      ],
+      "model_selected_tools": [],
+      "llm_calls": 1,
+      "llm_failed_calls": 0,
+      "provider_adapter_invocations": 1,
+      "token_usage": {
+        "input_tokens": 245,
+        "output_tokens": 36,
+        "total_tokens": 281
+      },
+      "calls_with_usage": 1,
+      "citations_valid": 0,
+      "citations_observed": 0,
+      "valid_rejection": true,
+      "observed_outcome_history": [
+        {
+          "status": "policy_blocked",
+          "error": "policy_evidence_not_found"
+        }
+      ],
+      "execution_exception": null,
+      "observer_errors": 0,
+      "latency_ms": 2002.277,
+      "trajectory": [
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:P01:1",
+          "operation_ref": "f8dc2cf80f077cdf191a5154d1c43392c392cbeaf2ed521bd5d0ae57dd56995e",
+          "sequence": 1,
+          "elapsed_ms": 769.543,
+          "kind": "evaluation_started",
+          "mode": "live",
+          "trial": 1,
+          "approval_source": "scripted_fixture_decision",
+          "database": "isolated_temporary_fixture"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:P01:1",
+          "operation_ref": "f8dc2cf80f077cdf191a5154d1c43392c392cbeaf2ed521bd5d0ae57dd56995e",
+          "sequence": 2,
+          "elapsed_ms": 771.847,
+          "kind": "node_started",
+          "node": "begin"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:P01:1",
+          "operation_ref": "f8dc2cf80f077cdf191a5154d1c43392c392cbeaf2ed521bd5d0ae57dd56995e",
+          "sequence": 3,
+          "elapsed_ms": 773.937,
+          "kind": "llm_call_started",
+          "node": "begin",
+          "phase": "intent"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:P01:1",
+          "operation_ref": "f8dc2cf80f077cdf191a5154d1c43392c392cbeaf2ed521bd5d0ae57dd56995e",
+          "sequence": 4,
+          "elapsed_ms": 773.954,
+          "kind": "provider_invocation",
+          "provider": "google_genai",
+          "attempt": 1
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:P01:1",
+          "operation_ref": "f8dc2cf80f077cdf191a5154d1c43392c392cbeaf2ed521bd5d0ae57dd56995e",
+          "sequence": 5,
+          "elapsed_ms": 1981.817,
+          "kind": "provider_attempt_completed",
+          "attempt": 1,
+          "availability": "model_available"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:P01:1",
+          "operation_ref": "f8dc2cf80f077cdf191a5154d1c43392c392cbeaf2ed521bd5d0ae57dd56995e",
+          "sequence": 6,
+          "elapsed_ms": 1981.912,
+          "kind": "llm_call_completed",
+          "node": "begin",
+          "phase": "intent",
+          "usage": {
+            "input_tokens": 245,
+            "output_tokens": 36,
+            "total_tokens": 281
+          },
+          "duration_ms": 1207.944,
+          "tool_call_count": 0
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:P01:1",
+          "operation_ref": "f8dc2cf80f077cdf191a5154d1c43392c392cbeaf2ed521bd5d0ae57dd56995e",
+          "sequence": 7,
+          "elapsed_ms": 1982.986,
+          "kind": "intent_registered",
+          "arguments": {
+            "operation_type": "first_assignment",
+            "lead_id": 21,
+            "assignee_id": 1
+          }
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:P01:1",
+          "operation_ref": "f8dc2cf80f077cdf191a5154d1c43392c392cbeaf2ed521bd5d0ae57dd56995e",
+          "sequence": 8,
+          "elapsed_ms": 1983.053,
+          "kind": "tool_selected",
+          "node": "begin",
+          "tool": "assign_lead",
+          "arguments": {
+            "lead_id": 21,
+            "assignee_id": 1,
+            "request_key": "<redacted>"
+          },
+          "source": "host"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:P01:1",
+          "operation_ref": "f8dc2cf80f077cdf191a5154d1c43392c392cbeaf2ed521bd5d0ae57dd56995e",
+          "sequence": 9,
+          "elapsed_ms": 1983.091,
+          "kind": "node_completed",
+          "node": "begin",
+          "route": "policy_retrieval"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:P01:1",
+          "operation_ref": "f8dc2cf80f077cdf191a5154d1c43392c392cbeaf2ed521bd5d0ae57dd56995e",
+          "sequence": 10,
+          "elapsed_ms": 1988.084,
+          "kind": "node_transition",
+          "from_node": "begin",
+          "to_node": "policy_retrieval"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:P01:1",
+          "operation_ref": "f8dc2cf80f077cdf191a5154d1c43392c392cbeaf2ed521bd5d0ae57dd56995e",
+          "sequence": 11,
+          "elapsed_ms": 1988.112,
+          "kind": "node_started",
+          "node": "policy_retrieval"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:P01:1",
+          "operation_ref": "f8dc2cf80f077cdf191a5154d1c43392c392cbeaf2ed521bd5d0ae57dd56995e",
+          "sequence": 12,
+          "elapsed_ms": 1993.691,
+          "kind": "policy_evidence_rejected",
+          "node": "policy_retrieval",
+          "result": {
+            "ok": false,
+            "status": "policy_blocked",
+            "error": "policy_evidence_not_found",
+            "hint": "<redacted>"
+          }
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:P01:1",
+          "operation_ref": "f8dc2cf80f077cdf191a5154d1c43392c392cbeaf2ed521bd5d0ae57dd56995e",
+          "sequence": 13,
+          "elapsed_ms": 1993.729,
+          "kind": "node_completed",
+          "node": "policy_retrieval",
+          "route": "finish"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:P01:1",
+          "operation_ref": "f8dc2cf80f077cdf191a5154d1c43392c392cbeaf2ed521bd5d0ae57dd56995e",
+          "sequence": 14,
+          "elapsed_ms": 1995.01,
+          "kind": "node_transition",
+          "from_node": "policy_retrieval",
+          "to_node": "finish"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:P01:1",
+          "operation_ref": "f8dc2cf80f077cdf191a5154d1c43392c392cbeaf2ed521bd5d0ae57dd56995e",
+          "sequence": 15,
+          "elapsed_ms": 1995.022,
+          "kind": "node_started",
+          "node": "finish"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:P01:1",
+          "operation_ref": "f8dc2cf80f077cdf191a5154d1c43392c392cbeaf2ed521bd5d0ae57dd56995e",
+          "sequence": 16,
+          "elapsed_ms": 1995.104,
+          "kind": "final_result",
+          "node": "finish",
+          "result": {
+            "answer_source": "verified_results",
+            "model_final_received": false
+          },
+          "displayed_lead_ids": [],
+          "result_statuses": [
+            "policy_blocked"
+          ]
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:P01:1",
+          "operation_ref": "f8dc2cf80f077cdf191a5154d1c43392c392cbeaf2ed521bd5d0ae57dd56995e",
+          "sequence": 17,
+          "elapsed_ms": 1995.15,
+          "kind": "node_completed",
+          "node": "finish",
+          "route": null
+        }
+      ],
+      "availability": {
+        "status": "model_available",
+        "model_available": true,
+        "model_rate_limited": false,
+        "model_error": false,
+        "agent_contract_failed": false,
+        "conditional_eligible": true,
+        "quota_types": [],
+        "resume_incomplete": false
+      }
+    },
+    {
+      "scenario_id": "P03",
+      "trial": 1,
+      "correlation_id": "deterministic-routing-live:P03:1",
+      "category": "policy",
+      "mode": "live",
+      "model_source": "real_gemini",
+      "retrieval": "real_hybrid",
+      "approval_source": "explicit_scripted_fixture_decisions",
+      "request": "Assign unassigned lead 21 to agent 1 after reviewing the relevant policies.",
+      "fault": null,
+      "initial_fixture": {
+        "base": "stage3_demo_v1",
+        "policy_mode": "forged"
+      },
+      "expected": {
+        "status": "policy_blocked",
+        "error": "policy_citation_invalid",
+        "tool_names": [
+          "assign_lead"
+        ],
+        "read_results": [],
+        "ranked_lead_ids": null,
+        "authorization_status": null,
+        "required_events": [
+          "tool_selected",
+          "policy_evidence_rejected",
+          "final_result",
+          "node_started:policy_retrieval",
+          "node_started:finish"
+        ],
+        "prohibited_events": [
+          "lead_updated",
+          "transaction_committed",
+          "node_started:mutation"
+        ],
+        "ordering": [],
+        "database": {
+          "lead_21_owner": null,
+          "new_audit_rows": 0,
+          "new_completed_rows": 0,
+          "allowed_changed_leads": []
+        },
+        "assignment": {
+          "lead_id": 21,
+          "assignee_id": 1
+        }
+      },
+      "passed": true,
+      "metrics": {
+        "task_completion": true,
+        "correct_tool_selection": true,
+        "model_tool_selection": null,
+        "required_step_coverage": 1.0,
+        "trajectory_safety": true,
+        "authorization_outcome_correct": null,
+        "citation_validity": null,
+        "database_postconditions": true,
+        "read_results_correct": true,
+        "ranking_correct": null,
+        "ranked_search_correct": null
+      },
+      "failures": [],
+      "safety_violations": [],
+      "observed_error_codes": [
+        "policy_citation_invalid"
+      ],
+      "observed_outcome": {
+        "status": "policy_blocked",
+        "error": "policy_citation_invalid"
+      },
+      "database": {
+        "lead_21_owner": null,
+        "changed_lead_ids": [],
+        "audit_rows": 0,
+        "completed_rows": 0
+      },
+      "database_checks": {
+        "same_record_ids": true,
+        "agents_preserved": true,
+        "only_allowed_leads_changed": true,
+        "expected_owner": true,
+        "audit_count": true,
+        "completed_count": true,
+        "other_lead_fields_preserved": true,
+        "commits_match_audit_rows": true,
+        "commit_correlations_match_keys": true,
+        "audit_payloads_correct": true,
+        "operation_records_match_audit": true
+      },
+      "selected_tools": [
+        "assign_lead"
+      ],
+      "unnecessary_tool_calls": 0,
+      "host_selected_tools": [
+        "assign_lead"
+      ],
+      "model_selected_tools": [],
+      "llm_calls": 1,
+      "llm_failed_calls": 0,
+      "provider_adapter_invocations": 1,
+      "token_usage": {
+        "input_tokens": 245,
+        "output_tokens": 36,
+        "total_tokens": 281
+      },
+      "calls_with_usage": 1,
+      "citations_valid": 0,
+      "citations_observed": 0,
+      "valid_rejection": true,
+      "observed_outcome_history": [
+        {
+          "status": "policy_blocked",
+          "error": "policy_citation_invalid"
+        }
+      ],
+      "execution_exception": null,
+      "observer_errors": 0,
+      "latency_ms": 7422.935,
+      "trajectory": [
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:P03:1",
+          "operation_ref": "79bbaa452bb696dd0aeb75dda5dc0e3fc5f1d74361f89aa74854ebc9f90b4671",
+          "sequence": 1,
+          "elapsed_ms": 745.112,
+          "kind": "evaluation_started",
+          "mode": "live",
+          "trial": 1,
+          "approval_source": "scripted_fixture_decision",
+          "database": "isolated_temporary_fixture"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:P03:1",
+          "operation_ref": "79bbaa452bb696dd0aeb75dda5dc0e3fc5f1d74361f89aa74854ebc9f90b4671",
+          "sequence": 2,
+          "elapsed_ms": 749.29,
+          "kind": "node_started",
+          "node": "begin"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:P03:1",
+          "operation_ref": "79bbaa452bb696dd0aeb75dda5dc0e3fc5f1d74361f89aa74854ebc9f90b4671",
+          "sequence": 3,
+          "elapsed_ms": 751.154,
+          "kind": "llm_call_started",
+          "node": "begin",
+          "phase": "intent"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:P03:1",
+          "operation_ref": "79bbaa452bb696dd0aeb75dda5dc0e3fc5f1d74361f89aa74854ebc9f90b4671",
+          "sequence": 4,
+          "elapsed_ms": 751.167,
+          "kind": "provider_wait",
+          "phase": "call_pacing",
+          "delay_seconds": 4.016636
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:P03:1",
+          "operation_ref": "79bbaa452bb696dd0aeb75dda5dc0e3fc5f1d74361f89aa74854ebc9f90b4671",
+          "sequence": 5,
+          "elapsed_ms": 4768.194,
+          "kind": "provider_invocation",
+          "provider": "google_genai",
+          "attempt": 1
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:P03:1",
+          "operation_ref": "79bbaa452bb696dd0aeb75dda5dc0e3fc5f1d74361f89aa74854ebc9f90b4671",
+          "sequence": 6,
+          "elapsed_ms": 6856.395,
+          "kind": "provider_attempt_completed",
+          "attempt": 1,
+          "availability": "model_available"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:P03:1",
+          "operation_ref": "79bbaa452bb696dd0aeb75dda5dc0e3fc5f1d74361f89aa74854ebc9f90b4671",
+          "sequence": 7,
+          "elapsed_ms": 6856.456,
+          "kind": "llm_call_completed",
+          "node": "begin",
+          "phase": "intent",
+          "usage": {
+            "input_tokens": 245,
+            "output_tokens": 36,
+            "total_tokens": 281
+          },
+          "duration_ms": 6105.282,
+          "tool_call_count": 0
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:P03:1",
+          "operation_ref": "79bbaa452bb696dd0aeb75dda5dc0e3fc5f1d74361f89aa74854ebc9f90b4671",
+          "sequence": 8,
+          "elapsed_ms": 6856.698,
+          "kind": "intent_registered",
+          "arguments": {
+            "operation_type": "first_assignment",
+            "lead_id": 21,
+            "assignee_id": 1
+          }
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:P03:1",
+          "operation_ref": "79bbaa452bb696dd0aeb75dda5dc0e3fc5f1d74361f89aa74854ebc9f90b4671",
+          "sequence": 9,
+          "elapsed_ms": 6856.764,
+          "kind": "tool_selected",
+          "node": "begin",
+          "tool": "assign_lead",
+          "arguments": {
+            "lead_id": 21,
+            "assignee_id": 1,
+            "request_key": "<redacted>"
+          },
+          "source": "host"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:P03:1",
+          "operation_ref": "79bbaa452bb696dd0aeb75dda5dc0e3fc5f1d74361f89aa74854ebc9f90b4671",
+          "sequence": 10,
+          "elapsed_ms": 6856.8,
+          "kind": "node_completed",
+          "node": "begin",
+          "route": "policy_retrieval"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:P03:1",
+          "operation_ref": "79bbaa452bb696dd0aeb75dda5dc0e3fc5f1d74361f89aa74854ebc9f90b4671",
+          "sequence": 11,
+          "elapsed_ms": 6859.721,
+          "kind": "node_transition",
+          "from_node": "begin",
+          "to_node": "policy_retrieval"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:P03:1",
+          "operation_ref": "79bbaa452bb696dd0aeb75dda5dc0e3fc5f1d74361f89aa74854ebc9f90b4671",
+          "sequence": 12,
+          "elapsed_ms": 6859.743,
+          "kind": "node_started",
+          "node": "policy_retrieval"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:P03:1",
+          "operation_ref": "79bbaa452bb696dd0aeb75dda5dc0e3fc5f1d74361f89aa74854ebc9f90b4671",
+          "sequence": 13,
+          "elapsed_ms": 7417.666,
+          "kind": "policy_evidence_rejected",
+          "node": "policy_retrieval",
+          "result": {
+            "ok": false,
+            "status": "policy_blocked",
+            "error": "policy_citation_invalid",
+            "hint": "<redacted>"
+          }
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:P03:1",
+          "operation_ref": "79bbaa452bb696dd0aeb75dda5dc0e3fc5f1d74361f89aa74854ebc9f90b4671",
+          "sequence": 14,
+          "elapsed_ms": 7417.708,
+          "kind": "node_completed",
+          "node": "policy_retrieval",
+          "route": "finish"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:P03:1",
+          "operation_ref": "79bbaa452bb696dd0aeb75dda5dc0e3fc5f1d74361f89aa74854ebc9f90b4671",
+          "sequence": 15,
+          "elapsed_ms": 7418.463,
+          "kind": "node_transition",
+          "from_node": "policy_retrieval",
+          "to_node": "finish"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:P03:1",
+          "operation_ref": "79bbaa452bb696dd0aeb75dda5dc0e3fc5f1d74361f89aa74854ebc9f90b4671",
+          "sequence": 16,
+          "elapsed_ms": 7418.469,
+          "kind": "node_started",
+          "node": "finish"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:P03:1",
+          "operation_ref": "79bbaa452bb696dd0aeb75dda5dc0e3fc5f1d74361f89aa74854ebc9f90b4671",
+          "sequence": 17,
+          "elapsed_ms": 7418.52,
+          "kind": "final_result",
+          "node": "finish",
+          "result": {
+            "answer_source": "verified_results",
+            "model_final_received": false
+          },
+          "displayed_lead_ids": [],
+          "result_statuses": [
+            "policy_blocked"
+          ]
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:P03:1",
+          "operation_ref": "79bbaa452bb696dd0aeb75dda5dc0e3fc5f1d74361f89aa74854ebc9f90b4671",
+          "sequence": 18,
+          "elapsed_ms": 7418.552,
+          "kind": "node_completed",
+          "node": "finish",
+          "route": null
+        }
+      ],
+      "availability": {
+        "status": "model_available",
+        "model_available": true,
+        "model_rate_limited": false,
+        "model_error": false,
+        "agent_contract_failed": false,
+        "conditional_eligible": true,
+        "quota_types": [],
+        "resume_incomplete": false
+      }
+    },
+    {
+      "scenario_id": "F03",
+      "trial": 1,
+      "correlation_id": "deterministic-routing-live:F03:1",
+      "category": "policy",
+      "mode": "live",
+      "model_source": "real_gemini",
+      "retrieval": "real_hybrid",
+      "approval_source": "explicit_scripted_fixture_decisions",
+      "request": "Assign lead 21 to agent 1.",
+      "fault": null,
+      "initial_fixture": {
+        "base": "stage3_demo_v1",
+        "policy_mode": "error"
+      },
+      "expected": {
+        "status": "policy_blocked",
+        "error": "policy_retrieval_failed",
+        "tool_names": [
+          "assign_lead"
+        ],
+        "read_results": [],
+        "ranked_lead_ids": null,
+        "authorization_status": null,
+        "required_events": [
+          "tool_selected",
+          "policy_evidence_rejected",
+          "final_result",
+          "node_started:policy_retrieval",
+          "node_started:finish"
+        ],
+        "prohibited_events": [
+          "lead_updated",
+          "transaction_committed",
+          "node_started:mutation"
+        ],
+        "ordering": [],
+        "database": {
+          "lead_21_owner": null,
+          "new_audit_rows": 0,
+          "new_completed_rows": 0,
+          "allowed_changed_leads": []
+        },
+        "assignment": {
+          "lead_id": 21,
+          "assignee_id": 1
+        }
+      },
+      "passed": true,
+      "metrics": {
+        "task_completion": true,
+        "correct_tool_selection": true,
+        "model_tool_selection": null,
+        "required_step_coverage": 1.0,
+        "trajectory_safety": true,
+        "authorization_outcome_correct": null,
+        "citation_validity": null,
+        "database_postconditions": true,
+        "read_results_correct": true,
+        "ranking_correct": null,
+        "ranked_search_correct": null
+      },
+      "failures": [],
+      "safety_violations": [],
+      "observed_error_codes": [
+        "policy_retrieval_failed"
+      ],
+      "observed_outcome": {
+        "status": "policy_blocked",
+        "error": "policy_retrieval_failed"
+      },
+      "database": {
+        "lead_21_owner": null,
+        "changed_lead_ids": [],
+        "audit_rows": 0,
+        "completed_rows": 0
+      },
+      "database_checks": {
+        "same_record_ids": true,
+        "agents_preserved": true,
+        "only_allowed_leads_changed": true,
+        "expected_owner": true,
+        "audit_count": true,
+        "completed_count": true,
+        "other_lead_fields_preserved": true,
+        "commits_match_audit_rows": true,
+        "commit_correlations_match_keys": true,
+        "audit_payloads_correct": true,
+        "operation_records_match_audit": true
+      },
+      "selected_tools": [
+        "assign_lead"
+      ],
+      "unnecessary_tool_calls": 0,
+      "host_selected_tools": [
+        "assign_lead"
+      ],
+      "model_selected_tools": [],
+      "llm_calls": 1,
+      "llm_failed_calls": 0,
+      "provider_adapter_invocations": 1,
+      "token_usage": {
+        "input_tokens": 238,
+        "output_tokens": 28,
+        "total_tokens": 266
+      },
+      "calls_with_usage": 1,
+      "citations_valid": 0,
+      "citations_observed": 0,
+      "valid_rejection": true,
+      "observed_outcome_history": [
+        {
+          "status": "policy_blocked",
+          "error": "policy_retrieval_failed"
+        }
+      ],
+      "execution_exception": null,
+      "observer_errors": 0,
+      "latency_ms": 4432.032,
+      "trajectory": [
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:F03:1",
+          "operation_ref": "0f58977227c259decf056a2aa3a7154e501d4f98413bc5ea66c7d8427fe4b7a0",
+          "sequence": 1,
+          "elapsed_ms": 761.401,
+          "kind": "evaluation_started",
+          "mode": "live",
+          "trial": 1,
+          "approval_source": "scripted_fixture_decision",
+          "database": "isolated_temporary_fixture"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:F03:1",
+          "operation_ref": "0f58977227c259decf056a2aa3a7154e501d4f98413bc5ea66c7d8427fe4b7a0",
+          "sequence": 2,
+          "elapsed_ms": 768.727,
+          "kind": "node_started",
+          "node": "begin"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:F03:1",
+          "operation_ref": "0f58977227c259decf056a2aa3a7154e501d4f98413bc5ea66c7d8427fe4b7a0",
+          "sequence": 3,
+          "elapsed_ms": 775.867,
+          "kind": "llm_call_started",
+          "node": "begin",
+          "phase": "intent"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:F03:1",
+          "operation_ref": "0f58977227c259decf056a2aa3a7154e501d4f98413bc5ea66c7d8427fe4b7a0",
+          "sequence": 4,
+          "elapsed_ms": 775.889,
+          "kind": "provider_wait",
+          "phase": "call_pacing",
+          "delay_seconds": 2.564434
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:F03:1",
+          "operation_ref": "0f58977227c259decf056a2aa3a7154e501d4f98413bc5ea66c7d8427fe4b7a0",
+          "sequence": 5,
+          "elapsed_ms": 3341.215,
+          "kind": "provider_invocation",
+          "provider": "google_genai",
+          "attempt": 1
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:F03:1",
+          "operation_ref": "0f58977227c259decf056a2aa3a7154e501d4f98413bc5ea66c7d8427fe4b7a0",
+          "sequence": 6,
+          "elapsed_ms": 4408.291,
+          "kind": "provider_attempt_completed",
+          "attempt": 1,
+          "availability": "model_available"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:F03:1",
+          "operation_ref": "0f58977227c259decf056a2aa3a7154e501d4f98413bc5ea66c7d8427fe4b7a0",
+          "sequence": 7,
+          "elapsed_ms": 4408.348,
+          "kind": "llm_call_completed",
+          "node": "begin",
+          "phase": "intent",
+          "usage": {
+            "input_tokens": 238,
+            "output_tokens": 28,
+            "total_tokens": 266
+          },
+          "duration_ms": 3632.457,
+          "tool_call_count": 0
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:F03:1",
+          "operation_ref": "0f58977227c259decf056a2aa3a7154e501d4f98413bc5ea66c7d8427fe4b7a0",
+          "sequence": 8,
+          "elapsed_ms": 4408.582,
+          "kind": "intent_registered",
+          "arguments": {
+            "operation_type": "first_assignment",
+            "lead_id": 21,
+            "assignee_id": 1
+          }
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:F03:1",
+          "operation_ref": "0f58977227c259decf056a2aa3a7154e501d4f98413bc5ea66c7d8427fe4b7a0",
+          "sequence": 9,
+          "elapsed_ms": 4408.626,
+          "kind": "tool_selected",
+          "node": "begin",
+          "tool": "assign_lead",
+          "arguments": {
+            "lead_id": 21,
+            "assignee_id": 1,
+            "request_key": "<redacted>"
+          },
+          "source": "host"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:F03:1",
+          "operation_ref": "0f58977227c259decf056a2aa3a7154e501d4f98413bc5ea66c7d8427fe4b7a0",
+          "sequence": 10,
+          "elapsed_ms": 4408.65,
+          "kind": "node_completed",
+          "node": "begin",
+          "route": "policy_retrieval"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:F03:1",
+          "operation_ref": "0f58977227c259decf056a2aa3a7154e501d4f98413bc5ea66c7d8427fe4b7a0",
+          "sequence": 11,
+          "elapsed_ms": 4411.307,
+          "kind": "node_transition",
+          "from_node": "begin",
+          "to_node": "policy_retrieval"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:F03:1",
+          "operation_ref": "0f58977227c259decf056a2aa3a7154e501d4f98413bc5ea66c7d8427fe4b7a0",
+          "sequence": 12,
+          "elapsed_ms": 4411.332,
+          "kind": "node_started",
+          "node": "policy_retrieval"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:F03:1",
+          "operation_ref": "0f58977227c259decf056a2aa3a7154e501d4f98413bc5ea66c7d8427fe4b7a0",
+          "sequence": 13,
+          "elapsed_ms": 4420.375,
+          "kind": "policy_evidence_rejected",
+          "node": "policy_retrieval",
+          "result": {
+            "ok": false,
+            "status": "policy_blocked",
+            "error": "policy_retrieval_failed",
+            "hint": "<redacted>"
+          }
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:F03:1",
+          "operation_ref": "0f58977227c259decf056a2aa3a7154e501d4f98413bc5ea66c7d8427fe4b7a0",
+          "sequence": 14,
+          "elapsed_ms": 4420.447,
+          "kind": "node_completed",
+          "node": "policy_retrieval",
+          "route": "finish"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:F03:1",
+          "operation_ref": "0f58977227c259decf056a2aa3a7154e501d4f98413bc5ea66c7d8427fe4b7a0",
+          "sequence": 15,
+          "elapsed_ms": 4422.649,
+          "kind": "node_transition",
+          "from_node": "policy_retrieval",
+          "to_node": "finish"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:F03:1",
+          "operation_ref": "0f58977227c259decf056a2aa3a7154e501d4f98413bc5ea66c7d8427fe4b7a0",
+          "sequence": 16,
+          "elapsed_ms": 4422.667,
+          "kind": "node_started",
+          "node": "finish"
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:F03:1",
+          "operation_ref": "0f58977227c259decf056a2aa3a7154e501d4f98413bc5ea66c7d8427fe4b7a0",
+          "sequence": 17,
+          "elapsed_ms": 4422.782,
+          "kind": "final_result",
+          "node": "finish",
+          "result": {
+            "answer_source": "verified_results",
+            "model_final_received": false
+          },
+          "displayed_lead_ids": [],
+          "result_statuses": [
+            "policy_blocked"
+          ]
+        },
+        {
+          "schema_version": 1,
+          "correlation_id": "deterministic-routing-live:F03:1",
+          "operation_ref": "0f58977227c259decf056a2aa3a7154e501d4f98413bc5ea66c7d8427fe4b7a0",
+          "sequence": 18,
+          "elapsed_ms": 4422.846,
+          "kind": "node_completed",
+          "node": "finish",
+          "route": null
+        }
+      ],
+      "availability": {
+        "status": "model_available",
+        "model_available": true,
+        "model_rate_limited": false,
+        "model_error": false,
+        "agent_contract_failed": false,
+        "conditional_eligible": true,
+        "quota_types": [],
+        "resume_incomplete": false
+      }
+    }
+  ]
+}

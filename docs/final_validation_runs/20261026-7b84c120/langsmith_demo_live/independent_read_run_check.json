@@ -1,0 +1,7 @@
+{
+  "method": "Client.read_run",
+  "run_id": "9ae7e943-1236-4152-a0f3-74c02229e41f",
+  "verified": false,
+  "exception_type": "LangSmithError",
+  "http_status": 403
+}

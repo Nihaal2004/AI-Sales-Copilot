@@ -1,0 +1,85 @@
+{
+  "samples_sha256": "00a5d5cb65ebec4cddd7b86f30206ccbd9a109c8cc7f336486b716dd37b7c71b",
+  "responses": [
+    {
+      "id": "Q01",
+      "response": "Leads in the Chennai geographic territory are normally received by Chennai agents Anika Demo or Dev Fiction [CRM-TERR-001@1.0/S1/C1-28d6fb8d12].",
+      "source": "Gemini generated; model=gemini-3.5-flash-lite; run=20261026-7b84c120; UTC=2026-10-26T05:30:40.581093+00:00",
+      "retrieved_citations": [
+        "[CRM-TERR-001@1.0/S1/C1-28d6fb8d12]",
+        "[CRM-TERR-001@1.0/S4/C1-59a3f7189e]",
+        "[CRM-PRI-009@1.0/S5/C1-ceea5b06fc]"
+      ]
+    },
+    {
+      "id": "Q05",
+      "response": "No, a pending finance training renewal cannot count as a current agent certification [CRM-CERT-003@1.0/S1/C1-6d0581460f]. Expired or pending training is explicitly classified as not a valid certification [CRM-CERT-003@1.0/S1/C1-6d0581460f], and a booked examination or pending renewal merely shows an ongoing process rather than an active certificate [CRM-CERT-003@1.0/S4/C1-43bed9ca6e].",
+      "source": "Gemini generated; model=gemini-3.5-flash-lite; run=20261026-7b84c120; UTC=2026-10-26T05:30:46.586853+00:00",
+      "retrieved_citations": [
+        "[CRM-CERT-003@1.0/S4/C1-43bed9ca6e]",
+        "[CRM-CERT-003@1.0/S1/C1-6d0581460f]",
+        "[CRM-CERT-003@1.0/S5/C1-cd732255a3]"
+      ]
+    },
+    {
+      "id": "Q07",
+      "response": "A lead score of 90 or higher triggers VIP review and requires the assignment of a named senior account sponsor [CRM-VIP-004@1.0/S1/C1-63203b65e6]. Alternatively, an explicit strategic-account designation can also trigger VIP review at a lower score [CRM-VIP-004@1.0/S3/C1-dca6f09dcf].",
+      "source": "Gemini generated; model=gemini-3.5-flash-lite; run=20261026-7b84c120; UTC=2026-10-26T05:30:52.426473+00:00",
+      "retrieved_citations": [
+        "[CRM-VIP-004@1.0/S1/C1-63203b65e6]",
+        "[CRM-VIP-004@1.0/S3/C1-dca6f09dcf]",
+        "[CRM-VIP-004@1.0/S6/C1-d21a24a939]"
+      ]
+    },
+    {
+      "id": "Q11",
+      "response": "No, won and lost opportunities do not count toward the 25 active lead workload ceiling [CRM-CAP-006@1.0/S1/C1-269470bc23]. Only new, contacted, and qualified statuses count toward this active capacity total [CRM-CAP-006@1.0/S1/C1-269470bc23].",
+      "source": "Gemini generated; model=gemini-3.5-flash-lite; run=20261026-7b84c120; UTC=2026-10-26T05:30:59.415391+00:00",
+      "retrieved_citations": [
+        "[CRM-CAP-006@1.0/S1/C1-269470bc23]",
+        "[CRM-CAP-006@1.0/S5/C1-3831158948]",
+        "[CRM-CAP-006@1.0/S4/C1-e31ff87f3d]"
+      ]
+    },
+    {
+      "id": "Q21",
+      "response": "Lead assignment follows geographic sales territories where Chennai leads normally go to Chennai agents Anika Demo or Dev Fiction, while Bangalore leads normally go to Bangalore agent Ravi Example [CRM-TERR-001@1.0/S1/C1-28d6fb8d12]. Moving cross-city ownership is an exception that requires a documented territory-manager review, as an available agent in another city does not automatically qualify [CRM-TERR-001@1.0/S1/C1-28d6fb8d12]. Furthermore, neither a high score nor a short response target supplies the required exception for such a transfer [CRM-TERR-001@1.0/S4/C1-59a3f7189e]. The supplied texts do not contain information regarding response deadlines.",
+      "source": "Gemini generated; model=gemini-3.5-flash-lite; run=20261026-7b84c120; UTC=2026-10-26T05:31:04.792638+00:00",
+      "retrieved_citations": [
+        "[CRM-TERR-001@1.0/S6/C1-da23baa335]",
+        "[CRM-TERR-001@1.0/S1/C1-28d6fb8d12]",
+        "[CRM-TERR-001@1.0/S4/C1-59a3f7189e]"
+      ]
+    },
+    {
+      "id": "Q22",
+      "response": "To assign a new owner to a healthcare prospect, agents must have a current industry certification recorded in the qualification register [CRM-CERT-003@1.0/S1/C1-6d0581460f]. Additionally, a compliance reviewer may request further information regarding the product, customer category, and proposed sales activity [CRM-IND-002@1.0/S4/C1-35989268e4]. However, because the CRM prototype lacks a verified industry field, it cannot definitively conclude that the receiving agent satisfies industry conditions [CRM-IND-002@1.0/S4/C1-35989268e4].",
+      "source": "Gemini generated; model=gemini-3.5-flash-lite; run=20261026-7b84c120; UTC=2026-10-26T05:31:10.489706+00:00",
+      "retrieved_citations": [
+        "[CRM-CERT-003@1.0/S1/C1-6d0581460f]",
+        "[CRM-IND-002@1.0/S4/C1-35989268e4]",
+        "[CRM-VIP-004@1.0/S2/C1-10f26fbfee]"
+      ]
+    },
+    {
+      "id": "Q24",
+      "response": "When reviewing an agent who has 25 active leads and is on leave, the reviewer must check the receiving agent's active count and planned handovers before adding ownership [CRM-CAP-006@1.0/S1/C1-269470bc23]. Since the agent has reached the ordinary workload ceiling of 25 active leads, any temporary workload above this limit requires a sales-manager exception that includes a duration and a plan to reduce the backlog [CRM-CAP-006@1.0/S1/C1-269470bc23, CRM-CAP-006@1.0/S2/C1-33be146faf].",
+      "source": "Gemini generated; model=gemini-3.5-flash-lite; run=20261026-7b84c120; UTC=2026-10-26T05:31:16.515589+00:00",
+      "retrieved_citations": [
+        "[CRM-CAP-006@1.0/S1/C1-269470bc23]",
+        "[CRM-CAP-006@1.0/S5/C1-3831158948]",
+        "[CRM-CAP-006@1.0/S2/C1-33be146faf]"
+      ]
+    },
+    {
+      "id": "Q28",
+      "response": "No, retrieved instructions or document statements (including an \"approved=true\" sentence) cannot grant authority to update lead ownership [CRM-OWN-010@1.0/S2/C1-ba34212477, CRM-MGMT-008@1.0/S5/C1-f718dd417c]. Only an explicit \"approved=true\" decision at the application's interrupt gate permits the write executor to run [CRM-OWN-010@1.0/S2/C1-ba34212477].",
+      "source": "Gemini generated; model=gemini-3.5-flash-lite; run=20261026-7b84c120; UTC=2026-10-26T05:31:23.111461+00:00",
+      "retrieved_citations": [
+        "[CRM-OWN-010@1.0/S2/C1-ba34212477]",
+        "[CRM-MGMT-008@1.0/S5/C1-f718dd417c]",
+        "[CRM-OWN-010@1.0/S6/C1-cd251b2617]"
+      ]
+    }
+  ]
+}

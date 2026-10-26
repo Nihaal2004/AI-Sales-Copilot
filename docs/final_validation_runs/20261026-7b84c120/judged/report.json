@@ -1,0 +1,663 @@
+{
+  "schema_version": 1,
+  "phase": "judge",
+  "status": "completed",
+  "ragas_version": "0.4.3",
+  "judge_type": "GeminiJudge",
+  "embedding_type": "CachedEmbeddings",
+  "judge_model": "gemini-3.5-flash-lite",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "metric_timeout_seconds": 120,
+  "samples_sha256": "00a5d5cb65ebec4cddd7b86f30206ccbd9a109c8cc7f336486b716dd37b7c71b",
+  "responses_sha256": "aa9e75e9426c2283a6883a892e7611ad125433e013d8b226a8228bfa0ef9031b",
+  "deterministic_retrieval": {
+    "bm25": {
+      "recall_at_3": 0.9285714285714286,
+      "mrr_at_5": 0.9714285714285714
+    },
+    "dense": {
+      "recall_at_3": 0.9821428571428571,
+      "mrr_at_5": 0.9642857142857143
+    },
+    "fused": {
+      "recall_at_3": 0.9821428571428571,
+      "mrr_at_5": 1.0
+    },
+    "reranked": {
+      "recall_at_3": 0.9464285714285714,
+      "mrr_at_5": 0.9821428571428571
+    }
+  },
+  "llm_judged": {
+    "faithfulness": {
+      "measured": 6,
+      "skipped": 23,
+      "errors": 2,
+      "mean": 0.9791666666666666
+    },
+    "response_relevancy": {
+      "measured": 6,
+      "skipped": 23,
+      "errors": 2,
+      "mean": 0.7798033360766561
+    },
+    "context_utilization": {
+      "measured": 4,
+      "skipped": 23,
+      "errors": 4,
+      "mean": 0.9999999999416667
+    }
+  },
+  "queries": [
+    {
+      "id": "Q01",
+      "metrics": {
+        "faithfulness": {
+          "status": "measured",
+          "value": 1.0
+        },
+        "response_relevancy": {
+          "status": "measured",
+          "value": 0.8614018449836336
+        },
+        "context_utilization": {
+          "status": "measured",
+          "value": 0.9999999999
+        }
+      }
+    },
+    {
+      "id": "Q02",
+      "metrics": {
+        "faithfulness": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "response_relevancy": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "context_utilization": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        }
+      }
+    },
+    {
+      "id": "Q03",
+      "metrics": {
+        "faithfulness": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "response_relevancy": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "context_utilization": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        }
+      }
+    },
+    {
+      "id": "Q04",
+      "metrics": {
+        "faithfulness": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "response_relevancy": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "context_utilization": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        }
+      }
+    },
+    {
+      "id": "Q05",
+      "metrics": {
+        "faithfulness": {
+          "status": "measured",
+          "value": 1.0
+        },
+        "response_relevancy": {
+          "status": "measured",
+          "value": 0.9983935789494215
+        },
+        "context_utilization": {
+          "status": "measured",
+          "value": 0.9999999999666667
+        }
+      }
+    },
+    {
+      "id": "Q06",
+      "metrics": {
+        "faithfulness": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "response_relevancy": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "context_utilization": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        }
+      }
+    },
+    {
+      "id": "Q07",
+      "metrics": {
+        "faithfulness": {
+          "status": "measured",
+          "value": 1.0
+        },
+        "response_relevancy": {
+          "status": "measured",
+          "value": 0.763926964545424
+        },
+        "context_utilization": {
+          "status": "measured",
+          "value": 0.99999999995
+        }
+      }
+    },
+    {
+      "id": "Q08",
+      "metrics": {
+        "faithfulness": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "response_relevancy": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "context_utilization": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        }
+      }
+    },
+    {
+      "id": "Q09",
+      "metrics": {
+        "faithfulness": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "response_relevancy": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "context_utilization": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        }
+      }
+    },
+    {
+      "id": "Q10",
+      "metrics": {
+        "faithfulness": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "response_relevancy": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "context_utilization": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        }
+      }
+    },
+    {
+      "id": "Q11",
+      "metrics": {
+        "faithfulness": {
+          "status": "measured",
+          "value": 1.0
+        },
+        "response_relevancy": {
+          "status": "measured",
+          "value": 0.9680594910610966
+        },
+        "context_utilization": {
+          "status": "measured",
+          "value": 0.99999999995
+        }
+      }
+    },
+    {
+      "id": "Q12",
+      "metrics": {
+        "faithfulness": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "response_relevancy": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "context_utilization": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        }
+      }
+    },
+    {
+      "id": "Q13",
+      "metrics": {
+        "faithfulness": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "response_relevancy": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "context_utilization": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        }
+      }
+    },
+    {
+      "id": "Q14",
+      "metrics": {
+        "faithfulness": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "response_relevancy": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "context_utilization": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        }
+      }
+    },
+    {
+      "id": "Q15",
+      "metrics": {
+        "faithfulness": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "response_relevancy": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "context_utilization": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        }
+      }
+    },
+    {
+      "id": "Q16",
+      "metrics": {
+        "faithfulness": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "response_relevancy": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "context_utilization": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        }
+      }
+    },
+    {
+      "id": "Q17",
+      "metrics": {
+        "faithfulness": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "response_relevancy": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "context_utilization": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        }
+      }
+    },
+    {
+      "id": "Q18",
+      "metrics": {
+        "faithfulness": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "response_relevancy": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "context_utilization": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        }
+      }
+    },
+    {
+      "id": "Q19",
+      "metrics": {
+        "faithfulness": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "response_relevancy": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "context_utilization": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        }
+      }
+    },
+    {
+      "id": "Q20",
+      "metrics": {
+        "faithfulness": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "response_relevancy": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "context_utilization": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        }
+      }
+    },
+    {
+      "id": "Q21",
+      "metrics": {
+        "faithfulness": {
+          "status": "measured",
+          "value": 0.875
+        },
+        "response_relevancy": {
+          "status": "measured",
+          "value": 0.3253384462556242
+        },
+        "context_utilization": {
+          "status": "error",
+          "reason": "judge_metric_failed",
+          "value": null
+        }
+      }
+    },
+    {
+      "id": "Q22",
+      "metrics": {
+        "faithfulness": {
+          "status": "measured",
+          "value": 1.0
+        },
+        "response_relevancy": {
+          "status": "measured",
+          "value": 0.7616996906647368
+        },
+        "context_utilization": {
+          "status": "error",
+          "reason": "judge_metric_failed",
+          "value": null
+        }
+      }
+    },
+    {
+      "id": "Q23",
+      "metrics": {
+        "faithfulness": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "response_relevancy": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "context_utilization": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        }
+      }
+    },
+    {
+      "id": "Q24",
+      "metrics": {
+        "faithfulness": {
+          "status": "error",
+          "reason": "judge_metric_failed",
+          "value": null
+        },
+        "response_relevancy": {
+          "status": "error",
+          "reason": "judge_metric_failed",
+          "value": null
+        },
+        "context_utilization": {
+          "status": "error",
+          "reason": "judge_metric_failed",
+          "value": null
+        }
+      }
+    },
+    {
+      "id": "Q25",
+      "metrics": {
+        "faithfulness": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "response_relevancy": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "context_utilization": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        }
+      }
+    },
+    {
+      "id": "Q26",
+      "metrics": {
+        "faithfulness": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "response_relevancy": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "context_utilization": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        }
+      }
+    },
+    {
+      "id": "Q27",
+      "metrics": {
+        "faithfulness": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "response_relevancy": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "context_utilization": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        }
+      }
+    },
+    {
+      "id": "Q28",
+      "metrics": {
+        "faithfulness": {
+          "status": "error",
+          "reason": "judge_metric_failed",
+          "value": null
+        },
+        "response_relevancy": {
+          "status": "error",
+          "reason": "judge_metric_failed",
+          "value": null
+        },
+        "context_utilization": {
+          "status": "error",
+          "reason": "judge_metric_failed",
+          "value": null
+        }
+      }
+    },
+    {
+      "id": "N01",
+      "metrics": {
+        "faithfulness": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "response_relevancy": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "context_utilization": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        }
+      }
+    },
+    {
+      "id": "N02",
+      "metrics": {
+        "faithfulness": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "response_relevancy": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "context_utilization": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        }
+      }
+    },
+    {
+      "id": "N03",
+      "metrics": {
+        "faithfulness": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "response_relevancy": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        },
+        "context_utilization": {
+          "status": "skipped",
+          "reason": "no_recorded_response",
+          "value": null
+        }
+      }
+    }
+  ],
+  "reference_answer_metrics": {
+    "status": "skipped",
+    "reason": "no_reference_answers_in_existing_labels",
+    "value": null
+  },
+  "telemetry_exported": false
+}

@@ -1,0 +1,1310 @@
+{
+  "scenario_id": "A06",
+  "trial": 1,
+  "correlation_id": "final-live-regression:A06:1",
+  "category": "assignment",
+  "mode": "live",
+  "model_source": "real_gemini",
+  "retrieval": "real_hybrid",
+  "approval_source": "explicit_scripted_fixture_decisions",
+  "request": "Assign lead 21 to agent 1.",
+  "fault": null,
+  "initial_fixture": {
+    "base": "stage3_demo_v1",
+    "active_count": 24
+  },
+  "expected": {
+    "status": "success",
+    "error": null,
+    "tool_names": [
+      "assign_lead"
+    ],
+    "read_results": [],
+    "ranked_lead_ids": null,
+    "authorization_status": "eligible",
+    "required_events": [
+      "tool_selected",
+      "policy_evidence_validated",
+      "authorization_result",
+      "final_result",
+      "approval_granted",
+      "transaction_revalidated",
+      "lead_updated",
+      "audit_inserted",
+      "idempotency_recorded",
+      "transaction_committed",
+      "node_started:policy_retrieval",
+      "node_started:finish",
+      "node_started:authorization",
+      "node_started:approval",
+      "node_started:mutation"
+    ],
+    "prohibited_events": [],
+    "ordering": [
+      [
+        "policy_evidence_validated",
+        "authorization_result"
+      ],
+      [
+        "authorization_result",
+        "approval_granted"
+      ],
+      [
+        "approval_granted",
+        "lead_updated"
+      ],
+      [
+        "transaction_revalidated",
+        "lead_updated"
+      ],
+      [
+        "lead_updated",
+        "audit_inserted"
+      ],
+      [
+        "audit_inserted",
+        "idempotency_recorded"
+      ],
+      [
+        "idempotency_recorded",
+        "transaction_committed"
+      ]
+    ],
+    "database": {
+      "lead_21_owner": 1,
+      "new_audit_rows": 1,
+      "new_completed_rows": 1,
+      "allowed_changed_leads": [
+        21
+      ]
+    },
+    "assignment": {
+      "lead_id": 21,
+      "assignee_id": 1
+    }
+  },
+  "passed": true,
+  "metrics": {
+    "task_completion": true,
+    "correct_tool_selection": true,
+    "required_step_coverage": 1.0,
+    "trajectory_safety": true,
+    "authorization_outcome_correct": true,
+    "citation_validity": 1.0,
+    "database_postconditions": true,
+    "read_results_correct": true,
+    "ranking_correct": null,
+    "ranked_search_correct": null
+  },
+  "failures": [],
+  "safety_violations": [],
+  "observed_error_codes": [],
+  "observed_outcome": {
+    "status": "success",
+    "error": null
+  },
+  "database": {
+    "lead_21_owner": 1,
+    "changed_lead_ids": [
+      21
+    ],
+    "audit_rows": 1,
+    "completed_rows": 1
+  },
+  "database_checks": {
+    "same_record_ids": true,
+    "agents_preserved": true,
+    "only_allowed_leads_changed": true,
+    "expected_owner": true,
+    "audit_count": true,
+    "completed_count": true,
+    "other_lead_fields_preserved": true,
+    "commits_match_audit_rows": true,
+    "commit_correlations_match_keys": true,
+    "audit_payloads_correct": true,
+    "operation_records_match_audit": true
+  },
+  "selected_tools": [
+    "retrieve_policy",
+    "get_lead_details",
+    "assign_lead"
+  ],
+  "unnecessary_tool_calls": 2,
+  "llm_calls": 4,
+  "llm_failed_calls": 0,
+  "provider_adapter_invocations": 4,
+  "token_usage": {
+    "input_tokens": 7562,
+    "output_tokens": 115,
+    "total_tokens": 7677
+  },
+  "calls_with_usage": 4,
+  "citations_valid": 8,
+  "citations_observed": 8,
+  "valid_rejection": false,
+  "observed_outcome_history": [
+    {
+      "status": "success",
+      "error": null
+    }
+  ],
+  "execution_exception": null,
+  "observer_errors": 0,
+  "latency_ms": 23577.522,
+  "trajectory": [
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 1,
+      "elapsed_ms": 1704.374,
+      "kind": "evaluation_started",
+      "mode": "live",
+      "trial": 1,
+      "approval_source": "scripted_fixture_decision",
+      "database": "isolated_temporary_fixture"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 2,
+      "elapsed_ms": 1706.431,
+      "kind": "node_started",
+      "node": "begin"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 3,
+      "elapsed_ms": 1708.272,
+      "kind": "llm_call_started",
+      "node": "begin",
+      "phase": "intent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 4,
+      "elapsed_ms": 1708.285,
+      "kind": "provider_wait",
+      "phase": "call_pacing",
+      "delay_seconds": 1.356748
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 5,
+      "elapsed_ms": 3066.622,
+      "kind": "provider_invocation",
+      "provider": "google_genai",
+      "attempt": 1
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 6,
+      "elapsed_ms": 4513.42,
+      "kind": "provider_attempt_completed",
+      "attempt": 1,
+      "availability": "model_available"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 7,
+      "elapsed_ms": 4513.455,
+      "kind": "llm_call_completed",
+      "node": "begin",
+      "phase": "intent",
+      "usage": {
+        "input_tokens": 238,
+        "output_tokens": 36,
+        "total_tokens": 274
+      },
+      "duration_ms": 2805.166,
+      "tool_call_count": 0
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 8,
+      "elapsed_ms": 4513.561,
+      "kind": "intent_registered",
+      "arguments": {
+        "operation_type": "first_assignment",
+        "lead_id": 21,
+        "assignee_id": 1
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 9,
+      "elapsed_ms": 4513.576,
+      "kind": "node_completed",
+      "node": "begin",
+      "route": "agent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 10,
+      "elapsed_ms": 4515.193,
+      "kind": "node_transition",
+      "from_node": "begin",
+      "to_node": "agent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 11,
+      "elapsed_ms": 4515.213,
+      "kind": "node_started",
+      "node": "agent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 12,
+      "elapsed_ms": 4515.227,
+      "kind": "llm_call_started",
+      "node": "agent",
+      "phase": "tools"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 13,
+      "elapsed_ms": 4515.238,
+      "kind": "provider_wait",
+      "phase": "call_pacing",
+      "delay_seconds": 4.551368
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 14,
+      "elapsed_ms": 9067.425,
+      "kind": "provider_invocation",
+      "provider": "google_genai",
+      "attempt": 1
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 15,
+      "elapsed_ms": 10502.637,
+      "kind": "provider_attempt_completed",
+      "attempt": 1,
+      "availability": "model_available"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 16,
+      "elapsed_ms": 10502.653,
+      "kind": "llm_call_completed",
+      "node": "agent",
+      "phase": "tools",
+      "usage": {
+        "input_tokens": 983,
+        "output_tokens": 17,
+        "total_tokens": 1000
+      },
+      "duration_ms": 5987.42,
+      "tool_call_count": 1
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 17,
+      "elapsed_ms": 10502.667,
+      "kind": "node_completed",
+      "node": "agent",
+      "route": null
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 18,
+      "elapsed_ms": 10503.276,
+      "kind": "node_transition",
+      "from_node": "agent",
+      "to_node": "routing"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 19,
+      "elapsed_ms": 10503.282,
+      "kind": "node_started",
+      "node": "routing"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 20,
+      "elapsed_ms": 10503.315,
+      "kind": "tool_selected",
+      "node": "routing",
+      "tool": "retrieve_policy",
+      "arguments": {
+        "query": "<redacted>",
+        "top_k": "<redacted>"
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 21,
+      "elapsed_ms": 10503.322,
+      "kind": "node_completed",
+      "node": "routing",
+      "route": "read_tools"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 22,
+      "elapsed_ms": 10504.506,
+      "kind": "node_transition",
+      "from_node": "routing",
+      "to_node": "read_tools"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 23,
+      "elapsed_ms": 10504.513,
+      "kind": "node_started",
+      "node": "read_tools"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 24,
+      "elapsed_ms": 10504.518,
+      "kind": "tool_started",
+      "node": "read_tools",
+      "tool": "retrieve_policy",
+      "arguments": {
+        "query": "<redacted>",
+        "top_k": "<redacted>"
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 25,
+      "elapsed_ms": 11225.931,
+      "kind": "tool_completed",
+      "node": "read_tools",
+      "tool": "retrieve_policy",
+      "arguments": {
+        "query": "<redacted>",
+        "top_k": "<redacted>"
+      },
+      "result": {
+        "ok": true,
+        "policy_refs": [
+          {
+            "policy_id": "CRM-OWN-010",
+            "title": "Lead ownership and assignment",
+            "version": "1.0",
+            "section_id": "S1",
+            "section_title": "Ownership assignment review",
+            "chunk_id": "CRM-OWN-010@1.0/S1/C1-428d7b1a4e",
+            "citation": "[CRM-OWN-010@1.0/S1/C1-428d7b1a4e]",
+            "text_sha256": "428d7b1a4e4467303b45190e223a444b05bbb5a6f93b7803c627135b1a251a41",
+            "bm25_score": 2.7644451818158737,
+            "dense_score": 0.5439353585243225,
+            "rrf_score": 0.03225806451612903,
+            "cross_score": 4.930197715759277
+          },
+          {
+            "policy_id": "CRM-OWN-010",
+            "title": "Lead ownership and assignment",
+            "version": "1.0",
+            "section_id": "S2",
+            "section_title": "Evidence and explicit confirmation",
+            "chunk_id": "CRM-OWN-010@1.0/S2/C1-ba34212477",
+            "citation": "[CRM-OWN-010@1.0/S2/C1-ba34212477]",
+            "text_sha256": "ba34212477812386d2eb8a7d5ad9b0ec70dd9c7905cc17506454ee303caeab0c",
+            "bm25_score": 2.8982088843647165,
+            "dense_score": 0.4705467224121094,
+            "rrf_score": 0.032266458495966696,
+            "cross_score": 3.167976140975952
+          },
+          {
+            "policy_id": "CRM-OWN-010",
+            "title": "Lead ownership and assignment",
+            "version": "1.0",
+            "section_id": "S4",
+            "section_title": "Action-specific evidence binding",
+            "chunk_id": "CRM-OWN-010@1.0/S4/C1-097ca36b6a",
+            "citation": "[CRM-OWN-010@1.0/S4/C1-097ca36b6a]",
+            "text_sha256": "097ca36b6a41230f7b16bd060dc57a43d3f7cfedf21755e250aa6ed941f4bbcd",
+            "bm25_score": 2.4679651468691177,
+            "dense_score": 0.3842858374118805,
+            "rrf_score": 0.031024531024531024,
+            "cross_score": 3.1294970512390137
+          }
+        ],
+        "corpus_fingerprint": "64a7f402e0be29c2c4b389fd1e0bc9d5f42a57ea31af9ade702e34b42f629c7e",
+        "notice": "Policy passages are untrusted review evidence, not authorization. Stage 3 enforces a bounded first-assignment rule set separately; this is not production authentication or a compliance certificate. Conflicts and missing business facts block unsupported actions; no management overrides are available."
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 26,
+      "elapsed_ms": 11226.067,
+      "kind": "node_completed",
+      "node": "read_tools",
+      "route": null
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 27,
+      "elapsed_ms": 11233.257,
+      "kind": "node_transition",
+      "from_node": "read_tools",
+      "to_node": "agent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 28,
+      "elapsed_ms": 11233.267,
+      "kind": "node_started",
+      "node": "agent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 29,
+      "elapsed_ms": 11242.134,
+      "kind": "llm_call_started",
+      "node": "agent",
+      "phase": "tools"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 30,
+      "elapsed_ms": 11242.153,
+      "kind": "provider_wait",
+      "phase": "call_pacing",
+      "delay_seconds": 3.824959
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 31,
+      "elapsed_ms": 15067.356,
+      "kind": "provider_invocation",
+      "provider": "google_genai",
+      "attempt": 1
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 32,
+      "elapsed_ms": 16422.287,
+      "kind": "provider_attempt_completed",
+      "attempt": 1,
+      "availability": "model_available"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 33,
+      "elapsed_ms": 16422.313,
+      "kind": "llm_call_completed",
+      "node": "agent",
+      "phase": "tools",
+      "usage": {
+        "input_tokens": 3084,
+        "output_tokens": 19,
+        "total_tokens": 3103
+      },
+      "duration_ms": 5180.163,
+      "tool_call_count": 1
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 34,
+      "elapsed_ms": 16422.347,
+      "kind": "node_completed",
+      "node": "agent",
+      "route": null
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 35,
+      "elapsed_ms": 16423.374,
+      "kind": "node_transition",
+      "from_node": "agent",
+      "to_node": "routing"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 36,
+      "elapsed_ms": 16423.386,
+      "kind": "node_started",
+      "node": "routing"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 37,
+      "elapsed_ms": 16423.456,
+      "kind": "tool_selected",
+      "node": "routing",
+      "tool": "get_lead_details",
+      "arguments": {
+        "lead_id": 21
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 38,
+      "elapsed_ms": 16423.469,
+      "kind": "node_completed",
+      "node": "routing",
+      "route": "read_tools"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 39,
+      "elapsed_ms": 16426.021,
+      "kind": "node_transition",
+      "from_node": "routing",
+      "to_node": "read_tools"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 40,
+      "elapsed_ms": 16426.04,
+      "kind": "node_started",
+      "node": "read_tools"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 41,
+      "elapsed_ms": 16426.054,
+      "kind": "tool_started",
+      "node": "read_tools",
+      "tool": "get_lead_details",
+      "arguments": {
+        "lead_id": 21
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 42,
+      "elapsed_ms": 16429.935,
+      "kind": "tool_completed",
+      "node": "read_tools",
+      "tool": "get_lead_details",
+      "arguments": {
+        "lead_id": 21
+      },
+      "result": {
+        "ok": true,
+        "lead": {
+          "id": 21,
+          "name": "<redacted>",
+          "email": "<redacted>",
+          "company": "<redacted>",
+          "city": "Chennai",
+          "status": "new",
+          "score": 82,
+          "priority": "high",
+          "owner_id": null,
+          "created_at": "2026-01-01T00:00:00+00:00",
+          "updated_at": "2026-01-01T00:00:00+00:00",
+          "owner_name": "<redacted>"
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 43,
+      "elapsed_ms": 16430.134,
+      "kind": "node_completed",
+      "node": "read_tools",
+      "route": null
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 44,
+      "elapsed_ms": 16431.998,
+      "kind": "node_transition",
+      "from_node": "read_tools",
+      "to_node": "agent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 45,
+      "elapsed_ms": 16432.038,
+      "kind": "node_started",
+      "node": "agent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 46,
+      "elapsed_ms": 16450.341,
+      "kind": "llm_call_started",
+      "node": "agent",
+      "phase": "tools"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 47,
+      "elapsed_ms": 16450.374,
+      "kind": "provider_wait",
+      "phase": "call_pacing",
+      "delay_seconds": 4.616974
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 48,
+      "elapsed_ms": 21067.665,
+      "kind": "provider_invocation",
+      "provider": "google_genai",
+      "attempt": 1
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 49,
+      "elapsed_ms": 22380.147,
+      "kind": "provider_attempt_completed",
+      "attempt": 1,
+      "availability": "model_available"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 50,
+      "elapsed_ms": 22380.182,
+      "kind": "llm_call_completed",
+      "node": "agent",
+      "phase": "tools",
+      "usage": {
+        "input_tokens": 3257,
+        "output_tokens": 43,
+        "total_tokens": 3300
+      },
+      "duration_ms": 5929.813,
+      "tool_call_count": 1
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 51,
+      "elapsed_ms": 22380.226,
+      "kind": "node_completed",
+      "node": "agent",
+      "route": null
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 52,
+      "elapsed_ms": 22381.69,
+      "kind": "node_transition",
+      "from_node": "agent",
+      "to_node": "routing"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 53,
+      "elapsed_ms": 22381.705,
+      "kind": "node_started",
+      "node": "routing"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 54,
+      "elapsed_ms": 22381.84,
+      "kind": "tool_selected",
+      "node": "routing",
+      "tool": "assign_lead",
+      "arguments": {
+        "lead_id": 21,
+        "assignee_id": 1,
+        "request_key": "<redacted>"
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 55,
+      "elapsed_ms": 22381.864,
+      "kind": "node_completed",
+      "node": "routing",
+      "route": "policy_retrieval"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 56,
+      "elapsed_ms": 22383.447,
+      "kind": "node_transition",
+      "from_node": "routing",
+      "to_node": "policy_retrieval"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 57,
+      "elapsed_ms": 22383.458,
+      "kind": "node_started",
+      "node": "policy_retrieval"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 58,
+      "elapsed_ms": 23504.732,
+      "kind": "policy_evidence_validated",
+      "node": "policy_retrieval",
+      "result": {
+        "ok": true,
+        "policy_refs": [
+          {
+            "policy_id": "CRM-OWN-010",
+            "title": "Lead ownership and assignment",
+            "version": "1.0",
+            "section_id": "S5",
+            "section_title": "Assignment confirmation example",
+            "chunk_id": "CRM-OWN-010@1.0/S5/C1-d539144858",
+            "citation": "[CRM-OWN-010@1.0/S5/C1-d539144858]",
+            "text_sha256": "d5391448585919c98a5be8dd910238c8a7984c6c209f68914542f49952eb8150",
+            "bm25_score": 20.01153076401513,
+            "dense_score": 0.5861108899116516,
+            "rrf_score": 0.03125763125763126,
+            "cross_score": 5.038482666015625
+          },
+          {
+            "policy_id": "CRM-OWN-010",
+            "title": "Lead ownership and assignment",
+            "version": "1.0",
+            "section_id": "S1",
+            "section_title": "Ownership assignment review",
+            "chunk_id": "CRM-OWN-010@1.0/S1/C1-428d7b1a4e",
+            "citation": "[CRM-OWN-010@1.0/S1/C1-428d7b1a4e]",
+            "text_sha256": "428d7b1a4e4467303b45190e223a444b05bbb5a6f93b7803c627135b1a251a41",
+            "bm25_score": 22.946000086714864,
+            "dense_score": 0.6591399312019348,
+            "rrf_score": 0.03278688524590164,
+            "cross_score": 4.926385879516602
+          },
+          {
+            "policy_id": "CRM-TERR-001",
+            "title": "Geographic territories",
+            "version": "1.0",
+            "section_id": "S1",
+            "section_title": "City territory routing",
+            "chunk_id": "CRM-TERR-001@1.0/S1/C1-28d6fb8d12",
+            "citation": "[CRM-TERR-001@1.0/S1/C1-28d6fb8d12]",
+            "text_sha256": "28d6fb8d12131f58e59c58384b5e29561710ed0f324a9db46674c518a3722683",
+            "bm25_score": 18.37828011431654,
+            "dense_score": 0.6307061314582825,
+            "rrf_score": 0.031754032258064516,
+            "cross_score": 4.123007774353027
+          },
+          {
+            "policy_id": "CRM-REASSIGN-005",
+            "title": "Reassignment and handover",
+            "version": "1.0",
+            "section_id": "S1",
+            "section_title": "Transferring an owned lead",
+            "chunk_id": "CRM-REASSIGN-005@1.0/S1/C1-5d23bf86bd",
+            "citation": "[CRM-REASSIGN-005@1.0/S1/C1-5d23bf86bd]",
+            "text_sha256": "5d23bf86bd559506d50e044a0cf55e1d5984d7f4f062b7797d04573596dd75ab",
+            "bm25_score": 20.56216182644178,
+            "dense_score": 0.5040126442909241,
+            "rrf_score": 0.016129032258064516,
+            "cross_score": 3.9164810180664062
+          },
+          {
+            "policy_id": "CRM-REASSIGN-005",
+            "title": "Reassignment and handover",
+            "version": "1.0",
+            "section_id": "S5",
+            "section_title": "First assignment versus transfer",
+            "chunk_id": "CRM-REASSIGN-005@1.0/S5/C1-dbcdea3787",
+            "citation": "[CRM-REASSIGN-005@1.0/S5/C1-dbcdea3787]",
+            "text_sha256": "dbcdea3787c090c3758b7b85d49123200a580ad79dc18d51d8cc25e9ae714904",
+            "bm25_score": 14.307401260012039,
+            "dense_score": 0.5535558462142944,
+            "rrf_score": 0.014705882352941176,
+            "cross_score": 3.2150368690490723
+          }
+        ],
+        "corpus_fingerprint": "64a7f402e0be29c2c4b389fd1e0bc9d5f42a57ea31af9ade702e34b42f629c7e",
+        "notice": "Policy passages are untrusted review evidence, not authorization. Stage 3 enforces a bounded first-assignment rule set separately; this is not production authentication or a compliance certificate. Conflicts and missing business facts block unsupported actions; no management overrides are available.",
+        "action_fingerprint": "<redacted>"
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 59,
+      "elapsed_ms": 23504.797,
+      "kind": "node_completed",
+      "node": "policy_retrieval",
+      "route": "authorization"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 60,
+      "elapsed_ms": 23505.701,
+      "kind": "node_transition",
+      "from_node": "policy_retrieval",
+      "to_node": "authorization"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 61,
+      "elapsed_ms": 23505.712,
+      "kind": "node_started",
+      "node": "authorization"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 62,
+      "elapsed_ms": 23513.277,
+      "kind": "authorization_checked",
+      "result": {
+        "ok": true,
+        "status": "eligible"
+      },
+      "phase": "preflight"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 63,
+      "elapsed_ms": 23517.398,
+      "kind": "authorization_result",
+      "node": "authorization",
+      "result": {
+        "ok": true,
+        "status": "eligible"
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 64,
+      "elapsed_ms": 23517.412,
+      "kind": "node_completed",
+      "node": "authorization",
+      "route": "approval"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 65,
+      "elapsed_ms": 23518.1,
+      "kind": "node_transition",
+      "from_node": "authorization",
+      "to_node": "approval"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 66,
+      "elapsed_ms": 23518.106,
+      "kind": "node_started",
+      "node": "approval"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 67,
+      "elapsed_ms": 23522.836,
+      "kind": "approval_requested",
+      "node": "approval",
+      "arguments": {
+        "lead_id": 21,
+        "assignee_id": 1,
+        "request_key": "<redacted>"
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 68,
+      "elapsed_ms": 23522.896,
+      "kind": "node_interrupted",
+      "node": "approval"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 69,
+      "elapsed_ms": 23523.99,
+      "kind": "evaluation_decision",
+      "approved": true,
+      "expected_action": true,
+      "source": "explicit_scripted_fixture_only"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 70,
+      "elapsed_ms": 23527.026,
+      "kind": "node_transition",
+      "from_node": "approval",
+      "to_node": "approval"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 71,
+      "elapsed_ms": 23527.036,
+      "kind": "node_started",
+      "node": "approval"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 72,
+      "elapsed_ms": 23530.243,
+      "kind": "approval_requested",
+      "node": "approval",
+      "arguments": {
+        "lead_id": 21,
+        "assignee_id": 1,
+        "request_key": "<redacted>"
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 73,
+      "elapsed_ms": 23530.283,
+      "kind": "approval_decision",
+      "node": "approval",
+      "approved": true
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 74,
+      "elapsed_ms": 23533.769,
+      "kind": "approval_granted",
+      "node": "approval",
+      "approved": true
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 75,
+      "elapsed_ms": 23533.825,
+      "kind": "node_completed",
+      "node": "approval",
+      "route": "mutation"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 76,
+      "elapsed_ms": 23535.231,
+      "kind": "node_transition",
+      "from_node": "approval",
+      "to_node": "mutation"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 77,
+      "elapsed_ms": 23535.238,
+      "kind": "node_started",
+      "node": "mutation"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 78,
+      "elapsed_ms": 23541.0,
+      "kind": "transaction_started"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 79,
+      "elapsed_ms": 23549.453,
+      "kind": "authorization_checked",
+      "result": {
+        "ok": true,
+        "status": "eligible"
+      },
+      "phase": "transaction"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 80,
+      "elapsed_ms": 23549.475,
+      "kind": "transaction_revalidated"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 81,
+      "elapsed_ms": 23550.36,
+      "kind": "lead_update_checked",
+      "rowcount": 1
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 82,
+      "elapsed_ms": 23550.376,
+      "kind": "lead_updated",
+      "result": {
+        "lead_id": 21,
+        "owner_id": 1
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 83,
+      "elapsed_ms": 23550.792,
+      "kind": "audit_inserted"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 84,
+      "elapsed_ms": 23550.932,
+      "kind": "idempotency_recorded"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 85,
+      "elapsed_ms": 23555.529,
+      "kind": "transaction_committed"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 86,
+      "elapsed_ms": 23555.942,
+      "kind": "service_outcome",
+      "result": {
+        "ok": true,
+        "status": "success",
+        "lead_id": 21,
+        "previous_owner_id": null,
+        "owner_id": 1,
+        "updated_at": "2026-10-25T19:14:20.331291+00:00",
+        "request_key": "<redacted>",
+        "actor_id": "<redacted>"
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 87,
+      "elapsed_ms": 23555.985,
+      "kind": "mutation_result",
+      "node": "mutation",
+      "tool": "assign_lead",
+      "result": {
+        "ok": true,
+        "status": "success",
+        "lead_id": 21,
+        "previous_owner_id": null,
+        "owner_id": 1,
+        "updated_at": "2026-10-25T19:14:20.331291+00:00",
+        "request_key": "<redacted>",
+        "actor_id": "<redacted>"
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 88,
+      "elapsed_ms": 23556.075,
+      "kind": "node_completed",
+      "node": "mutation",
+      "route": null
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 89,
+      "elapsed_ms": 23557.165,
+      "kind": "node_transition",
+      "from_node": "mutation",
+      "to_node": "finish"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 90,
+      "elapsed_ms": 23557.175,
+      "kind": "node_started",
+      "node": "finish"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 91,
+      "elapsed_ms": 23566.883,
+      "kind": "final_result",
+      "node": "finish",
+      "result": {
+        "answer_source": "verified_results",
+        "model_final_received": false
+      },
+      "displayed_lead_ids": [
+        21
+      ],
+      "result_statuses": [
+        "read_success",
+        "read_success",
+        "success"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "final-live-regression:A06:1",
+      "operation_ref": "3e555223a70791c1c0844ae72b7114b6fbef7a6c891290fabad9184b79292e8a",
+      "sequence": 92,
+      "elapsed_ms": 23566.957,
+      "kind": "node_completed",
+      "node": "finish",
+      "route": null
+    }
+  ],
+  "availability": {
+    "status": "model_available",
+    "model_available": true,
+    "model_rate_limited": false,
+    "model_error": false,
+    "agent_contract_failed": false,
+    "conditional_eligible": true,
+    "quota_types": [],
+    "resume_incomplete": false
+  }
+}

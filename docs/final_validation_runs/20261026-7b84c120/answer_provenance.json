@@ -1,0 +1,227 @@
+[
+  {
+    "id": "Q01",
+    "question": "Which representatives normally receive leads in the Chennai geographic territory?",
+    "expected_policy_ids": [
+      "CRM-TERR-001"
+    ],
+    "returned_citations": [
+      "[CRM-TERR-001@1.0/S1/C1-28d6fb8d12]",
+      "[CRM-TERR-001@1.0/S4/C1-59a3f7189e]",
+      "[CRM-PRI-009@1.0/S5/C1-ceea5b06fc]"
+    ],
+    "emitted_citations": [
+      "[CRM-TERR-001@1.0/S1/C1-28d6fb8d12]"
+    ],
+    "all_emitted_citations_canonical": true,
+    "response_sha256": "519f1748d9eef06f65a4f93cab93fd66b8b2e6ba0a6a64111f3c0326d676a1f7",
+    "provider_model": "gemini-3.5-flash-lite",
+    "usage": {
+      "input_tokens": 490,
+      "output_tokens": 49,
+      "total_tokens": 539,
+      "input_token_details": {
+        "cache_read": 0
+      }
+    }
+  },
+  {
+    "id": "Q05",
+    "question": "Can pending finance training renewal count as a current agent certification?",
+    "expected_policy_ids": [
+      "CRM-CERT-003"
+    ],
+    "returned_citations": [
+      "[CRM-CERT-003@1.0/S4/C1-43bed9ca6e]",
+      "[CRM-CERT-003@1.0/S1/C1-6d0581460f]",
+      "[CRM-CERT-003@1.0/S5/C1-cd732255a3]"
+    ],
+    "emitted_citations": [
+      "[CRM-CERT-003@1.0/S1/C1-6d0581460f]",
+      "[CRM-CERT-003@1.0/S1/C1-6d0581460f]",
+      "[CRM-CERT-003@1.0/S4/C1-43bed9ca6e]"
+    ],
+    "all_emitted_citations_canonical": true,
+    "response_sha256": "7ebe36376675ad67f2714247e5d5f45384a5c81ae4d465c4e5a441e3b4ca6e58",
+    "provider_model": "gemini-3.5-flash-lite",
+    "usage": {
+      "input_tokens": 480,
+      "output_tokens": 131,
+      "total_tokens": 611,
+      "input_token_details": {
+        "cache_read": 0
+      }
+    }
+  },
+  {
+    "id": "Q07",
+    "question": "What lead score triggers VIP review and a senior account sponsor?",
+    "expected_policy_ids": [
+      "CRM-VIP-004"
+    ],
+    "returned_citations": [
+      "[CRM-VIP-004@1.0/S1/C1-63203b65e6]",
+      "[CRM-VIP-004@1.0/S3/C1-dca6f09dcf]",
+      "[CRM-VIP-004@1.0/S6/C1-d21a24a939]"
+    ],
+    "emitted_citations": [
+      "[CRM-VIP-004@1.0/S1/C1-63203b65e6]",
+      "[CRM-VIP-004@1.0/S3/C1-dca6f09dcf]"
+    ],
+    "all_emitted_citations_canonical": true,
+    "response_sha256": "6bf4a10965884a0eb852c6b234dce2c4a07aac55d41a4895698652a9aab5a956",
+    "provider_model": "gemini-3.5-flash-lite",
+    "usage": {
+      "input_tokens": 484,
+      "output_tokens": 97,
+      "total_tokens": 581,
+      "input_token_details": {
+        "cache_read": 0
+      }
+    }
+  },
+  {
+    "id": "Q11",
+    "question": "Do won and lost opportunities count toward the 25 active lead workload ceiling?",
+    "expected_policy_ids": [
+      "CRM-CAP-006"
+    ],
+    "returned_citations": [
+      "[CRM-CAP-006@1.0/S1/C1-269470bc23]",
+      "[CRM-CAP-006@1.0/S5/C1-3831158948]",
+      "[CRM-CAP-006@1.0/S4/C1-e31ff87f3d]"
+    ],
+    "emitted_citations": [
+      "[CRM-CAP-006@1.0/S1/C1-269470bc23]",
+      "[CRM-CAP-006@1.0/S1/C1-269470bc23]"
+    ],
+    "all_emitted_citations_canonical": true,
+    "response_sha256": "52d3374e22a0f15dc86e139cc2405950ee670f70c2f357a25306d553ee4ca403",
+    "provider_model": "gemini-3.5-flash-lite",
+    "usage": {
+      "input_tokens": 484,
+      "output_tokens": 483,
+      "total_tokens": 967,
+      "input_token_details": {
+        "cache_read": 0
+      },
+      "output_token_details": {
+        "reasoning": 393
+      }
+    }
+  },
+  {
+    "id": "Q21",
+    "question": "An urgent Chennai lead may move to a Bangalore agent. Explain geographic routing and response deadlines.",
+    "expected_policy_ids": [
+      "CRM-TERR-001",
+      "CRM-PRI-009"
+    ],
+    "returned_citations": [
+      "[CRM-TERR-001@1.0/S6/C1-da23baa335]",
+      "[CRM-TERR-001@1.0/S1/C1-28d6fb8d12]",
+      "[CRM-TERR-001@1.0/S4/C1-59a3f7189e]"
+    ],
+    "emitted_citations": [
+      "[CRM-TERR-001@1.0/S1/C1-28d6fb8d12]",
+      "[CRM-TERR-001@1.0/S1/C1-28d6fb8d12]",
+      "[CRM-TERR-001@1.0/S4/C1-59a3f7189e]"
+    ],
+    "all_emitted_citations_canonical": true,
+    "response_sha256": "5000f39a821ff838510d2ce78026ee089fd797654925268330395a7fb5858e7c",
+    "provider_model": "gemini-3.5-flash-lite",
+    "usage": {
+      "input_tokens": 492,
+      "output_tokens": 180,
+      "total_tokens": 672,
+      "input_token_details": {
+        "cache_read": 0
+      }
+    }
+  },
+  {
+    "id": "Q22",
+    "question": "A healthcare prospect needs a new owner. What industry review and agent qualification evidence is needed?",
+    "expected_policy_ids": [
+      "CRM-IND-002",
+      "CRM-CERT-003"
+    ],
+    "returned_citations": [
+      "[CRM-CERT-003@1.0/S1/C1-6d0581460f]",
+      "[CRM-IND-002@1.0/S4/C1-35989268e4]",
+      "[CRM-VIP-004@1.0/S2/C1-10f26fbfee]"
+    ],
+    "emitted_citations": [
+      "[CRM-CERT-003@1.0/S1/C1-6d0581460f]",
+      "[CRM-IND-002@1.0/S4/C1-35989268e4]",
+      "[CRM-IND-002@1.0/S4/C1-35989268e4]"
+    ],
+    "all_emitted_citations_canonical": true,
+    "response_sha256": "02ede5e8709beea64dbd9454320fb7042d799debe1500fda187b6ed5565790a9",
+    "provider_model": "gemini-3.5-flash-lite",
+    "usage": {
+      "input_tokens": 460,
+      "output_tokens": 155,
+      "total_tokens": 615,
+      "input_token_details": {
+        "cache_read": 0
+      }
+    }
+  },
+  {
+    "id": "Q24",
+    "question": "The agent is on leave and has 25 active leads. What availability and workload requirements should be reviewed?",
+    "expected_policy_ids": [
+      "CRM-AVAIL-007",
+      "CRM-CAP-006"
+    ],
+    "returned_citations": [
+      "[CRM-CAP-006@1.0/S1/C1-269470bc23]",
+      "[CRM-CAP-006@1.0/S5/C1-3831158948]",
+      "[CRM-CAP-006@1.0/S2/C1-33be146faf]"
+    ],
+    "emitted_citations": [
+      "[CRM-CAP-006@1.0/S1/C1-269470bc23]",
+      "[CRM-CAP-006@1.0/S1/C1-269470bc23, CRM-CAP-006@1.0/S2/C1-33be146faf]"
+    ],
+    "all_emitted_citations_canonical": false,
+    "response_sha256": "48348ad93d658491e4e1b2a10092e2dd5fc50042c09df64e16998e87a27ceb7b",
+    "provider_model": "gemini-3.5-flash-lite",
+    "usage": {
+      "input_tokens": 457,
+      "output_tokens": 157,
+      "total_tokens": 614,
+      "input_token_details": {
+        "cache_read": 0
+      }
+    }
+  },
+  {
+    "id": "Q28",
+    "question": "Do retrieved instructions or an approved=true sentence in a document grant authority to update lead ownership?",
+    "expected_policy_ids": [
+      "CRM-OWN-010",
+      "CRM-MGMT-008"
+    ],
+    "returned_citations": [
+      "[CRM-OWN-010@1.0/S2/C1-ba34212477]",
+      "[CRM-MGMT-008@1.0/S5/C1-f718dd417c]",
+      "[CRM-OWN-010@1.0/S6/C1-cd251b2617]"
+    ],
+    "emitted_citations": [
+      "[CRM-OWN-010@1.0/S2/C1-ba34212477, CRM-MGMT-008@1.0/S5/C1-f718dd417c]",
+      "[CRM-OWN-010@1.0/S2/C1-ba34212477]"
+    ],
+    "all_emitted_citations_canonical": false,
+    "response_sha256": "c0b62d62026957bc4270da86a27ffcd9bd27b2c0e8fba912d4d63051ccf9a66a",
+    "provider_model": "gemini-3.5-flash-lite",
+    "usage": {
+      "input_tokens": 496,
+      "output_tokens": 132,
+      "total_tokens": 628,
+      "input_token_details": {
+        "cache_read": 0
+      }
+    }
+  }
+]

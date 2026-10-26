@@ -1,0 +1,138 @@
+{
+  "started_at": "2026-10-26T05:30:03.446846+00:00",
+  "selected_question_ids": [
+    "Q01",
+    "Q05",
+    "Q07",
+    "Q11",
+    "Q21",
+    "Q22",
+    "Q24",
+    "Q28"
+  ],
+  "status": "completed",
+  "generated_answers": 8,
+  "samples_sha256": "00a5d5cb65ebec4cddd7b86f30206ccbd9a109c8cc7f336486b716dd37b7c71b",
+  "corpus_fingerprint": "64a7f402e0be29c2c4b389fd1e0bc9d5f42a57ea31af9ade702e34b42f629c7e",
+  "api_usage": {
+    "started_adapter_calls": 8,
+    "completed_callbacks": 8,
+    "failed_callbacks": 0,
+    "calls_with_usage": 8,
+    "observed_usage": {
+      "input_tokens": 3843,
+      "output_tokens": 1384,
+      "total_tokens": 5227
+    },
+    "minimum_call_interval_seconds": 6,
+    "call_budget": 8,
+    "calls": [
+      {
+        "call": 1,
+        "label": "Q01",
+        "latency_ms": 1034.4,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 490,
+          "output_tokens": 49,
+          "total_tokens": 539
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 2,
+        "label": "Q05",
+        "latency_ms": 1039.833,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 480,
+          "output_tokens": 131,
+          "total_tokens": 611
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 3,
+        "label": "Q07",
+        "latency_ms": 878.435,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 484,
+          "output_tokens": 97,
+          "total_tokens": 581
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 4,
+        "label": "Q11",
+        "latency_ms": 1867.695,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 484,
+          "output_tokens": 483,
+          "total_tokens": 967
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 5,
+        "label": "Q21",
+        "latency_ms": 1244.366,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 492,
+          "output_tokens": 180,
+          "total_tokens": 672
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 6,
+        "label": "Q22",
+        "latency_ms": 941.221,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 460,
+          "output_tokens": 155,
+          "total_tokens": 615
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 7,
+        "label": "Q24",
+        "latency_ms": 966.184,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 457,
+          "output_tokens": 157,
+          "total_tokens": 614
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      },
+      {
+        "call": 8,
+        "label": "Q28",
+        "latency_ms": 1560.964,
+        "status": "completed",
+        "usage": {
+          "input_tokens": 496,
+          "output_tokens": 132,
+          "total_tokens": 628
+        },
+        "provider_model": "gemini-3.5-flash-lite"
+      }
+    ]
+  },
+  "versions": {
+    "langsmith": "0.14.12",
+    "langgraph": "1.2.17",
+    "langchain-core": "1.7.0",
+    "langchain-google-genai": "4.4.2",
+    "google-genai": "2.33.0",
+    "sentence-transformers": "6.2.0",
+    "transformers": "5.20.2"
+  },
+  "finished_at": "2026-10-26T05:31:23.156865+00:00"
+}

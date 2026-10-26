@@ -1,0 +1,101 @@
+{
+  "created_at": "2026-10-26T05:39:24.346951+00:00",
+  "selected_questions": [
+    "Q01",
+    "Q05",
+    "Q07",
+    "Q11",
+    "Q21",
+    "Q22",
+    "Q24",
+    "Q28"
+  ],
+  "selected_sample_size": 8,
+  "generated_answers": 8,
+  "langsmith_hosted_delivery_verified": false,
+  "langsmith_project": "sales-copilot",
+  "hosted_runs_independently_read": 0,
+  "outbound_records_audited": 30,
+  "local_tree_valid": true,
+  "selected_llm_metrics": {
+    "faithfulness": {
+      "mean": 0.9791666666666666,
+      "measured": 6,
+      "skipped": 0,
+      "error": 2
+    },
+    "response_relevancy": {
+      "mean": 0.7798033360766561,
+      "measured": 6,
+      "skipped": 0,
+      "error": 2
+    },
+    "context_utilization": {
+      "mean": 0.9999999999416667,
+      "measured": 4,
+      "skipped": 0,
+      "error": 4
+    }
+  },
+  "full_pipeline_llm_metrics": {
+    "faithfulness": {
+      "measured": 6,
+      "skipped": 23,
+      "errors": 2,
+      "mean": 0.9791666666666666
+    },
+    "response_relevancy": {
+      "measured": 6,
+      "skipped": 23,
+      "errors": 2,
+      "mean": 0.7798033360766561
+    },
+    "context_utilization": {
+      "measured": 4,
+      "skipped": 23,
+      "errors": 4,
+      "mean": 0.9999999999416667
+    }
+  },
+  "selected_deterministic_retrieval": {
+    "recall_at_3": 0.875,
+    "mrr_at_5": 1.0
+  },
+  "total_started_adapter_calls": 65,
+  "observed_usage": {
+    "input_tokens": 45244,
+    "output_tokens": 5086,
+    "total_tokens": 50330
+  },
+  "single_bracket_citation_format_passes": 6,
+  "no_reference_answers_created": true,
+  "new_agent_benchmark_executed": false,
+  "relevant_tests": {
+    "passed": 27,
+    "failed": 0,
+    "duration_seconds": 29.47,
+    "command": "python -m pytest tests/test_observability.py tests/test_rag_eval.py tests/test_ragas_sdk.py"
+  },
+  "artifacts_sha256": {
+    "answer_generation.json": "2d7279dab21c620977e9b1dee41e642968e23fbdb66502cd0ce4b019f1fae9d9",
+    "answer_provenance.json": "2f71c213b295e6fda5b4409646393583da90ab3383adaea3965a60a780f2c9f1",
+    "judge_execution.json": "e66a27af9a9ca2099bdbee53beb03b58445ab3bc808e61f94f28bb7d24eb0fb1",
+    "judged/report.json": "3570183a9a32746d4993cc6a05718036ae86f67c1cfca7163cdb317c57f7856b",
+    "judged/run.json": "1882317899ece8bd20d8e844af3b52d51062e86fff6ca9af50f946b8dcd248f2",
+    "langsmith_demo/langsmith_verification.json": "08c02e950e35e9a232a07911fc1fbfe26ea43ea45843a5fade767a384af15b2a",
+    "langsmith_demo/manifest.json": "2dd54f7d694b24f48936bd2eebcde64acafa73e8d0d49007cda3b8d2aa4b5460",
+    "langsmith_demo_live/endpoint_connectivity_check.json": "04b16ee772f7d4eadb376c127b4406aa59fbe2546a919732b6934c78c0c918cb",
+    "langsmith_demo_live/independent_read_run_check.json": "1b90e99b31c6f005404cdf72ccb8fa6f842f4acd24531cb53299955c0d7c1fc7",
+    "langsmith_demo_live/langsmith_hosted_records.json": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+    "langsmith_demo_live/langsmith_outbound_records.json": "4196718b29d6a63c2036877704c40b490bd0157f464514c57acaff184a1cfe1a",
+    "langsmith_demo_live/langsmith_verification.json": "52fe5b02c1c8a4720dd5ac825d3c20293b6f7f7ab40741a6e8e543fed02f2880",
+    "langsmith_demo_live/manifest.json": "8d25eb10139a691345516066a5e10e136a84f6199f62af82e1471d1652053c54",
+    "langsmith_verification.json": "308ce75e31b67eb39681e24952ae7bbc4da2704806d1dfc21ea8ee2e9d4138f0",
+    "manifest.json": "221864345bf87c150fc93c21d0e826abedfdd5418c3ff45ac2c1e4215b431cd2",
+    "prepared/report.json": "5b2e373d195a8bc0b77a3ef2592028d3009421b9a08821a6fb8629840641b123",
+    "prepared/retrieval.json": "78c32a0304ebc9be7ab02369e48f1520ea5e763edeee3a3eb9e39d86100f052c",
+    "prepared/samples.json": "00a5d5cb65ebec4cddd7b86f30206ccbd9a109c8cc7f336486b716dd37b7c71b",
+    "relevant_tests.json": "7af830bbf84046ded9fbcf7dd123520b91abbbc78e87fff3b90500c0cf486d05",
+    "responses.json": "aa9e75e9426c2283a6883a892e7611ad125433e013d8b226a8228bfa0ef9031b"
+  }
+}

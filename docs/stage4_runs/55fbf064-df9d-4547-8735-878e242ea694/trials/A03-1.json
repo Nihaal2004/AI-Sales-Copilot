@@ -1,0 +1,949 @@
+{
+  "scenario_id": "A03",
+  "trial": 1,
+  "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+  "category": "assignment",
+  "mode": "live",
+  "model_source": "real_gemini",
+  "retrieval": "real_hybrid",
+  "approval_source": "explicit_scripted_fixture_decisions",
+  "request": "Assign lead 21 to agent 2.",
+  "fault": null,
+  "initial_fixture": {
+    "base": "stage3_demo_v1"
+  },
+  "expected": {
+    "status": "policy_blocked",
+    "error": "territory_ineligible",
+    "tool_names": [
+      "assign_lead"
+    ],
+    "read_results": [],
+    "ranked_lead_ids": null,
+    "authorization_status": "policy_blocked",
+    "required_events": [
+      "tool_selected",
+      "policy_evidence_validated",
+      "authorization_result",
+      "final_result",
+      "node_started:policy_retrieval",
+      "node_started:finish",
+      "node_started:authorization"
+    ],
+    "prohibited_events": [
+      "lead_updated",
+      "transaction_committed",
+      "approval_granted",
+      "node_started:mutation"
+    ],
+    "ordering": [
+      [
+        "policy_evidence_validated",
+        "authorization_result"
+      ]
+    ],
+    "database": {
+      "lead_21_owner": null,
+      "new_audit_rows": 0,
+      "new_completed_rows": 0,
+      "allowed_changed_leads": []
+    },
+    "assignment": {
+      "lead_id": 21,
+      "assignee_id": 2
+    }
+  },
+  "passed": true,
+  "metrics": {
+    "task_completion": true,
+    "correct_tool_selection": true,
+    "required_step_coverage": 1.0,
+    "trajectory_safety": true,
+    "authorization_outcome_correct": true,
+    "citation_validity": 1.0,
+    "database_postconditions": true,
+    "read_results_correct": true,
+    "ranking_correct": null,
+    "ranked_search_correct": null
+  },
+  "failures": [],
+  "safety_violations": [],
+  "observed_error_codes": [
+    "territory_ineligible"
+  ],
+  "observed_outcome": {
+    "status": "policy_blocked",
+    "error": "territory_ineligible"
+  },
+  "database": {
+    "lead_21_owner": null,
+    "changed_lead_ids": [],
+    "audit_rows": 0,
+    "completed_rows": 0
+  },
+  "database_checks": {
+    "same_record_ids": true,
+    "agents_preserved": true,
+    "only_allowed_leads_changed": true,
+    "expected_owner": true,
+    "audit_count": true,
+    "completed_count": true,
+    "other_lead_fields_preserved": true,
+    "commits_match_audit_rows": true,
+    "commit_correlations_match_keys": true,
+    "audit_payloads_correct": true,
+    "operation_records_match_audit": true
+  },
+  "selected_tools": [
+    "retrieve_policy",
+    "get_lead_details",
+    "assign_lead"
+  ],
+  "unnecessary_tool_calls": 2,
+  "llm_calls": 3,
+  "llm_failed_calls": 0,
+  "provider_adapter_invocations": 3,
+  "token_usage": {
+    "input_tokens": 7176,
+    "output_tokens": 84,
+    "total_tokens": 7260
+  },
+  "calls_with_usage": 3,
+  "citations_valid": 8,
+  "citations_observed": 8,
+  "valid_rejection": true,
+  "observed_outcome_history": [
+    {
+      "status": "policy_blocked",
+      "error": "territory_ineligible"
+    }
+  ],
+  "execution_exception": null,
+  "observer_errors": 0,
+  "latency_ms": 12583.23,
+  "trajectory": [
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 1,
+      "elapsed_ms": 785.886,
+      "kind": "evaluation_started",
+      "mode": "live",
+      "trial": 1,
+      "approval_source": "scripted_fixture_decision",
+      "database": "isolated_temporary_fixture"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 2,
+      "elapsed_ms": 788.495,
+      "kind": "node_started",
+      "node": "begin"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 3,
+      "elapsed_ms": 788.504,
+      "kind": "node_completed",
+      "node": "begin",
+      "route": null
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 4,
+      "elapsed_ms": 789.487,
+      "kind": "node_transition",
+      "from_node": "begin",
+      "to_node": "agent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 5,
+      "elapsed_ms": 789.494,
+      "kind": "node_started",
+      "node": "agent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 6,
+      "elapsed_ms": 789.499,
+      "kind": "llm_call_started",
+      "node": "agent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 7,
+      "elapsed_ms": 789.508,
+      "kind": "provider_wait",
+      "phase": "call_pacing",
+      "delay_seconds": 1.425575
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 8,
+      "elapsed_ms": 2215.497,
+      "kind": "provider_invocation",
+      "provider": "google_genai",
+      "attempt": 1
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 9,
+      "elapsed_ms": 3197.019,
+      "kind": "provider_attempt_completed",
+      "attempt": 1,
+      "availability": "model_available"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 10,
+      "elapsed_ms": 3197.083,
+      "kind": "llm_call_completed",
+      "node": "agent",
+      "usage": {
+        "input_tokens": 913,
+        "output_tokens": 22,
+        "total_tokens": 935
+      },
+      "duration_ms": 2407.572,
+      "tool_call_count": 1
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 11,
+      "elapsed_ms": 3197.143,
+      "kind": "node_completed",
+      "node": "agent",
+      "route": null
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 12,
+      "elapsed_ms": 3201.222,
+      "kind": "node_transition",
+      "from_node": "agent",
+      "to_node": "routing"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 13,
+      "elapsed_ms": 3201.27,
+      "kind": "node_started",
+      "node": "routing"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 14,
+      "elapsed_ms": 3201.5,
+      "kind": "tool_selected",
+      "node": "routing",
+      "tool": "retrieve_policy",
+      "arguments": {
+        "query": "<redacted>",
+        "top_k": "<redacted>"
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 15,
+      "elapsed_ms": 3201.555,
+      "kind": "node_completed",
+      "node": "routing",
+      "route": "read_tools"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 16,
+      "elapsed_ms": 3207.098,
+      "kind": "node_transition",
+      "from_node": "routing",
+      "to_node": "read_tools"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 17,
+      "elapsed_ms": 3207.142,
+      "kind": "node_started",
+      "node": "read_tools"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 18,
+      "elapsed_ms": 3207.173,
+      "kind": "tool_started",
+      "node": "read_tools",
+      "tool": "retrieve_policy",
+      "arguments": {
+        "query": "<redacted>",
+        "top_k": "<redacted>"
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 19,
+      "elapsed_ms": 3699.25,
+      "kind": "tool_completed",
+      "node": "read_tools",
+      "tool": "retrieve_policy",
+      "arguments": {
+        "query": "<redacted>",
+        "top_k": "<redacted>"
+      },
+      "result": {
+        "ok": true,
+        "policy_refs": [
+          {
+            "policy_id": "CRM-OWN-010",
+            "title": "Lead ownership and assignment",
+            "version": "1.0",
+            "section_id": "S1",
+            "section_title": "Ownership assignment review",
+            "chunk_id": "CRM-OWN-010@1.0/S1/C1-428d7b1a4e",
+            "citation": "[CRM-OWN-010@1.0/S1/C1-428d7b1a4e]",
+            "text_sha256": "428d7b1a4e4467303b45190e223a444b05bbb5a6f93b7803c627135b1a251a41",
+            "bm25_score": 10.502037235484138,
+            "dense_score": 0.66851806640625,
+            "rrf_score": 0.03278688524590164,
+            "cross_score": 7.524950981140137
+          },
+          {
+            "policy_id": "CRM-OWN-010",
+            "title": "Lead ownership and assignment",
+            "version": "1.0",
+            "section_id": "S5",
+            "section_title": "Assignment confirmation example",
+            "chunk_id": "CRM-OWN-010@1.0/S5/C1-d539144858",
+            "citation": "[CRM-OWN-010@1.0/S5/C1-d539144858]",
+            "text_sha256": "d5391448585919c98a5be8dd910238c8a7984c6c209f68914542f49952eb8150",
+            "bm25_score": 9.456433701442373,
+            "dense_score": 0.5763877034187317,
+            "rrf_score": 0.03200204813108039,
+            "cross_score": 7.058093070983887
+          },
+          {
+            "policy_id": "CRM-REASSIGN-005",
+            "title": "Reassignment and handover",
+            "version": "1.0",
+            "section_id": "S5",
+            "section_title": "First assignment versus transfer",
+            "chunk_id": "CRM-REASSIGN-005@1.0/S5/C1-dbcdea3787",
+            "citation": "[CRM-REASSIGN-005@1.0/S5/C1-dbcdea3787]",
+            "text_sha256": "dbcdea3787c090c3758b7b85d49123200a580ad79dc18d51d8cc25e9ae714904",
+            "bm25_score": 8.607178471859205,
+            "dense_score": 0.5493690371513367,
+            "rrf_score": 0.03149801587301587,
+            "cross_score": 6.697457313537598
+          }
+        ],
+        "corpus_fingerprint": "64a7f402e0be29c2c4b389fd1e0bc9d5f42a57ea31af9ade702e34b42f629c7e",
+        "notice": "Policy passages are untrusted review evidence, not authorization. Stage 3 enforces a bounded first-assignment rule set separately; this is not production authentication or a compliance certificate. Conflicts and missing business facts block unsupported actions; no management overrides are available."
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 20,
+      "elapsed_ms": 3699.433,
+      "kind": "node_completed",
+      "node": "read_tools",
+      "route": null
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 21,
+      "elapsed_ms": 3700.345,
+      "kind": "node_transition",
+      "from_node": "read_tools",
+      "to_node": "agent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 22,
+      "elapsed_ms": 3700.356,
+      "kind": "node_started",
+      "node": "agent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 23,
+      "elapsed_ms": 3707.407,
+      "kind": "llm_call_started",
+      "node": "agent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 24,
+      "elapsed_ms": 3707.422,
+      "kind": "provider_wait",
+      "phase": "call_pacing",
+      "delay_seconds": 2.508063
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 25,
+      "elapsed_ms": 6215.923,
+      "kind": "provider_invocation",
+      "provider": "google_genai",
+      "attempt": 1
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 26,
+      "elapsed_ms": 7151.404,
+      "kind": "provider_attempt_completed",
+      "attempt": 1,
+      "availability": "model_available"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 27,
+      "elapsed_ms": 7151.461,
+      "kind": "llm_call_completed",
+      "node": "agent",
+      "usage": {
+        "input_tokens": 3045,
+        "output_tokens": 19,
+        "total_tokens": 3064
+      },
+      "duration_ms": 3444.036,
+      "tool_call_count": 1
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 28,
+      "elapsed_ms": 7151.531,
+      "kind": "node_completed",
+      "node": "agent",
+      "route": null
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 29,
+      "elapsed_ms": 7153.974,
+      "kind": "node_transition",
+      "from_node": "agent",
+      "to_node": "routing"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 30,
+      "elapsed_ms": 7154.026,
+      "kind": "node_started",
+      "node": "routing"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 31,
+      "elapsed_ms": 7154.168,
+      "kind": "tool_selected",
+      "node": "routing",
+      "tool": "get_lead_details",
+      "arguments": {
+        "lead_id": 21
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 32,
+      "elapsed_ms": 7154.196,
+      "kind": "node_completed",
+      "node": "routing",
+      "route": "read_tools"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 33,
+      "elapsed_ms": 7159.223,
+      "kind": "node_transition",
+      "from_node": "routing",
+      "to_node": "read_tools"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 34,
+      "elapsed_ms": 7159.253,
+      "kind": "node_started",
+      "node": "read_tools"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 35,
+      "elapsed_ms": 7159.27,
+      "kind": "tool_started",
+      "node": "read_tools",
+      "tool": "get_lead_details",
+      "arguments": {
+        "lead_id": 21
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 36,
+      "elapsed_ms": 7164.17,
+      "kind": "tool_completed",
+      "node": "read_tools",
+      "tool": "get_lead_details",
+      "arguments": {
+        "lead_id": 21
+      },
+      "result": {
+        "ok": true,
+        "lead": {
+          "id": 21,
+          "name": "<redacted>",
+          "email": "<redacted>",
+          "company": "<redacted>",
+          "city": "Chennai",
+          "status": "new",
+          "score": 82,
+          "priority": "high",
+          "owner_id": null,
+          "created_at": "2026-01-01T00:00:00+00:00",
+          "updated_at": "2026-01-01T00:00:00+00:00",
+          "owner_name": "<redacted>"
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 37,
+      "elapsed_ms": 7164.409,
+      "kind": "node_completed",
+      "node": "read_tools",
+      "route": null
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 38,
+      "elapsed_ms": 7166.7,
+      "kind": "node_transition",
+      "from_node": "read_tools",
+      "to_node": "agent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 39,
+      "elapsed_ms": 7166.728,
+      "kind": "node_started",
+      "node": "agent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 40,
+      "elapsed_ms": 7195.007,
+      "kind": "llm_call_started",
+      "node": "agent"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 41,
+      "elapsed_ms": 7195.061,
+      "kind": "provider_wait",
+      "phase": "call_pacing",
+      "delay_seconds": 3.020858
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 42,
+      "elapsed_ms": 10217.25,
+      "kind": "provider_invocation",
+      "provider": "google_genai",
+      "attempt": 1
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 43,
+      "elapsed_ms": 11896.792,
+      "kind": "provider_attempt_completed",
+      "attempt": 1,
+      "availability": "model_available"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 44,
+      "elapsed_ms": 11896.86,
+      "kind": "llm_call_completed",
+      "node": "agent",
+      "usage": {
+        "input_tokens": 3218,
+        "output_tokens": 43,
+        "total_tokens": 3261
+      },
+      "duration_ms": 4701.814,
+      "tool_call_count": 1
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 45,
+      "elapsed_ms": 11896.948,
+      "kind": "node_completed",
+      "node": "agent",
+      "route": null
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 46,
+      "elapsed_ms": 11899.6,
+      "kind": "node_transition",
+      "from_node": "agent",
+      "to_node": "routing"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 47,
+      "elapsed_ms": 11899.632,
+      "kind": "node_started",
+      "node": "routing"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 48,
+      "elapsed_ms": 11899.795,
+      "kind": "tool_selected",
+      "node": "routing",
+      "tool": "assign_lead",
+      "arguments": {
+        "lead_id": 21,
+        "assignee_id": 2,
+        "request_key": "<redacted>"
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 49,
+      "elapsed_ms": 11899.833,
+      "kind": "node_completed",
+      "node": "routing",
+      "route": "policy_retrieval"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 50,
+      "elapsed_ms": 11902.792,
+      "kind": "node_transition",
+      "from_node": "routing",
+      "to_node": "policy_retrieval"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 51,
+      "elapsed_ms": 11902.823,
+      "kind": "node_started",
+      "node": "policy_retrieval"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 52,
+      "elapsed_ms": 12559.521,
+      "kind": "policy_evidence_validated",
+      "node": "policy_retrieval",
+      "result": {
+        "ok": true,
+        "policy_refs": [
+          {
+            "policy_id": "CRM-OWN-010",
+            "title": "Lead ownership and assignment",
+            "version": "1.0",
+            "section_id": "S5",
+            "section_title": "Assignment confirmation example",
+            "chunk_id": "CRM-OWN-010@1.0/S5/C1-d539144858",
+            "citation": "[CRM-OWN-010@1.0/S5/C1-d539144858]",
+            "text_sha256": "d5391448585919c98a5be8dd910238c8a7984c6c209f68914542f49952eb8150",
+            "bm25_score": 18.399790751850453,
+            "dense_score": 0.5839985013008118,
+            "rrf_score": 0.031009615384615385,
+            "cross_score": 4.74088716506958
+          },
+          {
+            "policy_id": "CRM-TERR-001",
+            "title": "Geographic territories",
+            "version": "1.0",
+            "section_id": "S1",
+            "section_title": "City territory routing",
+            "chunk_id": "CRM-TERR-001@1.0/S1/C1-28d6fb8d12",
+            "citation": "[CRM-TERR-001@1.0/S1/C1-28d6fb8d12]",
+            "text_sha256": "28d6fb8d12131f58e59c58384b5e29561710ed0f324a9db46674c518a3722683",
+            "bm25_score": 19.295909904113966,
+            "dense_score": 0.6380971670150757,
+            "rrf_score": 0.03200204813108039,
+            "cross_score": 4.525235176086426
+          },
+          {
+            "policy_id": "CRM-OWN-010",
+            "title": "Lead ownership and assignment",
+            "version": "1.0",
+            "section_id": "S1",
+            "section_title": "Ownership assignment review",
+            "chunk_id": "CRM-OWN-010@1.0/S1/C1-428d7b1a4e",
+            "citation": "[CRM-OWN-010@1.0/S1/C1-428d7b1a4e]",
+            "text_sha256": "428d7b1a4e4467303b45190e223a444b05bbb5a6f93b7803c627135b1a251a41",
+            "bm25_score": 22.946000086714864,
+            "dense_score": 0.6569280624389648,
+            "rrf_score": 0.03278688524590164,
+            "cross_score": 4.477762222290039
+          },
+          {
+            "policy_id": "CRM-REASSIGN-005",
+            "title": "Reassignment and handover",
+            "version": "1.0",
+            "section_id": "S1",
+            "section_title": "Transferring an owned lead",
+            "chunk_id": "CRM-REASSIGN-005@1.0/S1/C1-5d23bf86bd",
+            "citation": "[CRM-REASSIGN-005@1.0/S1/C1-5d23bf86bd]",
+            "text_sha256": "5d23bf86bd559506d50e044a0cf55e1d5984d7f4f062b7797d04573596dd75ab",
+            "bm25_score": 20.56216182644178,
+            "dense_score": 0.5052599906921387,
+            "rrf_score": 0.016129032258064516,
+            "cross_score": 3.518099069595337
+          },
+          {
+            "policy_id": "CRM-TERR-001",
+            "title": "Geographic territories",
+            "version": "1.0",
+            "section_id": "S4",
+            "section_title": "Cross-city assignment example",
+            "chunk_id": "CRM-TERR-001@1.0/S4/C1-59a3f7189e",
+            "citation": "[CRM-TERR-001@1.0/S4/C1-59a3f7189e]",
+            "text_sha256": "59a3f7189e19d3e961b8767b8738b1fa8f7df84df61e9cf85005fb890c59181e",
+            "bm25_score": 17.07897068277217,
+            "dense_score": 0.6004744172096252,
+            "rrf_score": 0.031024531024531024,
+            "cross_score": 3.5151524543762207
+          }
+        ],
+        "corpus_fingerprint": "64a7f402e0be29c2c4b389fd1e0bc9d5f42a57ea31af9ade702e34b42f629c7e",
+        "notice": "Policy passages are untrusted review evidence, not authorization. Stage 3 enforces a bounded first-assignment rule set separately; this is not production authentication or a compliance certificate. Conflicts and missing business facts block unsupported actions; no management overrides are available.",
+        "action_fingerprint": "<redacted>"
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 53,
+      "elapsed_ms": 12559.661,
+      "kind": "node_completed",
+      "node": "policy_retrieval",
+      "route": "authorization"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 54,
+      "elapsed_ms": 12560.791,
+      "kind": "node_transition",
+      "from_node": "policy_retrieval",
+      "to_node": "authorization"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 55,
+      "elapsed_ms": 12560.8,
+      "kind": "node_started",
+      "node": "authorization"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 56,
+      "elapsed_ms": 12568.355,
+      "kind": "authorization_checked",
+      "result": {
+        "ok": false,
+        "status": "policy_blocked",
+        "error": "territory_ineligible"
+      },
+      "phase": "preflight"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 57,
+      "elapsed_ms": 12568.467,
+      "kind": "authorization_result",
+      "node": "authorization",
+      "result": {
+        "ok": false,
+        "status": "policy_blocked",
+        "error": "territory_ineligible"
+      }
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 58,
+      "elapsed_ms": 12568.542,
+      "kind": "node_completed",
+      "node": "authorization",
+      "route": "finish"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 59,
+      "elapsed_ms": 12569.78,
+      "kind": "node_transition",
+      "from_node": "authorization",
+      "to_node": "finish"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 60,
+      "elapsed_ms": 12569.789,
+      "kind": "node_started",
+      "node": "finish"
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 61,
+      "elapsed_ms": 12578.225,
+      "kind": "final_result",
+      "node": "finish",
+      "result": {
+        "answer_source": "verified_results",
+        "model_final_received": false
+      },
+      "displayed_lead_ids": [
+        21
+      ],
+      "result_statuses": [
+        "read_success",
+        "read_success",
+        "policy_blocked"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "correlation_id": "55fbf064-df9d-4547-8735-878e242ea694:A03:1",
+      "operation_ref": "04e476129c36e1f6bf9482bf8a82291a00ee68292f7cd7eba14bd8dab164c116",
+      "sequence": 62,
+      "elapsed_ms": 12578.288,
+      "kind": "node_completed",
+      "node": "finish",
+      "route": null
+    }
+  ],
+  "availability": {
+    "status": "model_available",
+    "model_available": true,
+    "model_rate_limited": false,
+    "model_error": false,
+    "agent_contract_failed": false,
+    "conditional_eligible": true,
+    "quota_types": [],
+    "resume_incomplete": false
+  }
+}

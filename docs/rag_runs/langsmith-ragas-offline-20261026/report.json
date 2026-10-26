@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "phase": "prepare",
+  "status": "completed",
+  "created_at": "2026-10-26T04:43:14.830974+00:00",
+  "corpus_fingerprint": "64a7f402e0be29c2c4b389fd1e0bc9d5f42a57ea31af9ade702e34b42f629c7e",
+  "labels_sha256": "1d2c4b9a4abcd7fa7d20029bcdce47dd48f7d5c4b26ad8bd3af8dcf40ceccf96",
+  "samples_sha256": "00a5d5cb65ebec4cddd7b86f30206ccbd9a109c8cc7f336486b716dd37b7c71b",
+  "sample_count": 31,
+  "deterministic_retrieval": {
+    "bm25": {
+      "recall_at_3": 0.9285714285714286,
+      "mrr_at_5": 0.9714285714285714
+    },
+    "dense": {
+      "recall_at_3": 0.9821428571428571,
+      "mrr_at_5": 0.9642857142857143
+    },
+    "fused": {
+      "recall_at_3": 0.9821428571428571,
+      "mrr_at_5": 1.0
+    },
+    "reranked": {
+      "recall_at_3": 0.9464285714285714,
+      "mrr_at_5": 0.9821428571428571
+    }
+  },
+  "negative_queries": 3,
+  "negative_abstentions": 3,
+  "llm_judged": {
+    "faithfulness": {
+      "status": "skipped",
+      "reason": "responses_and_explicit_judge_opt_in_required",
+      "value": null
+    },
+    "response_relevancy": {
+      "status": "skipped",
+      "reason": "responses_and_explicit_judge_opt_in_required",
+      "value": null
+    },
+    "context_utilization": {
+      "status": "skipped",
+      "reason": "responses_and_explicit_judge_opt_in_required",
+      "value": null
+    }
+  },
+  "reference_answer_metrics": {
+    "status": "skipped",
+    "reason": "no_reference_answers_in_existing_labels",
+    "value": null
+  },
+  "telemetry_exported": false,
+  "paid_api_calls": 0
+}

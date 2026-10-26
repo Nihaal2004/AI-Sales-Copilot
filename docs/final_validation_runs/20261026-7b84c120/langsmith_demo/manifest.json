@@ -1,0 +1,29 @@
+{
+  "created_at": "2026-10-26T05:31:11.707855+00:00",
+  "selected_questions": [
+    "Q01",
+    "Q05",
+    "Q07",
+    "Q11",
+    "Q21",
+    "Q22",
+    "Q24",
+    "Q28"
+  ],
+  "langsmith_key_configured": true,
+  "gemini_key_configured": true,
+  "project": "sales-copilot",
+  "llm_model": "gemini-3.5-flash-lite",
+  "judge_model": "gemini-3.5-flash-lite",
+  "versions": {
+    "langsmith": "0.14.12",
+    "langgraph": "1.2.17",
+    "langchain-core": "1.7.0",
+    "langchain-google-genai": "4.4.2",
+    "google-genai": "2.33.0",
+    "sentence-transformers": "6.2.0",
+    "transformers": "5.20.2"
+  },
+  "architecture_modified": false,
+  "driver_sha256": "8e913bc01ee91664cb6a628fea261382c2045e091d1f15e2695de0d0b556b8bb"
+}

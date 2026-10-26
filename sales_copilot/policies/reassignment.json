@@ -1,0 +1,37 @@
+{
+  "policy_id": "CRM-REASSIGN-005",
+  "title": "Reassignment and handover",
+  "version": "1.0",
+  "sections": [
+    {
+      "section_id": "S1",
+      "title": "Transferring an owned lead",
+      "text": "Fictional CRM policy. Moving a lead from an existing owner to another agent is a reassignment. Review the current owner, receiving agent, reason for transfer, open activities and contact commitments. Request the current owner's handover acknowledgement and the receiving agent's acceptance. Initial assignment of an unassigned lead has no previous-owner handover, but still requires ownership, territory and availability review."
+    },
+    {
+      "section_id": "S2",
+      "title": "Handover exceptions",
+      "text": "When the current owner is absent, the sales manager can review an exceptional handover and document who will preserve the contact history. Do not silently overwrite ownership during a handover dispute. A request key correlates the proposed transfer but is not an approval record or a deduplication guarantee. In this prototype, explicit human confirmation remains required for every ownership update."
+    },
+    {
+      "section_id": "S3",
+      "title": "Open work and contact continuity",
+      "text": "Before transferring an owned lead, inspect open meetings, promised callbacks, outstanding quotes and the last meaningful buyer interaction. Record which receiving agent will complete each commitment and when the customer will be informed. The previous owner should acknowledge the handover unless an exceptional absence process applies. A reassignment that changes only the owner field may still create operational risk if those commitments are ignored. Stage 2 retrieves this handover guidance but the current SQLite lead table does not contain an activity ledger or customer notification history."
+    },
+    {
+      "section_id": "S4",
+      "title": "Ownership dispute procedure",
+      "text": "If two agents dispute who should own a prospect, preserve the current owner while a sales manager reviews the record sources and customer commitments through the organizational process. Do not resolve the dispute by choosing the agent with the highest confidence or by treating a retrieved passage as a verdict. Request both agents perspectives and the territory context. A prototype user may still confirm an explicit action after seeing the limitations; such confirmation is separate from full deterministic organizational policy enforcement, which remains pending."
+    },
+    {
+      "section_id": "S5",
+      "title": "First assignment versus transfer",
+      "text": "A null owner indicates an unassigned lead. Giving that lead its first owner does not require a previous-owner handover because there is no prior agent to acknowledge it. It still needs a verified receiving agent, geographic review, availability consideration and explicit application confirmation. Moving a lead from agent 1 to agent 2 is a transfer even if both work in the same region. Assigning an already owned lead back to its current agent should be disclosed as an unchanged-owner request rather than misrepresented as a new handover."
+    },
+    {
+      "section_id": "S6",
+      "title": "Handover examples and request keys",
+      "text": "Example: an unavailable Hyderabad owner has a qualified lead with a promised demonstration tomorrow. The manager should identify a receiving representative, preserve the demonstration commitment and record the temporary or permanent scope of the handover. A request_key such as handover-demo-42 helps correlate the application proposal and result. It is not proof of manager review, exactly-once execution or deduplication. If the proposed receiving agent changes, the retrieval evidence must be rebound to the changed action and the human must review that exact new proposal."
+    }
+  ]
+}

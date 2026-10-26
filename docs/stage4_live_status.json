@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "mode": "live_gemini",
+  "execution_status": "not_run",
+  "reason": "Real provider evaluation requires explicit --live-gemini opt-in. Automated implementation used scripted models and isolated fictional databases only.",
+  "scenario_trials": 0,
+  "success_rate": null,
+  "metrics": null,
+  "token_usage": null,
+  "actual_provider_calls_made": false,
+  "sample_command": ".\\.venv\\Scripts\\python.exe -m sales_copilot.cli agent-evaluate --live-gemini --scenario R01 --scenario A01 --trials 3"
+}

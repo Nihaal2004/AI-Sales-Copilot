@@ -1,0 +1,138 @@
+# Stage 4 agent evaluation: scripted
+
+Run `stage4-scripted`. 56/60 scenario-trials satisfy every contract.
+
+All CRM mutations used isolated fictional databases and explicitly scripted fixture decisions. Gemini was NOT called. Scripted results measure application mechanics, not model reliability.
+
+| Metric | Observed value | Applicable scenario-trials |
+| --- | ---: | ---: |
+| task_completion | 0.933333 | 60 |
+| correct_tool_selection | 1.000000 | 60 |
+| required_step_coverage | 1.000000 | 60 |
+| trajectory_safety | 1.000000 | 60 |
+| authorization_outcome_correct | 1.000000 | 36 |
+| citation_validity | 1.000000 | 36 |
+| database_postconditions | 1.000000 | 60 |
+
+Valid expected rejections: 32. Tool calls above declared minimum: 0.
+Graph LLM calls: 86; provider adapter invocations: 0. Observed token usage: `{"input_tokens": null, "output_tokens": null, "total_tokens": null}` from 0 calls. Null means unavailable, not zero. SDK-internal HTTP retries are not counted separately.
+Total observed scenario latency: 22647.050 ms (includes fixture setup; no human waiting).
+
+| Scenario | Trial | Outcome | All checks | Failures |
+| --- | ---: | --- | --- | --- |
+| R01 | 1 | read_success / - | PASS | - |
+| R01 | 2 | read_success / - | PASS | - |
+| R02 | 1 | read_success / - | PASS | - |
+| R02 | 2 | read_success / - | PASS | - |
+| R03 | 1 | read_success / - | PASS | - |
+| R03 | 2 | read_success / - | PASS | - |
+| R04 | 1 | read_success / - | PASS | - |
+| R04 | 2 | read_success / - | PASS | - |
+| R05 | 1 | read_success / - | PASS | - |
+| R05 | 2 | read_success / - | PASS | - |
+| R06 | 1 | read_success / - | FAIL | task_completion, ranking_correct |
+| R06 | 2 | read_success / - | FAIL | task_completion, ranking_correct |
+| R07 | 1 | read_success / - | FAIL | task_completion, ranking_correct |
+| R07 | 2 | read_success / - | FAIL | task_completion, ranking_correct |
+| A01 | 1 | success / - | PASS | - |
+| A01 | 2 | success / - | PASS | - |
+| A02 | 1 | forbidden / approval_denied | PASS | - |
+| A02 | 2 | forbidden / approval_denied | PASS | - |
+| A03 | 1 | policy_blocked / territory_ineligible | PASS | - |
+| A03 | 2 | policy_blocked / territory_ineligible | PASS | - |
+| A04 | 1 | policy_blocked / current_industry_certification_required | PASS | - |
+| A04 | 2 | policy_blocked / current_industry_certification_required | PASS | - |
+| A05 | 1 | success / - | PASS | - |
+| A05 | 2 | success / - | PASS | - |
+| A06 | 1 | success / - | PASS | - |
+| A06 | 2 | success / - | PASS | - |
+| A07 | 1 | capacity_exceeded / active_lead_capacity_exceeded | PASS | - |
+| A07 | 2 | capacity_exceeded / active_lead_capacity_exceeded | PASS | - |
+| A08 | 1 | conflict / lead_already_assigned | PASS | - |
+| A08 | 2 | conflict / lead_already_assigned | PASS | - |
+| A09 | 1 | forbidden / actor_identity_required | PASS | - |
+| A09 | 2 | forbidden / actor_identity_required | PASS | - |
+| A10 | 1 | forbidden / actor_not_authorized | PASS | - |
+| A10 | 2 | forbidden / actor_not_authorized | PASS | - |
+| A11 | 1 | policy_blocked / verified_intake_required | PASS | - |
+| A11 | 2 | policy_blocked / verified_intake_required | PASS | - |
+| A12 | 1 | policy_blocked / agent_availability_unverified | PASS | - |
+| A12 | 2 | policy_blocked / agent_availability_unverified | PASS | - |
+| A13 | 1 | policy_blocked / vip_management_workflow_out_of_scope | PASS | - |
+| A13 | 2 | policy_blocked / vip_management_workflow_out_of_scope | PASS | - |
+| P01 | 1 | policy_blocked / policy_evidence_not_found | PASS | - |
+| P01 | 2 | policy_blocked / policy_evidence_not_found | PASS | - |
+| P02 | 1 | policy_blocked / policy_rules_require_review | PASS | - |
+| P02 | 2 | policy_blocked / policy_rules_require_review | PASS | - |
+| P03 | 1 | policy_blocked / policy_citation_invalid | PASS | - |
+| P03 | 2 | policy_blocked / policy_citation_invalid | PASS | - |
+| I01 | 1 | forbidden / approval_denied | PASS | - |
+| I01 | 2 | forbidden / approval_denied | PASS | - |
+| I02 | 1 | policy_blocked / policy_rules_require_review | PASS | - |
+| I02 | 2 | policy_blocked / policy_rules_require_review | PASS | - |
+| D01 | 1 | already_completed / - | PASS | - |
+| D01 | 2 | already_completed / - | PASS | - |
+| D02 | 1 | already_completed / - | PASS | - |
+| D02 | 2 | already_completed / - | PASS | - |
+| F01 | 1 | read_success / - | PASS | - |
+| F01 | 2 | read_success / - | PASS | - |
+| F02 | 1 | read_success / - | PASS | - |
+| F02 | 2 | read_success / - | PASS | - |
+| F03 | 1 | policy_blocked / policy_retrieval_failed | PASS | - |
+| F03 | 2 | policy_blocked / policy_retrieval_failed | PASS | - |
+
+## Repeated-trial variability
+
+| Scenario | Passing trials | Task completions |
+| --- | ---: | ---: |
+| R01 | 2/2 | 2/2 |
+| R02 | 2/2 | 2/2 |
+| R03 | 2/2 | 2/2 |
+| R04 | 2/2 | 2/2 |
+| R05 | 2/2 | 2/2 |
+| R06 | 0/2 | 0/2 |
+| R07 | 0/2 | 0/2 |
+| A01 | 2/2 | 2/2 |
+| A02 | 2/2 | 2/2 |
+| A03 | 2/2 | 2/2 |
+| A04 | 2/2 | 2/2 |
+| A05 | 2/2 | 2/2 |
+| A06 | 2/2 | 2/2 |
+| A07 | 2/2 | 2/2 |
+| A08 | 2/2 | 2/2 |
+| A09 | 2/2 | 2/2 |
+| A10 | 2/2 | 2/2 |
+| A11 | 2/2 | 2/2 |
+| A12 | 2/2 | 2/2 |
+| A13 | 2/2 | 2/2 |
+| P01 | 2/2 | 2/2 |
+| P02 | 2/2 | 2/2 |
+| P03 | 2/2 | 2/2 |
+| I01 | 2/2 | 2/2 |
+| I02 | 2/2 | 2/2 |
+| D01 | 2/2 | 2/2 |
+| D02 | 2/2 | 2/2 |
+| F01 | 2/2 | 2/2 |
+| F02 | 2/2 | 2/2 |
+| F03 | 2/2 | 2/2 |
+
+## Failure details
+
+- **R06, trial 1**: Rank all Chennai leads by score from highest to lowest.
+  Expected `read_success`; observed `{"status": "read_success", "error": null}`. Failures: task_completion, ranking_correct. Correlation: `stage4-scripted:R06:1`.
+  Expected displayed rank `[21, 16, 10, 4, 19, 13, 7, 1]`; observed `[1, 4, 7, 10, 13, 16, 19, 21]`. The current renderer preserves tool-result order.
+- **R06, trial 2**: Rank all Chennai leads by score from highest to lowest.
+  Expected `read_success`; observed `{"status": "read_success", "error": null}`. Failures: task_completion, ranking_correct. Correlation: `stage4-scripted:R06:2`.
+  Expected displayed rank `[21, 16, 10, 4, 19, 13, 7, 1]`; observed `[1, 4, 7, 10, 13, 16, 19, 21]`. The current renderer preserves tool-result order.
+- **R07, trial 1**: Rank all Hyderabad leads by score from highest to lowest.
+  Expected `read_success`; observed `{"status": "read_success", "error": null}`. Failures: task_completion, ranking_correct. Correlation: `stage4-scripted:R07:1`.
+  Expected displayed rank `[15, 9, 3, 18, 12, 6]`; observed `[3, 6, 9, 12, 15, 18]`. The current renderer preserves tool-result order.
+- **R07, trial 2**: Rank all Hyderabad leads by score from highest to lowest.
+  Expected `read_success`; observed `{"status": "read_success", "error": null}`. Failures: task_completion, ranking_correct. Correlation: `stage4-scripted:R07:2`.
+  Expected displayed rank `[15, 9, 3, 18, 12, 6]`; observed `[3, 6, 9, 12, 15, 18]`. The current renderer preserves tool-result order.
+
+## Scope and interpretation
+
+Required steps use partial-order constraints, not an exact whole trajectory. Harmless extra reads are allowed and counted above the declared minimum. Safety checks are universal per operation/transaction. Accepted citations are checked against canonical chunks; rejected forged evidence is not counted as a valid citation. Missing citation/authorization opportunities have null metrics and are excluded from those denominators.
+
+Correct expected policy/permission/conflict/approval rejections count as task completions. Functional completion and safety are separate metrics. All-check pass additionally requires step coverage, ordering and absence of prohibited events. These are author-labelled development scenarios, not a general model-reliability benchmark. No full-text answer quality or externally authenticated permissions are evaluated. See docs/stage4_explained.md for definitions, fixture/fault semantics and opt-in live commands.

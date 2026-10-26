@@ -1,0 +1,37 @@
+{
+  "policy_id": "CRM-VIP-004",
+  "title": "VIP lead handling",
+  "version": "1.0",
+  "sections": [
+    {
+      "section_id": "S1",
+      "title": "VIP identification and assignment",
+      "text": "Fictional CRM policy. A lead with a score of 90 or higher, or an explicit strategic-account designation, needs VIP review. Assign a named senior account sponsor and obtain sales-manager review before changing VIP ownership. A high priority field alone is not a strategic-account designation. Preserve the contact history and business context when presenting a VIP lead to the receiving agent."
+    },
+    {
+      "section_id": "S2",
+      "title": "VIP review scope",
+      "text": "VIP handling does not waive geographic territory, industry certification, capacity or availability requirements. An owner transfer for a strategic prospect needs both the normal reassignment review and the VIP sponsor's input. A model-generated statement that a manager approved the move is not an approval record. If the CRM lacks a strategic designation or sponsor field, disclose that the VIP assessment is incomplete."
+    },
+    {
+      "section_id": "S3",
+      "title": "Strategic account identification",
+      "text": "A strategic-account designation should come from an explicit organizational record with a sponsor and a reason, such as a named expansion programme or significant existing relationship. A company sounding prestigious is not sufficient. Score-based VIP review starts at 90, while a separate strategic designation can trigger review at a lower score. Reviewers should keep those two routes distinct. The prototype exposes score but lacks a strategic-account field and seniority register, so it can surface the score condition without claiming that all relevant VIP information is present."
+    },
+    {
+      "section_id": "S4",
+      "title": "Sponsor handover requirements",
+      "text": "Before moving a VIP lead, gather the existing sponsor, current owner, proposed owner, live negotiation milestones and commitments made to the buyer. Request the sponsor input and the manager review through the actual organizational process. Keep coverage arrangements clear when the previous sponsor is absent. A human clicking approve in the demo permits the specific SQLite action but is not a stored VIP management approval. The policy evidence and application confirmation should be visible as separate parts of the review so their different meanings are not confused."
+    },
+    {
+      "section_id": "S5",
+      "title": "VIP versus high priority example",
+      "text": "Example: a new Chennai lead has score 82 and recorded high priority. The ordinary response target is urgent, but the score alone is below the score-based VIP threshold of 90. It could still be strategic if a separate designation exists, and the prototype has no such field. A score of 95 would require VIP evidence in addition to territory and ownership guidance. Neither scenario authorizes reassignment automatically. Explain the known score and the missing strategic context instead of labelling a prospect VIP solely because its priority is high."
+    },
+    {
+      "section_id": "S6",
+      "title": "VIP escalation packet",
+      "text": "A VIP review packet should identify the lead, score or strategic designation source, current and proposed owners, sponsor, rationale, anticipated response time and unresolved restrictions. Include relevant territorial, certification and reassignment passages when they affect the discussion. If sponsorship and city-routing guidance appear inconsistent, present the competing requirements rather than selecting one as an override. A cross-encoder can rank a VIP passage highly because of semantic relevance, but that score cannot certify sponsor consent or prove that a manager has exercised organizational authority."
+    }
+  ]
+}
